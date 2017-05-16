@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script type = "text/javascript">
+			window.onload = function() {
+				// 1.window.onscroll 滚动条的高度
+				var i = 0;
+				window.onscroll = function () {
+					document.title = i++;
+					var A = document.documentElement.scrollTop;//其他游览器
+					var B = document.body.scrollTop;//谷歌浏览器
+					var C = document.body.scrollTop || document.documentElement.scrollTop;
+					document.title = c;
+				}
+				var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+
+				//2.get Attribute 自定义属性和class的兼容
+				obj.getAttribute("class") ? obj.getAttribute("class") : obj.getAttribute("className");
+				function getAttribute(obj) {
+					return obj.getAttribute("class") ? obj.getAttribute("class") : obj.getAttribute("className");
+
+					//3.removeChild 删除空白文本节点
+					function removeSpace(node) { //node:接收的是父节点
+						var childs = node.childNodes; //获取到指定父节点中所有的子节点
+						for (var i = 0; i < childs.length; i++) {
+							//找出空白文本节点
+							if (childs[i].nodeType === 3 && /^\s+$/.test(childs[i].nodeValue)) {
+								node.removeChild(childs[i]);
+							}
+						}
+						return node;
+					}
+
+					//4. get style 获取非行内样式的兼容
+					function getStyle(obj, attr) {
+						return obj.currentStyle ? obj.currentStyle[attr] : getComputedStyle(obj, true)[attr];
+					}
+
+					//5.window.event 事件对象的兼容
+					var e = evt || window.event;
+					window.event //IE和谷歌早期版本
+					//标准：通过给事件触发函数传递的第一个参数
+
+					//6.冒泡事件
+					oDiv1.onclick = function (evt) {
+						var e = evt || window.event;
+						alert(this.id);
+						e.stopPropagation ? e.stopPropagation() : e.cancelBubble = true;
+					}
+					Event.cancelBubble = true; //IE
+					Event.stopPropagation();  //标准游览器
+
+					//7.event.botton 获取鼠标键值的兼容
+					document.onmousedown = function (evt) {
+						//var e = evt || window.event;
+						//e.button:获取鼠标的键值
+						//alert(e.button);
+						alert(getButton(evt));
+						switch (getButton(evt)) {
+							case 0 :
+								alert("您按了左键");
+								break;
+							case 1 :
+								alert("您按了中键，即滚轮键");
+								break;
+							case 2 :
+								alert("您按了右键");
+						}
+					}
+					function getButton(evt) {
+						var e = evt || window.event;
+						if (evt) {
+							return e.button;
+						} else if (window.event) {
+							switch (e.button) {
+								case 1 :
+									return 0;
+								case 4 :
+									return 1;
+								case 2 :
+									return 2;
+							}
+						}
+					}
+
+					//8.阻止超链接的兼容
+					var oA = document.getElementById("a1");
+					oA.onclick = function (evt) {
+						evt = evt || window.event;
+						//evt.preventDefault();
+						//evt.returnValue = false;
+						evt.preventDefault ? evt.preventDefault() : evt.returnValue = false;
+						//oA.href="javascript:;";
+					}
+					//9.事件源的兼容
+					var src = e.target || e.srcElement;
+
+					//10.事件监听器
+					function addEventListener(obj, event, fn, boo) {
+						//obj.addEventListener ? obj.addEventListener(event,fn,boo) : obj.attachEvent("on" + event, fn);
+						if (obj.addEventListener) {
+							obj.addEventListener(event, fn, boo);
+						} else {
+							obj.attachEvent("on" + event, fn);
+						}
+					}
+
+					//11.移除事件监听器
+					function removeEventListener(obj, event, fn, boo) {
+						obj.removeEventListener ? obj.removeEventListener(event, fn, boo) : obj.detachEvent("on" + event, fn);
+					}
+
+					removeEventListener(document, 'click', fn1, false);
+					//12.Ajax的兼容
+					var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHttp");
+				}
+			}
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>
