@@ -1,0 +1,15 @@
+  $(function(){
+            $("#sign_up").click(function(){
+            	var cookieNew = document.cookie.split("; ");
+            	var oTxt = document.getElementById("sign_txt1");
+            	var oTxt2 = document.getElementById("sign_txt2");
+	            var cookieZu = (oTxt.value + "=" + oTxt2.value);
+            	for(var i = 0; i < cookieNew.length; i ++) {
+            			if (decodeURIComponent(cookieNew[i]) == cookieZu) {
+			            alert("成功");
+			            return;
+		            }
+	            }
+	            alert("失败");
+            })
+        })
