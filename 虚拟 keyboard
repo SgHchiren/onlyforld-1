@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>虚拟键盘</title>
+    <style>
+        *{margin:0;padding: 0;}
+        body {
+            user-select : none;
+        }
+        #container {
+            width: 795px; height: 475px;
+            margin : 100px auto;
+            padding : 5px;
+            background: #CCC;
+        }
+        #inp {
+            width : 790px;
+            height: 200px;
+            font-size: 24px;
+        }
+        #keyboard {
+            width : 795px; height: 275px;
+        }
+        #keyboard span {
+            width: 50px; height: 50px;
+            background: orange;
+            display : inline-block;
+            font-size: 24px;
+            text-align : center;
+            line-height: 50px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            float : left;
+            border-radius: 5px;
+            cursor : pointer;
+        }
+        #keyboard span[name=delBtn] {
+            width : 75px;
+            font-size: 18px;
+        }
+        #keyboard span[name=tabBtn] {
+            width : 75px;
+            font-size: 18px;
+        }
+        #keyboard span[name=capsBtn],#keyboard span[name=enterBtn] {
+            width : 90px;
+            font-size: 18px;
+        }
+        #keyboard span[name=shiftBtn] {
+            width : 117px;
+            font-size : 18px;
+        }
+        #keyboard span[name=blankBtn] {
+            width : 790px;
+        }
+        #keyboard span.active {
+            background: #f00;
+            color : #fff;
+        }
+    </style>
+    <script>
+        window.onload = function (){
+            // 获取所有的键盘按键
+            var keyboard = document.getElementById('keyboard');
+            var btns = keyboard.getElementsByTagName('span');
+            // 获取一下输入框
+            var inp = document.getElementById('inp');
+            // 定义变量存放大小写或shift的状态
+            var isCaps = false;
+            var isShift = false;
+            // 给所有的按键添加点击事件
+            for(var i = 0; i < btns.length; i++){
+                btns[i].onclick = function (){
+                    // 获取按键的内容
+                    var v = this.innerHTML;
+
+                    if(v == "delete"){
+                        // 删除键被按下, 将输入框中的内容末尾的字符去除
+                        inp.value = inp.value.substring(0, inp.value.length - 1);
+                    } else if (v == "Enter"){
+                        inp.value += "\n";
+                    } else if (v == "tab"){
+                        inp.value += "  ";
+                    } else if (v == "shift"){
+                        isShift = !isShift;
+                    } else if (v == "capsLock"){
+                        isCaps = !isCaps;
+                    } else {
+                        if(isShift){
+                            // shift如果被按着, 那么转换一下
+                            // shift和大写锁定键同时被按着的时候, 还是小写的
+                            inp.value += convertToShiftKey(v, isCaps);
+                        } else {
+                            // 如果shift没有被按下, 那么根据大写锁定键的状态来做
+                            if(isCaps){
+                                inp.value += v.toUpperCase();
+                            } else {
+                                inp.value += v;
+                            }
+                        }
+                    }
+
+                    if(v == "shift"){
+                        // 获取到所有的shift按键, 然后根据isShift的状态改变样式
+                        var shiftBtns = document.getElementsByName('shiftBtn');
+                        for(var i = 0; i < shiftBtns.length; i++){
+                            shiftBtns[i].className = isShift ? "active" : "";
+                        }
+                        // 这里不需要后面的闪烁
+                        return;
+                    } else if(v == 'capsLock'){
+                        // 获取到所有的capsLock按键, 然后根据isCaps状态改变样式
+                        var capsBtn = document.getElementsByName('capsBtn')[0];
+                        capsBtn.className = isCaps ? "active" : "";
+                        // 这里不需要后面的闪烁
+                        return;
+                    }
+                    // 闪烁一下
+                    shark(this);
+                };
+            }
+
+
+            // 封装一个函数用来做shiftkey转换
+            function convertToShiftKey(v, isCaps){
+                var code = v.charCodeAt(0);
+                // shift和大写锁定键同时被按着的时候, 还是小写的
+                if(97 <= code && code <= 122 && !isCaps){
+                    return v.toUpperCase();
+                } else {
+                    return switchLetter(v);
+                }
+            }
+
+            // 封装一个函数, 用于转换非字母
+            function switchLetter(letter){
+                switch (letter){
+                    case "1" : letter = "!"; break;
+                    case "2" : letter = "@"; break;
+                    case "3" : letter = "#"; break;
+                    case "4" : letter = "$"; break;
+                    case "5" : letter = "%"; break;
+                    case "6" : letter = "^"; break;
+                    case "7" : letter = "&"; break;
+                    case "8" : letter = "*"; break;
+                    case "9" : letter = "("; break;
+                    case "0" : letter = ")"; break;
+                    case "-" : letter = "_"; break;
+                    case "=" : letter = "+"; break;
+                    case "`" : letter = "~"; break;
+                    case "[" : letter = "{"; break;
+                    case "]" : letter = "}"; break;
+                    case ";" : letter = ":"; break;
+                    case "'" : letter = "\""; break;
+                    case "," : letter = "<"; break;
+                    case "." : letter = ">"; break;
+                    case "\\" : letter = "|"; break;
+                    case "/" : letter = "?"; break;
+                    default:break;
+                }
+                return letter;
+            }
+
+
+
+            // 封装函数用来是点击的按钮闪烁一下
+            function shark(dom){
+                // 给元素添加active的class
+                // dom.setAttribute('class', "active");
+                dom.className = "active";
+                // 延时将上面的class取消
+                setTimeout(function (){
+                    dom.removeAttribute('class');
+                }, 50);
+            }
+        };
+    </script>
+</head>
+<body>
+    <div id="container">
+        <textarea id="inp" cols="30" rows="10"></textarea>
+        <div id="keyboard">
+            <!-- 第一排 14个键-->
+            <span>`</span>
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+            <span>6</span>
+            <span>7</span>
+            <span>8</span>
+            <span>9</span>
+            <span>0</span>
+            <span>-</span>
+            <span>=</span>
+            <span name="delBtn">delete</span>
+            <!-- 第二排 14键-->
+            <span name="tabBtn">tab</span>
+            <span>q</span>
+            <span>w</span>
+            <span>e</span>
+            <span>r</span>
+            <span>t</span>
+            <span>y</span>
+            <span>u</span>
+            <span>i</span>
+            <span>o</span>
+            <span>p</span>
+            <span>[</span>
+            <span>]</span>
+            <span>\</span>
+            <!-- 第三排 13个键-->
+            <span name="capsBtn">capsLock</span>
+            <span>a</span>
+            <span>s</span>
+            <span>d</span>
+            <span>f</span>
+            <span>g</span>
+            <span>h</span>
+            <span>j</span>
+            <span>k</span>
+            <span>l</span>
+            <span>;</span>
+            <span>'</span>
+            <span name="enterBtn">Enter</span>
+            <!--第四排 12个键-->
+            <span name="shiftBtn">shift</span>
+            <span>z</span>
+            <span>x</span>
+            <span>c</span>
+            <span>v</span>
+            <span>b</span>
+            <span>n</span>
+            <span>m</span>
+            <span>,</span>
+            <span>.</span>
+            <span>/</span>
+            <span name="shiftBtn">shift</span>
+            <!-- 第五排 1个键-->
+            <span name="blankBtn"> </span>
+        </div>
+    </div>
+</body>
+</html>
