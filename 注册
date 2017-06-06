@@ -1,0 +1,17 @@
+$(".login_a").click(function(){
+        		if(off == true){//off为验证上面条件的开关
+        			var dCookie = document.getElementById("txt1");
+			        var cookieSame = document.cookie.split("; ");
+			        for(var i = 0;i < cookieSame.length; i ++){
+			        	var arr = cookieSame[i].split("=");
+			        	if(decodeURIComponent(arr[0]) == dCookie.value){
+			        		alert("账号已经存在");
+			        		return;
+                        }
+                    }
+        			$.cookie($("#txt1").val(),$("#txt2").val(),{expires:7,path:'/'});
+			        alert("注册成功");
+                }else{
+        			alert("您还有信息并没有完善");
+                }
+            })
