@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播</title>
+    <script src = "js/jquery-1.11.3.js"></script>
+    <script src = "js/swiper.jquery.min.js"></script>
+    <script type = "text/javascript">
+        $(function(){
+	        var swiper = new Swiper('.swiper-container', {
+		        pagination: '.swiper-pagination',
+		        slidesPerView: 3,
+		        paginationClickable: true,
+		        spaceBetween: 200,
+		        freeMode: true,
+		        autoplayStopOnLast:false,
+		        slidesOffsetAfter:260
+	        });
+        })
+    </script>
+    <link rel = "stylesheet" type = "text/css" href = "style/swiper.min.css"/>
+    <style type = "text/css">
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        img{
+            display:block;
+            margin-left:10px;
+            height:400px;
+        }
+    </style>
+</head>
+<body>
+<div class="swiper-container" style = "height:500px;width:600px;">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide" style = "width:260px;height:400px;mmargin-left:10px;"><img src = "img/floor_big_picture_302.jpg"/></div>
+        <div class="swiper-slide" style = "width:260px;height:400px;mmargin-left:10px;"><img src = "img/floor_big_picture_402.jpg"/></div>
+        <div class="swiper-slide" style = "width:260px;height:400px;mmargin-left:10px;"><img src = "img/floor_big_picture_502.jpg"/></div>
+        <div class="swiper-slide" style = "width:260px;height:400px;mmargin-left:10px;"><img src = "img/floor_big_picture_602.jpg"/></div>
+        <div class="swiper-slide" style = "width:260px;height:400px;mmargin-left:10px;"><img src = "img/floor_big_picture_702.jpg"/></div>
+    </div>
+</div>
+
+</body>
+</html>
