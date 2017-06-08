@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{padding: 0; margin: 0;}
+        #div1 {
+            width: 100px; height: 100px;
+            background: #f00;
+            position: absolute; left: 100px; top: 100px;
+        }
+        #div2 {
+            width: 100px; height: 100px;
+            background: #f00;
+            position: absolute; left: 300px; top: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <script>
+        window.onload = function (){
+            var div1 = $('#div1');
+            var div2 = $('#div2');
+            drag(div1);
+            drag(div2);
+
+            // 封装一个函数专门用于拖拽
+            function drag(dom){
+                dom.onmousedown = function (e){
+                    var evt = e || window.event;
+                    var l = evt.offsetX;
+                    var t = evt.offsetY;
+
+                    document.onmousemove = function (e){
+                        var evt = e || window.event;
+
+                        var toLeft = evt.pageX - l;
+                        var toTop = evt.pageY - t;
+
+                        dom.style.left = toLeft + "px";
+                        dom.style.top = toTop + "px";
+
+                        // 在div块发生移动的时候, 检测碰撞是否发生
+                        // 判断是否没有碰上
+                        if(!detectKnock(div1, div2)){
+                            div1.style.background = "#f00";
+                            div2.style.background = "#f00";
+                        } else {
+                            div1.style.background = "green";
+                            div2.style.background = "green";
+                        }
+                    };
+
+                    document.onmouseup = function (){
+                        document.onmousemove = null;
+                        document.onmouseup = null;
+                    };
+
+                    return false;
+                }
+            }
+        };
+
+        // 封装函数专门用于检测是否碰撞
+        function detectKnock(dom1, dom2){
+            // 获取到dom1四条边线的位置
+            var l1 = dom1.offsetLeft;
+            var t1 = dom1.offsetTop;
+            var r1 = l1 + dom1.offsetWidth;
+            var b1 = t1 + dom1.offsetHeight;
+            // 获取到dom2四条边线的位置
+            var l2 = dom2.offsetLeft;
+            var t2 = dom2.offsetTop;
+            var r2 = l2 + dom2.offsetWidth;
+            var b2 = t2 + dom2.offsetHeight;
+
+            // 判断是否没有碰上
+            if(l1 > r2 || t1 > b2 || r1 < l2 || b1 < t2){
+                return false;
+            }
+            return true;
+        }
