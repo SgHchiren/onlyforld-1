@@ -1,0 +1,96 @@
+var data = null;
+            var oBtn = document.getElementById("btn");
+            var oShen = document.getElementById("shen");
+            var oCity = document.getElementById("city");
+            var oCount = document.getElementById("qu");
+            oBtn.onclick = function(){
+            	var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Msxml2.XMLHTTP");
+            	xhr.open("GET","allCity.json",true);
+            	xhr.send();
+            	xhr.onreadystatechange = function(){
+            		if(xhr.readyState == 4){
+            			if(xhr.status == 200){
+                            data = JSON.parse(xhr.responseText);
+            				console.log(data);
+            				loadShen();
+                        }
+                    }
+                }
+            }
+            function loadShen() {
+	            var shens = data.regions;
+	            //console.log(data);
+	            for (var i = 0; i < shens.length; i++) {
+		            var shensName = shens[i].name;
+		            var oP = document.createElement("option");
+		            oP.innerHTML = shensName;
+		            oShen.appendChild(oP);
+	            }
+	            oShen.onchange = function () {
+		            //console.log(this.value);
+		            oCity.innerHTML = "<option>请选择城市</option>";
+		           loadCity(this.value);
+	            }
+            }
+            function loadCity(shensName){
+            	var shens = data.regions;
+                for(var i = 0; i < shens.length; i ++){
+                	if(shensName == shens[i].name && shens[i].regions){
+                		var cities = shens[i].regions;
+                		//console.log(cities);
+                		for(var j = 0; j < cities.length; j ++){
+                            var cityName = cities[j].name;
+                            //console.log(cityName);
+                            var oP = document.createElement("option");
+                            oP.innerHTML = cityName;
+                            oCity.appendChild(oP);
+                        }
+                    }
+                }
+                oCity.onchange = function(){
+                	oCount.innerHTML = "<option>请选择区</option>";
+                	loadQu(cities,this.value);
+                }
+            }
+            function loadQu(cities,cityName){
+            	for(var i = 0; i < cities.length; i ++){
+            		if(cities[i].name == cityName){
+            			var count = cities[i].regions;
+            			for(var j = 0; j < count.length; j ++){
+            				var countName = count[j].name;
+            				console.log(countName);
+            				var oP = document.createElement("option");
+            				oP.innerHTML = countName;
+            				oCount.appendChild(oP);
+                        }
+                    }
+                }
+
+            }
+        }
+    </script>
+</head>
+<body>
+<!--<input type = "button" id = "btn" value = "提交"/>
+<ul id = "myul"></ul>
+<div id="nav">
+    <a href="javascript:;" data-id="first">首页</a>
+    <a href="javascript:;" data-id="previous">前一页</a>
+    <a href="javascript:;" data-id="1">1</a>
+    <a href="javascript:;" data-id="2">2</a>
+    <a href="javascript:;" data-id="3">3</a>
+    <a href="javascript:;" data-id="next">下一页</a>
+    <a href="javascript:;" data-id="last">末页</a>
+</div>-->
+<input type = "button" id = "btn" value = "查询"/>
+<select id = "shen">
+    <option>请选择省份</option>
+</select>
+<select id = "city">
+    <option>请选择城市</option>
+</select>
+<select id = "qu">
+    <option>请选择区</option>
+</select>
+</body>
+</html>
