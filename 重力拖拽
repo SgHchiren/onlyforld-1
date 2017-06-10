@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{padding: 0; margin: 0;}
+        div {
+            width: 100px; height: 100px;
+            position: absolute; left: 0;top: 100px;
+            background: #f00;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+    <script>
+        window.onload = function (){
+
+            // 给div1添加拖拽
+            div1.onmousedown  = function (e){
+                // 拖拽开始的时候, 停止该div的运动
+                clearInterval(div1.timer);
+                var evt = e || window.event;
+                var l = evt.offsetX;
+                var t = evt.offsetY;
+                // 在拖拽开始的时候, 记录当前位置
+                // 在之后记录上一个点的位置
+                var lastLeft = div1.offsetLeft;
+                var lastTop = div1.offsetTop;
+                document.onmousemove = function (e){
+                    var evt = e || window.event;
+                    var toLeft = evt.pageX - l;
+                    var toTop = evt.pageY - t;
+
+                    div1.style.left = toLeft + "px";
+                    div1.style.top = toTop + "px";
+
+                    // 计算speedX及speedY
+                    speedX = toLeft - lastLeft;
+                    speedY = toTop - lastTop;
+                    // 更新lastLeft和lastTop
+                    lastLeft = toLeft;
+                    lastTop = toTop;
+
+                    // var d = document.createElement('div');
+                    // d.style.width = "5px";
+                    // d.style.height = "5px";
+                    // d.style.background = "black";
+                    // d.style.position = "absolute";
+                    // d.style.left = toLeft + "px";
+                    // d.style.top = toTop + "px";
+                    // document.body.appendChild(d);
+                };
+                document.onmouseup = function (){
+                    document.onmousemove = null;
+                    document.onmouseup = null;
+                    // 在鼠标松开的时候, 调用move使div1开始碰撞加重力的运动
+                    move(div1);
+                };
+                return false;
+            }
+
+            // speedX代表横向的运动速度
+            var speedX = 8;
+            // speedY代表纵向的运动速度
+            var speedY = 6;
+            function move(dom){
+                clearInterval(dom.timer);
+                dom.timer = setInterval(function (){
+                    speedY += 3;
+                    var toLeft = dom.offsetLeft + speedX;
+                    var toTop = dom.offsetTop + speedY;
+
+                    var maxTop = document.documentElement.clientHeight - dom.offsetHeight;
+                    if(toTop >= maxTop){
+                        toTop = maxTop;
+                        speedY *= -0.8;
+                        speedX *= 0.8;
+                    } else if(toTop <= 0){
+                        toTop = 0;
+                        speedY *= -0.8;
+                        speedX *= 0.8;
+                    }
+                        console.log("speedY:" + speedY);
+                        console.log("speedX:" + speedX);
+                    var maxLeft = document.documentElement.clientWidth - dom.offsetWidth;
+                    if(toLeft >= maxLeft){
+                        toLeft = maxLeft;
+                        speedX *= -0.8;
+                        speedY *= 0.8;
+                    } else if(toLeft <= 0){
+                        toLeft = 0;
+                        speedX *= -0.8;
+                        speedY *= 0.8;
+                    }
+
+                    if(Math.abs(speedY) < 1){
+                        speedY = 0;
+                    }
+                    if(Math.abs(speedX) < 1){
+                        speedX = 0;
+                    }
+
+                    // 该运动停止的条件:
+                    //  1. speedX 和 speedY 都为0
+                    //  2. 方块到达"地面"
+                    if(speedX == 0 && speedY == 0 && dom.offsetTop == maxTop){
+                        clearInterval(dom.timer);
+                        return;
+                    }
+
+                    dom.style.left = toLeft + "px";
+                    dom.style.top = toTop + "px";
+                }, 30);
+
+            }
+        };
+    </script>
+</body>
+</html>
