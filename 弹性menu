@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{padding: 0; margin: 0;}
+        #box {
+            width: 505px; height: 30px;
+            position: relative;
+            margin : 100px auto;
+        }
+        #box ul{
+            width: 505px; height: 30px;
+            border : 1px solid black;
+            border-right : none;
+        }
+        #box ul li{
+            list-style: none;
+            width: 100px; height: 30px;
+            border-right : 1px solid black;
+            float : left;
+            text-align: center;
+            line-height: 30px;
+        }
+        #mask {
+            width: 100px; height: 30px;
+            background: #f00;
+            opacity : 0.3;
+            position: absolute; top: 1px; left: 101px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <ul>
+            <li>首页</li>
+            <li>公告</li>
+            <li>关于我们</li>
+            <li>联系我们</li>
+            <li>详情</li>
+        </ul>
+        <div id="mask"></div>
+    </div>
+
+    <script>
+        window.onload = function (){
+            var mask = document.getElementById('mask');
+            var lis = document.getElementsByTagName('li');
+            for(var i = 0; i < lis.length; i++){
+                lis[i].onmouseover = function (){
+                    // console.log(this.offsetLeft);
+                    move(mask, this.offsetLeft);
+                    //console.log("li" + this.offsetLeft);
+                    //console.log("mask:" + mask.offsetLeft);
+                };
+            }
+
+            var speed = 0;
+            // var left = 0;
+            function move(dom, dest){
+                //left = dom.offsetLeft;
+                clearInterval(dom.timer);
+                dom.timer = setInterval(function (){
+                    speed += (dest - dom.offsetLeft) / 8;
+                    speed *= 0.8;
+                    console.log(speed);
+                    //left += speed;
+                    if(Math.abs(speed) < 1 && dom.offsetLeft == dest){
+                        console.log('运动停止');
+                        // 停止的时候, 将结束位置直接放到目标点
+                        dom.style.left = dest + "px";
+                        clearInterval(dom.timer);
+                        return;
+                    }
+                    // dom.style.left = left + "px";
+                    dom.style.left = dom.offsetLeft + speed + "px";
+                }, 30);
+            }
+        };
+    </script>
+</body>
