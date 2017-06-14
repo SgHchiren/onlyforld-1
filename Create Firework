@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src = "js/sport1.js"></script>
+    <script type = "text/javascript">
+        window.onload = function(){
+        	var oStage = document.getElementById("stage");
+        	oStage.onclick = function(event){
+                var e = event || window.event;
+                var target = {
+                	left:e.offsetX,
+                    top:e.offsetY
+                }
+                new Firework(oStage,target);
+            }
+        }
+        function Firework(oStage,target){
+        	this.warp = oStage;
+        	this.target = target;
+        	this.ele = document.createElement("div");
+        	this.init();
+        }
+        Firework.prototype.init = function(){
+        	this.ele.className = "fire";
+        	this.ele.style.left = this.target.left + "px";
+        	this.ele.style.bottom = 0;
+        	this.ele.style.backgroundColor = this.changeColor();
+        	this.warp.appendChild(this.ele);
+        	this.fireMove();
+        }
+        Firework.prototype.changeColor = function(){
+        	var color = "#";
+        	var colorStr = "0123456789ABCDEF";
+        	for(var i = 0; i < 6; i++){
+        		color += colorStr[Math.round(Math.random() * 15)];
+            }
+            return color;
+        }
+        Firework.prototype.fireMove = function(){
+        	var that = this;
+        	sport(this.ele,this.target,function(){
+        		that.ele.remove();
+        		that.boom();
+            })
+        }
+        Firework.prototype.boom = function(){
+        	var r = Math.round(Math.random() * 100) + 50;
+        	for(let i = 0; i < 18; i ++){
+        		let fireSmall = document.createElement("div");
+        		fireSmall.className = "fire-small";
+        		fireSmall.style.left = this.target.left + "px";
+        		fireSmall.style.top = this.target.top + "px";
+        		fireSmall.style.backgroundColor = this.changeColor();
+        		this.warp.appendChild(fireSmall);
+        		let a = Math.round(Math.sin(Math.PI / 180 * 20 * i) * r) + this.target.top;
+        		let b = Math.round(Math.cos(Math.PI / 180 * 20 * i) * r) + this.target.left;
+        		sport(fireSmall,{
+        			left:b,
+                    top:a
+                },function(){
+        			fireSmall.remove();
+                })
+            }
+        }
+    </script>
+    <style type = 'text/css'>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        #stage{
+            width:800px;
+            height:600px;
+            margin:50px auto;
+            border:2px solid red;
+            background-color:black;
+            position:relative;
+        }
+        .fire{
+            width:10px;
+            height:10px;
+            bottom:0;
+            position:absolute;
+        }
+        .fire-small{
+            width: 10px;
+            height:10px;
+            position: absolute;
+            bottom: 0;
+            border-radius: 50%;
+        }
+        #btn{
+            width:100px;
+            height:50px;
+            background-color:white;
+            color:red;
+        }
+    </style>
+</head>
+<body>
+<div id = "stage">
+</div>
+</body>
+</html>
