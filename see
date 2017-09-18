@@ -1,0 +1,45 @@
+npm:
+	干嘛的：安装模块（前后台包), 自动解决模块自身依赖
+	类似：bower yarn 
+	安装到全局: 系统目录下, 任何目录都可以访问到这个包
+		npm install 包名 -g
+		npm uninstall 包名 -g
+	安装到本地: 项目目录， 在项目里面引入并使用
+		npm install 包名
+		npm uninstall 包名
+		npm install 包名@x.x.x 指定版本
+	npm list 查看已安装
+	npm info 包名 看历史版本
+	npm oudated 版本变化(列出有变化)
+
+	包管理package.json
+		创建package.json:	
+		dependencies  项目依赖 	  npm install 包名 --save
+		devDependencies 开发依赖  上线就不需要了
+			npm install 包名 --save-dev
+			npm install 包名 -D
+
+		^x.x.x  ^约束
+		x.~x.x  保持前不变，后面找最新
+		*		装最新
+	选择源：
+		npm install nrm -g   
+		nrm ls 查看所有源
+		nrm test 查看所有源的速度、状态
+		nrm use 源名  切换源
+	模块下载失败:
+		报错是快速的：node_modules 删除，再装
+		精度条卡（超过5分钟) , ctrl+c -> npm uninstall 包->npm cache clean->npm install包
+	发布自个的包到npm，供其他下载
+		1. 注册npm账号
+		2. 登录
+			npm login-> username/password/email
+		3. 创建包目录
+			创建package.json 管理包-> 规定入口文件index.js(编写+暴露)
+		4. 发布
+			npm publish  
+			注意：一定要在包目录去发布|一定要在npm源下|要登录|包名不要和npm重复
+				包名设定： package.json里面 修改name
+			更新: npm publish ++ 一下 版本号
+		5.	删除包
+			
