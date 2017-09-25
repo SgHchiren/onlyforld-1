@@ -1,0 +1,53 @@
+/*时间差值计算秒数不如开始时间的可以分钟减1*/
+function timeDifc(start,end){
+                let starts = new Date(start),ends = new Date(end),message = '';
+                if (starts.getTime() > ends.getTime())
+                    return message = "现在的时间小于以前的时间!";
+
+                if ((ends.getTime() - starts.getTime())/(1000*60) < 1)
+                    return message = "刚刚";
+
+                if (ends.getFullYear() > starts.getFullYear() && ends.getMonth() >= starts.getMonth())
+                    message += ends.getFullYear() - starts.getFullYear() + "年";
+
+                if (ends.getMonth() > starts.getMonth() && ends.getDate() >= starts.getDate())
+                    message += ends.getMonth() - starts.getMonth() + "个月";
+
+                if (ends.getDate() > starts.getDate() && ends.getHours() >= starts.getHours())
+                    message += ends.getDate() - starts.getDate() + "天";
+
+                if (ends.getHours() > starts.getHours() && ends.getMinutes() >= starts.getMinutes())
+                    message += ends.getHours() - starts.getHours() + "小时";
+
+                if (ends.getMinutes() > starts.getMinutes())
+                    message += ends.getMinutes() - starts.getMinutes() + "分钟";
+                if(ends.getSeconds() >= starts.getSeconds())
+                {
+                    message += ends.getSeconds() - starts.getSeconds() + "秒数"
+                }else{
+                    message = (ends.getHours() - starts.getHours() + "小时" + (parseInt(ends.getMinutes()) - parseInt(starts.getMinutes()) - 1) + "分钟" + (parseInt(ends.getSeconds()) + 60 - parseInt(starts.getSeconds())) + "秒数");
+                }
+
+                return message;
+            };
+            /*时间格式转化*/
+            var t1 = "2016-03-28 10:27:00";
+            var d1 = t1.replace(/\-/g, "/");
+            var date1 = new Date(d1);//时间格式
+            /*时间获取并且补0*/
+            function getNowFormatDate() {
+                let date = new Date();
+                let seperator1 = "-";
+                let seperator2 = ":";
+                let month = date.getMonth() + 1;
+                let strDate = date.getDate();
+                if (month >= 1 && month <= 9) {
+                    month = "0" + month;
+                }
+                if (strDate >= 0 && strDate <= 9) {
+                    strDate = "0" + strDate;
+                }
+                let currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate + " " + date.getHours() + seperator2 + date.getMinutes() + seperator2 + date.getSeconds();
+                return currentdate;
+            }
+            alert(getNowFormatDate());
