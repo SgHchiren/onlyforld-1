@@ -1,0 +1,10 @@
+const Foo = resolve => {
+require.ensure(['./Foo.vue'], () => {
+resolve(require('./Foo.vue'))
+})
+}
+
+
+const router = new VueRouter({
+    routes: [
+      { path: '/foo', component: 
