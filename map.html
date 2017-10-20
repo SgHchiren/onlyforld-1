@@ -1,0 +1,326 @@
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <title>鼠标拾取地图坐标</title>
+    <link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css"/>
+    <script type="text/javascript"
+            src="http://webapi.amap.com/maps?v=1.4.0&key=52185dd2466b06ce9c738aabfc7e5605&plugin=AMap.Autocomplete"></script>
+    <script type="text/javascript" src="http://cache.amap.com/lbs/static/addToolbar.js"></script>
+</head>
+<body>
+<div id="container"></div>
+<div id="myPageTop">
+    <table>
+        <tr>
+            <td>
+                <label>按关键字搜索：</label>
+            </td>
+            <td class="column2">
+                <label>左击获取经纬度：</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" placeholder="请输入关键字进行搜索" id="tipinput">
+            </td>
+            <td class="column2">
+                <input type="text" readonly="true" id="lnglat">
+            </td>
+        </tr>
+    </table>
+</div>
+<script type="text/javascript">
+    var map = new AMap.Map("container", {
+        resizeEnable: true
+    });
+    //为地图注册click事件获取鼠标点击出的经纬度坐标
+    var clickEventListener = map.on('click', function(e) {
+        document.getElementById("lnglat").value = e.lnglat.getLng() + ',' + e.lnglat.getLat()
+    });
+    var auto = new AMap.Autocomplete({
+        input: "tipinput"
+    });
+    AMap.event.addListener(auto, "select", select);//注册监听，当选中某条记录时会触发
+    function select(e) {
+        if (e.poi && e.poi.location) {
+            map.setZoom(15);
+            map.setCenter(e.poi.location);
+        }
+    }
+</script>
+</body>
+</html>
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <title>输入提示后查询</title>
+    <link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css"/>
+    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.0&key=您申请的key值&plugin=AMap.Autocomplete,AMap.PlaceSearch"></script>
+    <script type="text/javascript" src="http://cache.amap.com/lbs/static/addToolbar.js"></script>
+</head>
+<body>
+<div id="container"></div>
+<div id="myPageTop">
+    <table>
+        <tr>
+            <td>
+                <label>请输入关键字：</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input id="tipinput"/>
+            </td>
+        </tr>
+    </table>
+</div>
+<script type="text/javascript">
+    //地图加载
+    var map = new AMap.Map("container", {
+        resizeEnable: true
+    });
+    //输入提示
+    var autoOptions = {
+        input: "tipinput"
+    };
+    var auto = new AMap.Autocomplete(autoOptions);
+    var placeSearch = new AMap.PlaceSearch({
+        map: map
+    });  //构造地点查询类
+    AMap.event.addListener(auto, "select", select);//注册监听，当选中某条记录时会触发
+    function select(e) {
+        placeSearch.setCity(e.poi.adcode);
+        placeSearch.search(e.poi.name);  //关键字查询查询
+    }
+</script>
+</body>
+</html>
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <title>设置点的拖拽效果</title>
+    <link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css"/>
+    <script src="http://webapi.amap.com/maps?v=1.4.0&key=您申请的key值"></script>
+    <script type="text/javascript" src="http://cache.amap.com/lbs/static/addToolbar.js"></script>
+</head>
+<body>
+<div id="container"></div>
+<div id="tip" class="tip">鼠标拖拽点标记试试</div>
+<script>
+    var map = new AMap.Map("container", {
+        resizeEnable: true,
+        center: [116.40, 39.91],
+        zoom: 13
+    });
+    var marker = new AMap.Marker({
+        position: map.getCenter(),
+        draggable: true,
+        cursor: 'move',
+        raiseOnDrag: true
+    });
+    marker.setMap(map);
+</script>
+</body>
+</html>
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <title>地图点击事件</title>
+    <link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css"/>
+    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.0&key=您申请的key值"></script>
+    <script type="text/javascript" src="http://cache.amap.com/lbs/static/addToolbar.js"></script>
+</head>
+<body>
+<div id="container"></div>
+<div id="tip">点击地图试试</div>
+<script type="text/javascript">
+    //初始化地图对象，加载地图
+    var map = new AMap.Map("container", {
+        resizeEnable: true
+    });
+    map.on("click", function(e) {
+        alert('您在[ '+e.lnglat.getLng()+','+e.lnglat.getLat()+' ]的位置点击了地图！');
+    });
+</script>
+</body>
+</html>
+
+
+
+contextMenu.addItem("缩放至全国范围", function(e) {
+map.setZoomAndCenter(4, [108.95, 34.26]);
+}, 2);
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <!-- 原始地址：//webapi.amap.com/ui/1.0/ui/misc/PositionPicker/examples/positionPicker.html -->
+    <base href="//webapi.amap.com/ui/1.0/ui/misc/PositionPicker/examples/" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <title>拖拽选址</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            width: 100%;
+            padding: 0;
+            overflow: hidden;
+            font-size: 13px;
+        }
+
+        .map {
+            height: 100%;
+            width: 60%;
+            float: left;
+        }
+
+        #right {
+            color: #444;
+            background-color: #f8f8f8;
+            width: 40%;
+            float: left;
+            height: 100%;
+        }
+
+        #start,
+        #stop,
+        #right input {
+            margin: 4px;
+            margin-left: 15px;
+        }
+
+        .title {
+            width: 100%;
+            background-color: #dadada
+        }
+
+        button {
+            border: solid 1px;
+            margin-left: 15px;
+            background-color: #dadafa;
+        }
+
+        .c {
+            font-weight: 600;
+            padding-left: 15px;
+            padding-top: 4px;
+        }
+
+        #lnglat,
+        #address,
+        #nearestJunction,
+        #nearestRoad,
+        #nearestPOI,
+        .title {
+            padding-left: 15px;
+        }
+    </style>
+</head>
+
+<body>
+<div id="container" class="map" tabindex="0"></div>
+<div id='right'>
+    <div>
+        <div class='title'>选择模式</div>
+        <input type='radio' name='mode' value='dragMap' checked>拖拽地图模式</input>
+        </br>
+        <input type='radio' name='mode' value='dragMarker'>拖拽Marker模式</input>
+    </div>
+    <div>
+        <button id='start'>开始选点</button>
+        <button id='stop'>关闭选点</button>
+    </div>
+    <div>
+        <div class='title'>选址结果</div>
+        <div class='c'>经纬度:</div>
+        <div id='lnglat'></div>
+        <div class='c'>地址:</div>
+        <div id='address'></div>
+        <div class='c'>最近的路口:</div>
+        <div id='nearestJunction'></div>
+        <div class='c'>最近的路:</div>
+        <div id='nearestRoad'></div>
+        <div class='c'>最近的POI:</div>
+        <div id='nearestPOI'></div>
+    </div>
+</div>
+<script type="text/javascript" src='//webapi.amap.com/maps?v=1.4.0&key=您申请的key值&plugin=AMap.ToolBar'></script>
+<!-- UI组件库 1.0 -->
+<script src="//webapi.amap.com/ui/1.0/main.js?v=1.0.11"></script>
+<script type="text/javascript">
+    AMapUI.loadUI(['misc/PositionPicker'], function(PositionPicker) {
+        var map = new AMap.Map('container', {
+            zoom: 16,
+            scrollWheel: false
+        })
+        var positionPicker = new PositionPicker({
+            mode: 'dragMap',
+            map: map
+        });
+
+        positionPicker.on('success', function(positionResult) {
+            document.getElementById('lnglat').innerHTML = positionResult.position;
+            document.getElementById('address').innerHTML = positionResult.address;
+            document.getElementById('nearestJunction').innerHTML = positionResult.nearestJunction;
+            document.getElementById('nearestRoad').innerHTML = positionResult.nearestRoad;
+            document.getElementById('nearestPOI').innerHTML = positionResult.nearestPOI;
+        });
+        positionPicker.on('fail', function(positionResult) {
+            document.getElementById('lnglat').innerHTML = ' ';
+            document.getElementById('address').innerHTML = ' ';
+            document.getElementById('nearestJunction').innerHTML = ' ';
+            document.getElementById('nearestRoad').innerHTML = ' ';
+            document.getElementById('nearestPOI').innerHTML = ' ';
+        });
+        var onModeChange = function(e) {
+            positionPicker.setMode(e.target.value)
+        }
+        var startButton = document.getElementById('start');
+        var stopButton = document.getElementById('stop');
+        var dragMapMode = document.getElementsByName('mode')[0];
+        var dragMarkerMode = document.getElementsByName('mode')[1];
+        AMap.event.addDomListener(startButton, 'click', function() {
+            positionPicker.start(map.getBounds().getSouthWest())
+        })
+        AMap.event.addDomListener(stopButton, 'click', function() {
+            positionPicker.stop();
+        })
+        AMap.event.addDomListener(dragMapMode, 'change', onModeChange)
+        AMap.event.addDomListener(dragMarkerMode, 'change', onModeChange);
+        positionPicker.start();
+        map.panBy(0, 1);
+
+        map.addControl(new AMap.ToolBar({
+            liteStyle: true
+        }))
+    });
+</script>
+</body>
+
+</html>
+／／拖拽marker
