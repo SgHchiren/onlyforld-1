@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ad</title>
+  <script type="text/javascript">
+    window.onload = function(){
+      var obj = {};
+Object.defineProperty(obj, 'msg', {
+  get () {
+    console.log('get')
+  },
+  set (newValue) {
+    console.log('set', newValue)
+  }
+});
+obj.msg // get
+obj.msg = 'hello world' // set hello world
+    }
+  </script>
+</head>
+<body>
+  <div id="one">
+    
+  </div>
+</body>
+</html>
