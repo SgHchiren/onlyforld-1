@@ -54,7 +54,7 @@
 
       },
       show(){
-        console.log(this.$route.query.);
+      
       }
 
     }

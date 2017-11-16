@@ -29,6 +29,11 @@ export default {
       }
     }
   },
+  methods:{
+    add(){
+      console.log(1)
+    }
+  }
 }
 </script>
 
