@@ -1,6 +1,12 @@
 <template>
   <div class="d">
     <h1>我是d组件</h1>
+    <mt-button type="primary" @click = "showaction">showaction</mt-button>
+    <mt-actionsheet
+  :actions="actions"
+  v-model="sheetVisible">
+</mt-actionsheet>
+    <mt-button type="primary" @click = "show">default</mt-button>
     <mt-loadmore :bottom-method="loadBottom"  ref="loadmore" :bottom-all-loaded="allLoaded" :auto-fill = "fill" class = "bottomload">
     <ul>
       <li v-for="item in list">{{ item }}</li>
@@ -9,7 +15,7 @@
   </div>
 </template>
 <script>
-import { Toast,Button,Indicator,Loadmore } from 'mint-ui';
+import { Toast,Button,Indicator,Loadmore,MessageBox,Actionsheet } from 'mint-ui';
   export default{
     data(){
       return{
@@ -17,7 +23,17 @@ import { Toast,Button,Indicator,Loadmore } from 'mint-ui';
           allLoaded:false,
           limit:10,
           page:0,
-          fill:false
+          fill:false,
+          sheetVisible:false,
+          actions:[{
+            name:"拍照",
+            method:this.pai()
+          },
+          {
+            name:"说话",
+            method:this.say()
+          }
+          ]
       }
     },
     methods:{
@@ -43,6 +59,20 @@ import { Toast,Button,Indicator,Loadmore } from 'mint-ui';
         }).catch(err=>{
           console.log(err)
         })
+      },
+      show(){
+          this.$messagebox.prompt('操作成功').then((value,action) => {
+              console.log(value);
+})
+      },
+      pai(){
+        console.log("我是拍照")
+      },
+      say(){
+        console.log("我是说话")
+      },
+      showaction(){
+        this.sheetVisible = true;
       }
     }
   }
