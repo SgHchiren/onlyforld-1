@@ -32,7 +32,7 @@ import { Toast,Button,Indicator,Loadmore } from 'mint-ui';
     data(){
       return{
         arr:[1,2,3],
-        list:[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],
+        list:[1,2,3],
         limit:10,
         page:0
       }
@@ -60,6 +60,7 @@ import { Toast,Button,Indicator,Loadmore } from 'mint-ui';
           if(this.page <= 9){
             this.page++;
           }else{
+            this.$refs.loadmore.onTopLoaded();
             this.page = 10;
           }
           this.$refs.loadmore.onTopLoaded();

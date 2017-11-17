@@ -5,6 +5,7 @@
   <!-- <router-link to="'/user/?id='+no.id" tag = "a" >Go to Bar</router-link>  -->
   <!-- <router-link :to="{path:'/user/',query: {name: no.id}}">跳转</router-link> -->
   <a :href="'/competitions/enroll_detail/?competition_id='+no.id" >touser</a>
+  <router-link to = "/come" tag = "a">D组件</router-link>
     <router-view></router-view>
   </div>
 </template>

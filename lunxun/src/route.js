@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import A from "../src/components/a.vue";
 import B from "../src/components/b.vue";
 import C from "../src/components/c.vue";
+import D from "../src/components/d.vue";
 
 Vue.use(VueRouter);
 
@@ -11,6 +12,11 @@ const routes = [
     name:"a",
     path:"/home/a",
     component:A
+  },
+  {
+    name:"a",
+    path:"/come",
+    component:D
   },
   {
     path:"/user",
