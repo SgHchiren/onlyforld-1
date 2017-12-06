@@ -1,0 +1,244 @@
+{
+    "action": "tag_list",
+    "res": 1,
+    "data": {
+        "tags_expire_time": [
+            {
+                "value": 0,
+                "key": "无时效性"
+            },
+            {
+                "value": 86400000,
+                "key": "1天"
+            },
+            {
+                "value": 259200000,
+                "key": "3天"
+            },
+            {
+                "value": 604800000,
+                "key": "1周"
+            },
+            {
+                "value": 2592000000,
+                "key": "1月"
+            },
+            {
+                "value": 7776000000,
+                "key": "1季度"
+            },
+            {
+                "value": 31104000000,
+                "key": "1年"
+            }
+        ],
+        "tags": [
+        {
+            "sub": [
+                {
+                    "sub": [],
+                    "name": "骑游",
+                    "level": 2
+                },
+                {
+                    "sub": [],
+                    "name": "长途",
+                    "level": 2
+                },
+                {
+                    "sub": [],
+                    "name": "竞速",
+                    "level": 2
+                },
+                {
+                    "sub": [],
+                    "name": "入门",
+                    "level": 2
+                },
+                {
+                    "sub": [],
+                    "name": "伤病",
+                    "level": 2
+                },
+                {
+                    "sub": [],
+                    "name": "赛事",
+                    "level": 2
+                },
+                {
+                    "sub": [],
+                    "name": "器材",
+                    "level": 2
+                }
+            ],
+            "name": "骑行",
+            "level": 1
+        },
+        {
+            "sub": [
+                {
+                    "sub": [],
+                    "name": "入门",
+                    "level": 2
+                },
+                {
+                    "sub": [],
+                    "name": "瘦身",
+                    "level": 2
+                },
+                {
+                    "sub": [],
+                    "name": "竞速",
+                    "level": 2
+                },
+                {
+                    "sub": [],
+                    "name": "伤病",
+                    "level": 2
+                },
+                {
+                    "sub": [],
+                    "name": "马拉松",
+                    "level": 2
+                },
+                {
+                    "sub": [],
+                    "name": "越野跑",
+                    "level": 2
+                },
+                {
+                    "sub": [], 
+                    "name": "装备", 
+                    "level": 2
+                }, 
+                {
+                    "sub": [], 
+                    "name": "超长距离", 
+                    "level": 2
+                }, 
+                {
+                    "sub": [], 
+                    "name": "铁三", 
+                    "level": 2
+                }
+            ], 
+            "name": "跑步\t", 
+            "level": 1
+        }, 
+        {
+            "sub": [
+                {
+                    "sub": [], 
+                    "name": "入门", 
+                    "level": 2
+                }, 
+                {
+                    "sub": [], 
+                    "name": "高海拔", 
+                    "level": 2
+                }, 
+                {
+                    "sub": [], 
+                    "name": "地图", 
+                    "level": 2
+                }, 
+                {
+                    "sub": [], 
+                    "name": "探险", 
+                    "level": 2
+                }, 
+                {
+                    "sub": [], 
+                    "name": "装备", 
+                    "level": 2
+                }, 
+                {
+                    "sub": [], 
+                    "name": "生存技巧", 
+                    "level": 2
+                }
+            ], 
+            "name": "登山", 
+            "level": 1
+        }, 
+        {
+            "sub": [
+                {
+                    "sub": [], 
+                    "name": "单板", 
+                    "level": 2
+                }, 
+                {
+                    "sub": [], 
+                    "name": "双板", 
+                    "level": 2
+                }, 
+                {
+                    "sub": [], 
+                    "name": "滑冰", 
+                    "level": 2
+                }, 
+                {
+                    "sub": [], 
+                    "name": "雪橇", 
+                    "level": 2
+                }
+            ], 
+            "name": "滑雪", 
+            "level": 1
+        }, 
+        {
+            "sub": [
+                {
+                    "sub": [], 
+                    "name": "野攀", 
+                    "level": 2
+                }, 
+                {
+                    "sub": [], 
+                    "name": "抱石", 
+                    "level": 2
+                }, 
+                {
+                    "sub": [], 
+                    "name": "装备", 
+                    "level": 2
+                }
+            ], 
+            "name": "攀岩", 
+            "level": 1
+        }, 
+        {
+            "sub": [], 
+            "name": "徒步", 
+            "level": 1
+        }, 
+        {
+            "sub": [
+                {
+                    "sub": [], 
+                    "name": "潜水", 
+                    "level": 2
+                }, 
+                {
+                    "sub": [], 
+                    "name": "游泳", 
+                    "level": 2
+                }, 
+                {
+                    "sub": [], 
+                    "name": "帆船", 
+                    "level": 2
+                }, 
+                {
+                    "sub": [], 
+                    "name": "冲浪", 
+                    "level": 2
+                }
+            ], 
+            "name": "水上", 
+            "level": 1
+        }
+    ]
+    }
+}

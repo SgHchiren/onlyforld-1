@@ -73,7 +73,7 @@ import { Toast,Button,Indicator,Loadmore,MessageBox,Actionsheet } from 'mint-ui'
       },
       showaction(){
         this.sheetVisible = true;
-      }
+      },
     }
   }
 </script>

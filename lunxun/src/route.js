@@ -4,7 +4,7 @@ import A from "../src/components/a.vue";
 import B from "../src/components/b.vue";
 import C from "../src/components/c.vue";
 import D from "../src/components/d.vue";
-
+import E from "../src/components/e.vue"
 Vue.use(VueRouter);
 
 const routes = [
@@ -21,6 +21,12 @@ const routes = [
   {
     path:"/user",
     component:B
+  },
+  ,
+  {
+    path:"/hongbao",
+    component:E,
+    name:"e"
   },
   {
     path:"/competitions/enroll_detail",
