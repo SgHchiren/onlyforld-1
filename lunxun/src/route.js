@@ -4,7 +4,8 @@ import A from "../src/components/a.vue";
 import B from "../src/components/b.vue";
 import C from "../src/components/c.vue";
 import D from "../src/components/d.vue";
-import E from "../src/components/e.vue"
+import E from "../src/components/e.vue";
+import F from "../src/components/element.vue";
 Vue.use(VueRouter);
 
 const routes = [
@@ -27,6 +28,10 @@ const routes = [
     path:"/hongbao",
     component:E,
     name:"e"
+  },
+  {
+    path:"/ele",
+    component:F,
   },
   {
     path:"/competitions/enroll_detail",

@@ -1,80 +1,19 @@
 <!DOCTYPE html>
 <html>
- <head>
-  <meta charset="UTF-8">
+<head>
   <title></title>
-  <style>
-   *{
-    margin: 0;
-    padding: 0;
-   }
-   .box{
-    float:left;
-   }
-   ul li{
-    width:111px;
-    height:37px;
-    list-style: none;
-    background:url(src/assets/311511231129_.pic_thumb.jpg);
-    float:left;
-    margin:50px auto;
-   }
-   #div1{
-    border:1px solid red;
-   }
-  </style>
   <script>
-   window.onload = function(){
-    let oUl = document.querySelectorAll(".box");
-    let oLi = document.querySelectorAll("li");
-    let oDiv = getid("div1");
-    let arr = ["差","一般","好","很好","非常好"];
-    let num = 0;
-    let stop = false;
-    for(let k = 0; k < oLi.length; k ++){
-     oLi[k].index = k;
-     oLi[k].onclick = function(){
-      stop = true; //开关：判断是否点击过，true:已点过，false:未点过
-      num = this.index;
-      oDiv.innerHTML = arr[this.index];
-     };
-     oLi[k].onmouseover = function(){
-      if(stop){
-       if(this.index >= num){
-        for(let j = 0; j < oLi.length; j ++){
-         oLi[j].style.background = "url(src/assets/311511231129_.pic_thumb.jpg) 0 0";
-        }
-        for(let k = 0;k <= this.index; k ++){
-         oLi[k].style.background = "url(src/assets/311511231129_.pic_thumb.jpg) 0 -38px";
-        }
-       }
-      }else{
-       for(let j = 0; j < oLi.length; j ++){
-        oLi[j].style.background = "url(src/assets/311511231129_.pic_thumb.jpg) 0 0";
-       }
-       for(let k = 0;k <= this.index; k ++){
-        oLi[k].style.background = "url(src/assets/311511231129_.pic_thumb.jpg) 0 -38px";
-       }
-      }
-     }
+    window.onload = function(){
+      let arr1 = [1,2,3];
+      arr2 = arr1.slice(0)
+      console.log(arr2);
+      arr2[2] = 5;
+      console.log(arr1);
+      console.log(arr2);
     }
-   };
-    let getid = function(id){
-      return document.getElementById(id);
-    }
-    let 
-
   </script>
- </head>
- <body>
- <ul class="box">
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
- </ul>
- <div id="div1">
- </div>
- </body>
+</head>
+<body>
+
+</body>
 </html>
