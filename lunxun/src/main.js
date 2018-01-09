@@ -7,6 +7,7 @@ import Vueresource from "vue-resource"
 import store from "./store.js";
 import Sortable from 'vue-sortable'
 import VueDND from 'awe-dnd'
+import moment from "moment";
 
 Vue.use(VueDND)
 Vue.use(Sortable)

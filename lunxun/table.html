@@ -1,9 +1,318 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title></title>
-</head>
-<body>
-  <table></table>
-</body>
-</html>
+
+        <!-- 组别信息 start -->
+           <div class="group_list" v-if="group_list_show">
+             <ul>
+                 <li v-for="(item,index) in form.group"  v-dragging="{ item: item, list: form.group, group: 'form.group' }">
+                     <div class="group_list_title">
+                        组别名称：{{item.group_name}}
+                        组别顺序：{{index + 1}}
+                        <el-button @click="deletethis(index)" type="primary" style="float:right;margin-top:0.6rem;">删除</el-button>
+                        <el-button @click="changethis(index)" type="primary" style="float:right; margin-top:.6rem;margin-right:2rem;">编辑</el-button>
+                         <i class="handle"></i>
+                    </div>
+                     <span>报名费：{{item.group_money}}元／人</span>
+                     <span>出发时间：{{item.start_time | timework}} 关门时间:{{item.end_time | timework}}</span>
+                     <span>距离：{{item.group_distance}}KM</span>
+                     <span>人数上限:{{item.group_quoto}}</span>
+                     <span>报名时间:{{item.apply_start_time | timework}}至{{item.apply_end_time | timework}}</span>
+                     <span>路书编号{{item.lushu_id}}</span>
+                     <span>年龄限制:{{item.age_limit | agelimit}}</span>
+                     <!-- <span>是否需要审核参赛资格</span> -->
+                     <span>备注{{item.money_desc}}</span>
+                 </li>
+             </ul>
+         </div>
+         <el-dialog v-model="this_show">
+                   <el-row class="form-row">
+            <el-col :span="24">
+                <h3 class="sub-title">组别信息（必填）<!-- <el-button @click="addNewGroup" type="text" class="float-right" size="small">添加组别</el-button> --></h3>
+            </el-col>
+        </el-row>
+        <el-row :span="24" >
+            <el-col :span="24">
+                <transition-group name="formitem" appear>
+                    <el-form :model="form.group[this_group]" :rules="rules.groupRules" :key="form.group[this_group].form_id" :span="24"  label-width="130px" class="group-section demo-ruleForm" style="text-align:center;">
+                        <el-row class="form-row">
+                            <el-col :span="12">
+                                <el-form-item label-width="120px" label="组别名称" prop="group_name">
+                                    <el-input v-model="form.group[this_group].group_name" :maxlength="10" :placeholder="'最多10个字符'"></el-input>
+                                </el-form-item>
+                            </el-col>
+                            <el-col :span="6">
+                                <el-form-item label-width="120px" label="人数上限" prop="group_quoto">
+                                    <el-input v-model.number="form.group[this_group].group_quoto" type="number"></el-input>
+                                </el-form-item>
+                            </el-col>
+                        </el-row>
+                        <el-row class="form-row">
+                                <el-form-item label-width="120px" label="开关门时间" prop="start_time" style="float:left;">
+                                    <!-- <el-input v-model="form.baseInfo.createTime"></el-input> -->
+                                    <!--  <el-date-picker
+                                        v-model="value4"
+                                        type="datetimerange"
+                                        :picker-options="pickerOptions2"
+                                        range-separator="至"
+                                        start-placeholder="开始日期"
+                                        end-placeholder="结束日期"
+                                        format="yyyy-MM-dd HH:mm"
+                                        align="right">
+                                    </el-date-picker> -->
+                                    <el-date-picker
+                                        v-model="form.group[this_group].start_time"
+                                        type="datetime"
+                                        format="yyyy-MM-dd HH:mm"
+                                        placeholder="选择日期时间">
+                                    </el-date-picker>
+                                </el-form-item>
+                                <el-form-item label-width="120px" label="至" prop="end_time" style="float:left;">
+                                    <!-- <el-input v-model="form.baseInfo.closingTime"></el-input> -->
+                                    <el-date-picker
+                                        v-model="form.group[this_group].end_time"
+                                        type="datetime"
+                                        format="yyyy-MM-dd HH:mm"
+                                        placeholder="选择日期时间">
+                                    </el-date-picker>
+                                </el-form-item>
+                        </el-row>
+                        <el-row class="form-row">
+                                <el-form-item label-width="120px" label="报名时间" prop="apply_start_time" style="float:left;">
+                                    <!-- <el-input v-model="form.baseInfo.createTime"></el-input> -->
+                                    <el-date-picker
+                                        v-model="form.group[this_group].apply_start_time"
+                                        type="datetime"
+                                        format="yyyy-MM-dd HH:mm"
+                                        placeholder="选择日期时间">
+                                    </el-date-picker>
+                                </el-form-item>
+                                <el-form-item label-width="120px" label="至" prop="apply_end_time" style="float:left;">
+                                    <!-- <el-input v-model="form.baseInfo.closingTime"></el-input> -->
+                                    <el-date-picker
+                                        v-model="form.group[this_group].apply_end_time"
+                                        type="datetime"
+                                        format="yyyy-MM-dd HH:mm"
+                                        placeholder="选择日期时间">
+                                    </el-date-picker>
+                                </el-form-item>
+                        </el-row>
+                        <el-row class="form-row">
+                            <el-col :span="12">
+                                <el-form-item label-width="120px" label="距离" prop="group_distance">
+                                    <el-input v-model.number="form.group[this_group].group_distance" type="number">
+                                        <template slot="append">km</template>
+                                    </el-input>
+                                </el-form-item>
+                            </el-col>
+                            <el-col :span="12">
+                                <el-form-item label-width="120px" label="路书编号" prop="lushu_id">
+                                    <el-input v-model.number="form.group[this_group].lushu_id" :type="'number'"></el-input>
+                                </el-form-item>
+                            </el-col>
+                        </el-row>
+                        <el-row class="form-row">
+                            <el-col :span="12">
+                                <el-form-item label-width="120px" label="报名费" prop="group_money">
+                                    <el-input v-model.number="form.group[this_group].group_money" type="number">
+                                        <template slot="append">元/人</template>
+                                    </el-input>
+                                </el-form-item>
+                            </el-col>
+                        </el-row>
+                        <!-- 新增年龄限制 start-->
+                        <el-row>
+                            <el-col :span="12">
+                                <el-form-item label-width="220px" label="是否增加年龄限制" prop="require_age_limit">
+                                    <el-switch
+                                        v-model="form.group[this_group].require_age_limit"
+                                        on-text="是"
+                                        off-text="否">
+                                    </el-switch>
+                                </el-form-item>
+                            </el-col>
+                        </el-row>
+                        <transition name="formitem">
+                            <el-row v-show="form.group[this_group].require_age_limit">
+                                <el-col :span="24">
+                                    <el-form-item label-width="220px" label="出生日期要求" prop="clothes_size">
+                                        <el-date-picker
+                                            v-model="form.group[this_group].age_limit[0]"
+                                            align="right"
+                                            type="date"
+                                            placeholder="不选则默认为无限制"
+                                            :editable="false"
+                                            :picker-options="options.age_limit">
+                                        </el-date-picker>
+                                        <el-date-picker
+                                            v-model="form.group[this_group].age_limit[1]"
+                                            align="right"
+                                            type="date"
+                                            placeholder="不选则默认为无限制"
+                                            :editable="false"
+                                            :picker-options="options.age_limit">
+                                        </el-date-picker>
+                                        <span class="font-14 font-gray4">例如：1970-01-01 - 2017-04-20</span>
+                                    </el-form-item>
+                                </el-col>
+                            </el-row>
+                        </transition>
+                        <!-- 新增年龄限制 end-->
+                        <el-row class="form-row">
+                            <el-form-item label-width="120px" label="备注" prop="money_desc">
+                                <el-input v-model="form.group[this_group].money_desc" type="textarea" resize="'none'" :rows="3"></el-input>
+                            </el-form-item>
+                        </el-row>
+                        <el-button @click="saveGroup" type="primary">保存</el-button>
+                        <el-button @click="cancelGroup" type="primary">取消</el-button>
+                    </el-form>
+                </transition-group>
+            </el-col>
+        </el-row>
+         </el-dialog>
+        <div v-if="step2">
+            <el-button type="text" @click="addNewGroup" class="addgroup">添加组别</el-button>
+            <el-dialog v-model="dialogFormVisible">
+                <el-row class="form-row">
+            <el-col :span="24">
+                <h3 class="sub-title">组别信息（必填）<!-- <el-button @click="addNewGroup" type="text" class="float-right" size="small">添加组别</el-button> --></h3>
+            </el-col>
+        </el-row>
+        <el-row :span="24" >
+            <el-col :span="24">
+                <transition-group name="formitem" appear>
+                    <el-form ref="groupForm" :model="form.group[form.group.length - 1]" :rules="rules.groupRules" :key="form.group[form.group.length - 1].form_id" :span="24"  label-width="130px" class="group-section demo-ruleForm" style="text-align:center;">
+                        <el-row class="form-row">
+                            <el-col :span="12">
+                                <el-form-item label-width="120px" label="组别名称" prop="group_name">
+                                    <el-input v-model="form.group[form.group.length - 1].group_name" :maxlength="10" :placeholder="'最多10个字符'"></el-input>
+                                </el-form-item>
+                            </el-col>
+                            <el-col :span="6">
+                                <el-form-item label="人数上限" prop="group_quoto">
+                                    <el-input v-model.number="form.group[form.group.length - 1].group_quoto" type="number" style="width:120px;"></el-input>
+                                </el-form-item>
+                            </el-col>
+                        </el-row>
+                        <el-row class="form-row">
+                                <el-form-item label-width="120px" label="开关门时间" prop="start_time" style="float:left;">
+                                    <!-- <el-input v-model="form.baseInfo.createTime"></el-input> -->
+                                    <!--  <el-date-picker
+                                        v-model="value4"
+                                        type="datetimerange"
+                                        :picker-options="pickerOptions2"
+                                        range-separator="至"
+                                        start-placeholder="开始日期"
+                                        end-placeholder="结束日期"
+                                        format="yyyy-MM-dd HH:mm"
+                                        align="right">
+                                    </el-date-picker> -->
+                                    <el-date-picker
+                                        v-model="form.group[form.group.length - 1].start_time"
+                                        type="datetime"
+                                        format="yyyy-MM-dd HH:mm"
+                                        placeholder="选择日期时间">
+                                    </el-date-picker>
+                                </el-form-item>
+                                <el-form-item label-width="120px" label="至" prop="end_time" style="float:left;">
+                                    <!-- <el-input v-model="form.baseInfo.closingTime"></el-input> -->
+                                    <el-date-picker
+                                        v-model="form.group[form.group.length - 1].end_time"
+                                        type="datetime"
+                                        format="yyyy-MM-dd HH:mm"
+                                        placeholder="选择日期时间">
+                                    </el-date-picker>
+                                </el-form-item>
+                        </el-row>
+                        <el-row class="form-row">
+                                <el-form-item label-width="120px" label="报名时间" prop="apply_start_time" style="float:left;">
+                                    <!-- <el-input v-model="form.baseInfo.createTime"></el-input> -->
+                                    <el-date-picker
+                                        v-model="form.group[form.group.length - 1].apply_start_time"
+                                        type="datetime"
+                                        format="yyyy-MM-dd HH:mm"
+                                        placeholder="选择日期时间">
+                                    </el-date-picker>
+                                </el-form-item>
+                                <el-form-item label-width="120px" label="至" prop="apply_end_time" style="float:left;">
+                                    <!-- <el-input v-model="form.baseInfo.closingTime"></el-input> -->
+                                    <el-date-picker
+                                        v-model="form.group[form.group.length - 1].apply_end_time"
+                                        type="datetime"
+                                        format="yyyy-MM-dd HH:mm"
+                                        placeholder="选择日期时间">
+                                    </el-date-picker>
+                                </el-form-item>
+                        </el-row>
+                        <el-row class="form-row">
+                            <el-col :span="12">
+                                <el-form-item label-width="120px" label="距离" prop="group_distance">
+                                    <el-input v-model.number="form.group[form.group.length - 1].group_distance" type="number">
+                                        <template slot="append">km</template>
+                                    </el-input>
+                                </el-form-item>
+                            </el-col>
+                            <el-col :span="12">
+                                <el-form-item label-width="120px" label="路书编号" prop="lushu_id">
+                                    <el-input v-model.number="form.group[form.group.length - 1].lushu_id" :type="'number'"></el-input>
+                                </el-form-item>
+                            </el-col>
+                        </el-row>
+                        <el-row class="form-row">
+                            <el-col :span="12">
+                                <el-form-item label-width="120px" label="报名费" prop="group_money">
+                                    <el-input v-model.number="form.group[form.group.length - 1].group_money" type="number">
+                                        <template slot="append">元/人</template>
+                                    </el-input>
+                                </el-form-item>
+                            </el-col>
+                        </el-row>
+                        <!-- 新增年龄限制 start-->
+                        <el-row>
+                            <el-col :span="12">
+                                <el-form-item label-width="220px" label="是否增加年龄限制" prop="require_age_limit">
+                                    <el-switch
+                                        v-model="form.group[form.group.length - 1].require_age_limit"
+                                        on-text="是"
+                                        off-text="否">
+                                    </el-switch>
+                                </el-form-item>
+                            </el-col>
+                        </el-row>
+                        <transition name="formitem">
+                            <el-row v-show="form.group[form.group.length - 1].require_age_limit">
+                                <el-col :span="24">
+                                    <el-form-item label-width="220px" label="出生日期要求" prop="clothes_size">
+                                        <el-date-picker
+                                            v-model="form.group[form.group.length - 1].age_limit[0]"
+                                            align="right"
+                                            type="date"
+                                            placeholder="不选则默认为无限制"
+                                            :editable="false"
+                                            :picker-options="options.age_limit">
+                                        </el-date-picker>
+                                        <el-date-picker
+                                            v-model="form.group[form.group.length - 1].age_limit[1]"
+                                            align="right"
+                                            type="date"
+                                            placeholder="不选则默认为无限制"
+                                            :editable="false"
+                                            :picker-options="options.age_limit">
+                                        </el-date-picker>
+                                        <span class="font-14 font-gray4">例如：1970-01-01 - 2017-04-20</span>
+                                    </el-form-item>
+                                </el-col>
+                            </el-row>
+                        </transition>
+                        <!-- 新增年龄限制 end-->
+                        <el-row class="form-row">
+                            <el-form-item label-width="120px" label="备注" prop="money_desc">
+                                <el-input v-model="form.group[form.group.length - 1].money_desc" type="textarea" resize="'none'" :rows="3"></el-input>
+                            </el-form-item>
+                        </el-row>
+                        <el-button @click="saveGroup" type="primary">保存</el-button>
+                        <el-button @click="deleteGroup" type="primary">取消</el-button>
+                    </el-form>
+                </transition-group>
+            </el-col>
+        </el-row>
+            </el-dialog>
+        </div>
+        <!-- 组别信息 end -->

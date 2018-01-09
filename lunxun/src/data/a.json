@@ -1,6 +1,24 @@
 {
-  "come":{
-    "a":"qwe",
-    "b":123
-  }
+"status": "1",
+"count": 1,
+"data": [
+{
+"username": "competitions",
+"start_time": "2018-01-11 18:48",
+"create_time": "2018-01-09 18:48",
+"id": 662,
+"user_id": 1930703,
+"total_enroll": 0,
+"title": "0108测试",
+"cid": 0,
+"pic_url": "https://oi27flgao.qnssl.com/o_1c3am6ldu1emecbqhl4v2capic.jpg",
+"mode": 1,
+"total_fee": 0,
+"closing_time": "2018-01-10 18:48",
+"com_type": 2,
+"cp_status": "待审核",
+"end_time": "2018-01-12 18:48"
+}
+],
+"page": 1
 }

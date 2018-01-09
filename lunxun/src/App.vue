@@ -8,9 +8,11 @@
   <router-link to = "/come" tag = "a">D组件</router-link>
   <router-link to = "/hongbao" tag = "a">e组件</router-link>
   <router-link to = "/ele" tag = "a">ele组件</router-link>
-   <qian message="msg"></qian>
+  <router-link to = "/demo" tag = "a">demo</router-link>
+  <router-link to = "/tuo" tag = "a">tuo</router-link>
+  <!--  <qian message="msg"></qian>
    <qian2></qian2>
-   <dad></dad>
+   <dad></dad> -->
    <button @click="show">show</button>
   <router-view></router-view> 
  
