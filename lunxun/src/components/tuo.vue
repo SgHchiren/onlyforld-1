@@ -4,7 +4,7 @@
       <li v-for="item in arr">
         <h1>tuo</h1>
         <button v-if="item.com_type !== 2" @click="add">我是a</button>
-         <button v-else @click="addd">我是aj1</button>
+         <button v-else @click="addd">我是aj1123123</button>
       </li>
     </ul>
   </div>
