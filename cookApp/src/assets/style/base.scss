@@ -1,0 +1,55 @@
+div
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section {
+  box-sizing: border-box;
+}
+body,
+html {
+  -webkit-overflow-scrolling: touch;
+  -webkit-user-select: none;
+  user-select: none;
+}
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  margin: 0;
+  font-size: 14px;
+  font-family: Helvetica Neue, Helvetica, STHeiTi, Arial, sans-serif;
+}
+img {
+  max-width: 100%;
+}
+a.link {
+    color: #189ADB;
+    text-decoration: none;
+}
+.text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.mint-checkbox-core {
+    box-sizing: border-box;
+}
+.mint-radio-core {
+    box-sizing: border-box;
+}
+.mint-tab-item-label {
+  font-size: 14px;
+}
+.mint-cell-value.is-link {
+  color: #189ADB;
+}
