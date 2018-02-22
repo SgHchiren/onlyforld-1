@@ -27,8 +27,12 @@ import moment from "moment"
       getData(){
         console.log(this)
         this.$http.get("../../src/data/a.json").then(res=>{
-          console.log(res.data.data);
-
+          console.log(res.data.data.closing_time);
+          let time = res.data.data.closing_time;
+          let time2 = this.fixTime(time);
+          let time3 = "Tue Jan 09 2018 17:34:00 GMT+0800 (CST)";
+          console.log(moment(time3).format("YYYY-MM-DD HH:mm"));
+          // console.log(time2);
         }).catch(err=>{
           console.log(err)
         })
@@ -39,6 +43,22 @@ import moment from "moment"
       addd(){
         console.log("非行者")
       },
+      fixTime ( val ) {
+    if ( val instanceof Date ) {
+        val = val.getTime();
+    }
+    let time;
+    let str = val + "";
+    if ( str.length === 10 ) {
+        time = moment(new Date( val * 1000 )).format("YYYY-MM-DD HH:mm");
+        // time = new Date( val );
+
+    } else {
+        time = new Date( val );
+    }
+    // return new Date( time.getFullYear(), time.getMonth(), time.getDate(), time.getHours(), time.getMinutes() ).getTime();
+    return time
+      }
     },
     mounted(){
       this.getData();

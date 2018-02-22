@@ -1,0 +1,3596 @@
+{
+    "continent": [
+        {
+            "size_m": 475.467,
+            "name": "亚洲",
+            "countries": [
+                {
+                    "size_m": 78.371,
+                    "name": "中国",
+                    "version": 1,
+                    "name_en": "china",
+                    "cities": [
+                        {
+                            "size_m": 0.671,
+                            "name": "北京",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/beijing.map",
+                            "version": 1,
+                            "name_en": "beijing",
+                            "id": 912940,
+                            "size": 703740
+                        },
+                        {
+                            "size_m": 1.579,
+                            "name": "上海",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/shanghai.map",
+                            "version": 1,
+                            "name_en": "shanghai",
+                            "id": 913067,
+                            "size": 1655905
+                        },
+                        {
+                            "size_m": 1.193,
+                            "name": "重庆",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/chongqing.map",
+                            "version": 1,
+                            "name_en": "chongqing",
+                            "id": 913069,
+                            "size": 1250901
+                        },
+                        {
+                            "size_m": 0.671,
+                            "name": "天津",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/tianjin.map",
+                            "version": 1,
+                            "name_en": "tianjin",
+                            "id": 912999,
+                            "size": 703740
+                        },
+                        {
+                            "size_m": 1.563,
+                            "name": "河北省",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/hebei.map",
+                            "version": 1,
+                            "name_en": "hebei",
+                            "id": 912998,
+                            "size": 1639090
+                        },
+                        {
+                            "size_m": 1.14,
+                            "name": "山西省",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/shanxi.map",
+                            "version": 1,
+                            "name_en": "shanxi",
+                            "id": 913105,
+                            "size": 1195161
+                        },
+                        {
+                            "size_m": 1.798,
+                            "name": "辽宁省",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/liaoning.map",
+                            "version": 1,
+                            "name_en": "liaoning",
+                            "id": 912942,
+                            "size": 1885823
+                        },
+                        {
+                            "size_m": 1.467,
+                            "name": "吉林省",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/jilin.map",
+                            "version": 1,
+                            "name_en": "jining",
+                            "id": 198590,
+                            "size": 1538783
+                        },
+                        {
+                            "size_m": 1.213,
+                            "name": "黑龙江",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/heilongjiang.map",
+                            "version": 1,
+                            "name_en": "heilongjiang",
+                            "id": 199073,
+                            "size": 1271448
+                        },
+                        {
+                            "size_m": 4.082,
+                            "name": "江苏省",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/jiangsu.map",
+                            "version": 1,
+                            "name_en": "jiangsu",
+                            "id": 913012,
+                            "size": 4280157
+                        },
+                        {
+                            "size_m": 3.633,
+                            "name": "浙江省",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/zhejiang.map",
+                            "version": 1,
+                            "name_en": "zhejiang",
+                            "id": 553302,
+                            "size": 3809602
+                        },
+                        {
+                            "size_m": 1.79,
+                            "name": "安徽省",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/anhui.map",
+                            "version": 1,
+                            "name_en": "anhui",
+                            "id": 913011,
+                            "size": 1876471
+                        },
+                        {
+                            "size_m": 2.674,
+                            "name": "福建省",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/fujian.map",
+                            "version": 1,
+                            "name_en": "fujian",
+                            "id": 553303,
+                            "size": 2803686
+                        },
+                        {
+                            "size_m": 2.454,
+                            "name": "江西省",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/jiangxi.map",
+                            "version": 1,
+                            "name_en": "jiangxi",
+                            "id": 913109,
+                            "size": 2573599
+                        },
+                        {
+                            "size_m": 3.141,
+                            "name": "山东省",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/shandong.map",
+                            "version": 1,
+                            "name_en": "shandong",
+                            "id": 913006,
+                            "size": 3294079
+                        },
+                        {
+                            "size_m": 1.372,
+                            "name": "河南省",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/henan.map",
+                            "version": 1,
+                            "name_en": "henan",
+                            "id": 407492,
+                            "size": 1438635
+                        },
+                        {
+                            "size_m": 1.713,
+                            "name": "湖北省",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/hubei.map",
+                            "version": 1,
+                            "name_en": "hubei",
+                            "id": 913106,
+                            "size": 1795935
+                        },
+                        {
+                            "size_m": 1.866,
+                            "name": "湖南省",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/hunan.map",
+                            "version": 1,
+                            "name_en": "hunan",
+                            "id": 913073,
+                            "size": 1956866
+                        },
+                        {
+                            "size_m": 5.676,
+                            "name": "广东省",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/guangdong.map",
+                            "version": 1,
+                            "name_en": "guangdong",
+                            "id": 911844,
+                            "size": 5951669
+                        },
+                        {
+                            "size_m": 0.662,
+                            "name": "海南省",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/hainan.map",
+                            "version": 1,
+                            "name_en": "hainan",
+                            "id": 2128285,
+                            "size": 693963
+                        },
+                        {
+                            "size_m": 3.56,
+                            "name": "四川省",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/sichuan.map",
+                            "version": 1,
+                            "name_en": "sichuan",
+                            "id": 913068,
+                            "size": 3732474
+                        },
+                        {
+                            "size_m": 1.398,
+                            "name": "贵州省",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/guizhou.map",
+                            "version": 1,
+                            "name_en": "guizhou",
+                            "id": 286937,
+                            "size": 1466151
+                        },
+                        {
+                            "size_m": 3.968,
+                            "name": "云南省",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/yunnan.map",
+                            "version": 1,
+                            "name_en": "yunnan",
+                            "id": 913094,
+                            "size": 4160352
+                        },
+                        {
+                            "size_m": 1.951,
+                            "name": "陕西省",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/shaixi.map",
+                            "version": 1,
+                            "name_en": "shanxi",
+                            "id": 913100,
+                            "size": 2045391
+                        },
+                        {
+                            "size_m": 2.485,
+                            "name": "甘肃省",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/gansu.map",
+                            "version": 1,
+                            "name_en": "gansu",
+                            "id": 153314,
+                            "size": 2606179
+                        },
+                        {
+                            "size_m": 1.3,
+                            "name": "青海省",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/qinghai.map",
+                            "version": 1,
+                            "name_en": "qinghai",
+                            "id": 153269,
+                            "size": 1362794
+                        },
+                        {
+                            "size_m": 12.838,
+                            "name": "台湾省",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/taiwan.map",
+                            "version": 1,
+                            "name_en": "taiwan",
+                            "id": 449220,
+                            "size": 13461150
+                        },
+                        {
+                            "size_m": 1.948,
+                            "name": "内蒙古",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/neimenggu.map",
+                            "version": 1,
+                            "name_en": "neimenggu",
+                            "id": 161349,
+                            "size": 2042935
+                        },
+                        {
+                            "size_m": 2.142,
+                            "name": "西藏",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/xizang.map",
+                            "version": 1,
+                            "name_en": "tibet",
+                            "id": 153292,
+                            "size": 2245532
+                        },
+                        {
+                            "size_m": 2.061,
+                            "name": "新疆",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/xinjiang.map",
+                            "version": 1,
+                            "name_en": "xinjiang",
+                            "id": 153310,
+                            "size": 2161291
+                        },
+                        {
+                            "size_m": 0.369,
+                            "name": "宁夏",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/ningxia.map",
+                            "version": 1,
+                            "name_en": "ningxia",
+                            "id": 913101,
+                            "size": 387276
+                        },
+                        {
+                            "size_m": 1.622,
+                            "name": "广西",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/guangxi.map",
+                            "version": 1,
+                            "name_en": "guangxi",
+                            "id": 286342,
+                            "size": 1700768
+                        },
+                        {
+                            "size_m": 2.115,
+                            "name": "香港",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/hongkong.map",
+                            "version": 1,
+                            "name_en": "hongkong",
+                            "id": 913110,
+                            "size": 2217947
+                        },
+                        {
+                            "size_m": 0.256,
+                            "name": "澳门",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/macau.map",
+                            "version": 1,
+                            "name_en": "macau",
+                            "id": 1867188,
+                            "size": 268207
+                        }
+                    ],
+                    "id": 270056,
+                    "size": 0
+                },
+                {
+                    "size_m": 5462895,
+                    "name": "阿富汗",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/afghanistan.map",
+                    "version": 1,
+                    "name_en": "afghanistan",
+                    "cities": [],
+                    "id": 303427,
+                    "size": 5462895
+                },
+                {
+                    "size_m": 4453335,
+                    "name": "阿塞拜疆",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/azerbaijan.map",
+                    "version": 1,
+                    "name_en": "azerbaijan",
+                    "cities": [],
+                    "id": 364110,
+                    "size": 4453335
+                },
+                {
+                    "size_m": 5106848,
+                    "name": "孟加拉国",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/bangladesh.map",
+                    "version": 1,
+                    "name_en": "bangladesh",
+                    "cities": [],
+                    "id": 184640,
+                    "size": 5106848
+                },
+                {
+                    "size_m": 611508,
+                    "name": "不丹",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/bhutan.map",
+                    "version": 1,
+                    "name_en": "bhutan",
+                    "cities": [],
+                    "id": 184629,
+                    "size": 611508
+                },
+                {
+                    "size_m": 2292053,
+                    "name": "柬埔寨",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/cambodia.map",
+                    "version": 1,
+                    "name_en": "cambodia",
+                    "cities": [],
+                    "id": 49898,
+                    "size": 2292053
+                },
+                {
+                    "size_m": 30999952,
+                    "name": "伊朗",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/iran.map",
+                    "version": 1,
+                    "name_en": "iran",
+                    "cities": [],
+                    "id": 304938,
+                    "size": 30999952
+                },
+                {
+                    "size_m": 6534828,
+                    "name": "伊拉克",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/iraq.map",
+                    "version": 1,
+                    "name_en": "iraq",
+                    "cities": [],
+                    "id": 304934,
+                    "size": 6534828
+                },
+                {
+                    "size_m": 2686917,
+                    "name": "约旦",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/jordan.map",
+                    "version": 1,
+                    "name_en": "jordan",
+                    "cities": [],
+                    "id": 184818,
+                    "size": 2686917
+                },
+                {
+                    "size_m": 13199791,
+                    "name": "哈萨克斯坦",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/kazakhstan.map",
+                    "version": 1,
+                    "name_en": "kazakhstan",
+                    "cities": [],
+                    "id": 214665,
+                    "size": 13199791
+                },
+                {
+                    "size_m": 3454792,
+                    "name": "吉尔吉斯斯坦",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/kyrgyzstan.map",
+                    "version": 1,
+                    "name_en": "kyrgyzstan",
+                    "cities": [],
+                    "id": 178009,
+                    "size": 3454792
+                },
+                {
+                    "size_m": 1953486,
+                    "name": "黎巴嫩",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/lebanon.map",
+                    "version": 1,
+                    "name_en": "lebanon",
+                    "cities": [],
+                    "id": 184843,
+                    "size": 1953486
+                },
+                {
+                    "size_m": 12981368,
+                    "name": "malaysia-singapore-brunei",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/malaysia-singapore-brunei.map",
+                    "version": 1,
+                    "name_en": "malaysia-singapore-brunei",
+                    "cities": [],
+                    "id": 0,
+                    "size": 12981368
+                },
+                {
+                    "size_m": 324470,
+                    "name": "马尔代夫",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/maldives.map",
+                    "version": 1,
+                    "name_en": "maldives",
+                    "cities": [],
+                    "id": 536773,
+                    "size": 324470
+                },
+                {
+                    "size_m": 30939045,
+                    "name": "印度尼西亚",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/indonesia.map",
+                    "version": 1,
+                    "name_en": "indonesia",
+                    "cities": [],
+                    "id": 304751,
+                    "size": 30939045
+                },
+                {
+                    "size_m": 68808952,
+                    "name": "印度",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/india.map",
+                    "version": 1,
+                    "name_en": "india",
+                    "cities": [],
+                    "id": 304716,
+                    "size": 68808952
+                },
+                {
+                    "size_m": 20348169,
+                    "name": "菲律宾",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/philippines.map",
+                    "version": 1,
+                    "name_en": "philippines",
+                    "cities": [],
+                    "id": 443174,
+                    "size": 20348169
+                },
+                {
+                    "size_m": 157,
+                    "name": "日本",
+                    "version": 1,
+                    "name_en": "japan",
+                    "cities": [
+                        {
+                            "size_m": 2.763,
+                            "name": "Osaka Prefecture",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/341906.map",
+                            "version": 1,
+                            "name_en": "Osaka Prefecture",
+                            "id": 341906,
+                            "size": 2897539
+                        },
+                        {
+                            "size_m": 2.818,
+                            "name": "Oita",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/356911.map",
+                            "version": 1,
+                            "name_en": "Oita",
+                            "id": 356911,
+                            "size": 2955312
+                        },
+                        {
+                            "size_m": 4.75,
+                            "name": "Hyogo Prefecture",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/356912.map",
+                            "version": 1,
+                            "name_en": "Hyogo Prefecture",
+                            "id": 356912,
+                            "size": 4981112
+                        },
+                        {
+                            "size_m": 1.749,
+                            "name": "Fukui Prefecture",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/357112.map",
+                            "version": 1,
+                            "name_en": "Fukui Prefecture",
+                            "id": 357112,
+                            "size": 1833480
+                        },
+                        {
+                            "size_m": 1.829,
+                            "name": "Shiga",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/357800.map",
+                            "version": 1,
+                            "name_en": "Shiga",
+                            "id": 357800,
+                            "size": 1918295
+                        },
+                        {
+                            "size_m": 1.702,
+                            "name": "Nara Prefecture",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/358631.map",
+                            "version": 1,
+                            "name_en": "Nara Prefecture",
+                            "id": 358631,
+                            "size": 1784775
+                        },
+                        {
+                            "size_m": 3.682,
+                            "name": "Gifu Prefecture",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/760746.map",
+                            "version": 1,
+                            "name_en": "Gifu Prefecture",
+                            "id": 760746,
+                            "size": 3860565
+                        },
+                        {
+                            "size_m": 3.06,
+                            "name": "Mie Prefecture",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/812190.map",
+                            "version": 1,
+                            "name_en": "Mie Prefecture",
+                            "id": 812190,
+                            "size": 3209002
+                        },
+                        {
+                            "size_m": 1.984,
+                            "name": "Wakayama Prefecture",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/908959.map",
+                            "version": 1,
+                            "name_en": "Wakayama Prefecture",
+                            "id": 908959,
+                            "size": 2080229
+                        },
+                        {
+                            "size_m": 4.716,
+                            "name": "東京都",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/1543125.map",
+                            "version": 1,
+                            "name_en": "Tokyo",
+                            "id": 1543125,
+                            "size": 4945348
+                        },
+                        {
+                            "size_m": 3.555,
+                            "name": "Fukuoka Prefecture",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/1553735.map",
+                            "version": 1,
+                            "name_en": "Fukuoka Prefecture",
+                            "id": 1553735,
+                            "size": 3727297
+                        },
+                        {
+                            "size_m": 3.647,
+                            "name": "Saitama",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/1768185.map",
+                            "version": 1,
+                            "name_en": "Saitama",
+                            "id": 1768185,
+                            "size": 3824247
+                        },
+                        {
+                            "size_m": 4.066,
+                            "name": "Fukushima",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/1800608.map",
+                            "version": 1,
+                            "name_en": "Fukushima",
+                            "id": 1800608,
+                            "size": 4263744
+                        },
+                        {
+                            "size_m": 2.706,
+                            "name": "Tochigi",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/1800742.map",
+                            "version": 1,
+                            "name_en": "Tochigi",
+                            "id": 1800742,
+                            "size": 2837958
+                        },
+                        {
+                            "size_m": 3.228,
+                            "name": "Aomori",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/1834655.map",
+                            "version": 1,
+                            "name_en": "Aomori",
+                            "id": 1834655,
+                            "size": 3385116
+                        },
+                        {
+                            "size_m": 1.435,
+                            "name": "Saga Prefecture",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/1842150.map",
+                            "version": 1,
+                            "name_en": "Saga Prefecture",
+                            "id": 1842150,
+                            "size": 1504548
+                        },
+                        {
+                            "size_m": 2.99,
+                            "name": "Nagasaki Prefecture",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/1842151.map",
+                            "version": 1,
+                            "name_en": "Nagasaki Prefecture",
+                            "id": 1842151,
+                            "size": 3135025
+                        },
+                        {
+                            "size_m": 3.099,
+                            "name": "Miyazaki Prefecture",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/1842184.map",
+                            "version": 1,
+                            "name_en": "Miyazaki Prefecture",
+                            "id": 1842184,
+                            "size": 3249454
+                        },
+                        {
+                            "size_m": 4.024,
+                            "name": "Kumamoto",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/1842185.map",
+                            "version": 1,
+                            "name_en": "Kumamoto",
+                            "id": 1842185,
+                            "size": 4219360
+                        },
+                        {
+                            "size_m": 4.405,
+                            "name": "Kagoshima Prefecture",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/1842186.map",
+                            "version": 1,
+                            "name_en": "Kagoshima Prefecture",
+                            "id": 1842186,
+                            "size": 4619212
+                        },
+                        {
+                            "size_m": 2.915,
+                            "name": "Gunma",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/1851649.map",
+                            "version": 1,
+                            "name_en": "Gunma",
+                            "id": 1851649,
+                            "size": 3056988
+                        },
+                        {
+                            "size_m": 2.734,
+                            "name": "Kyoto Prefecture",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/2137477.map",
+                            "version": 1,
+                            "name_en": "Kyoto Prefecture",
+                            "id": 2137477,
+                            "size": 2866351
+                        },
+                        {
+                            "size_m": 4.935,
+                            "name": "Chiba",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/2679957.map",
+                            "version": 1,
+                            "name_en": "Chiba",
+                            "id": 2679957,
+                            "size": 5174631
+                        },
+                        {
+                            "size_m": 3.717,
+                            "name": "Ibaraki",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/2682940.map",
+                            "version": 1,
+                            "name_en": "Ibaraki",
+                            "id": 2682940,
+                            "size": 3897334
+                        },
+                        {
+                            "size_m": 4.238,
+                            "name": "Kanagawa",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/2689487.map",
+                            "version": 1,
+                            "name_en": "Kanagawa",
+                            "id": 2689487,
+                            "size": 4443916
+                        },
+                        {
+                            "size_m": 4.956,
+                            "name": "Hiroshima",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/3218753.map",
+                            "version": 1,
+                            "name_en": "Hiroshima",
+                            "id": 3218753,
+                            "size": 5196920
+                        },
+                        {
+                            "size_m": 1.677,
+                            "name": "Tottori Prefecture",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/3285636.map",
+                            "version": 1,
+                            "name_en": "Tottori Prefecture",
+                            "id": 3285636,
+                            "size": 1758870
+                        },
+                        {
+                            "size_m": 2.259,
+                            "name": "Shimane",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/3346137.map",
+                            "version": 1,
+                            "name_en": "Shimane",
+                            "id": 3346137,
+                            "size": 2368277
+                        },
+                        {
+                            "size_m": 5.141,
+                            "name": "Niigata",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/3559887.map",
+                            "version": 1,
+                            "name_en": "Niigata",
+                            "id": 3559887,
+                            "size": 5391196
+                        },
+                        {
+                            "size_m": 4.942,
+                            "name": "Nagano",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/3560284.map",
+                            "version": 1,
+                            "name_en": "Nagano",
+                            "id": 3560284,
+                            "size": 5182476
+                        },
+                        {
+                            "size_m": 4.75,
+                            "name": "Aichi Prefecture",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/3560336.map",
+                            "version": 1,
+                            "name_en": "Aichi Prefecture",
+                            "id": 3560336,
+                            "size": 4980248
+                        },
+                        {
+                            "size_m": 1.831,
+                            "name": "Yamanashi",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/3578391.map",
+                            "version": 1,
+                            "name_en": "Yamanashi",
+                            "id": 3578391,
+                            "size": 1919612
+                        },
+                        {
+                            "size_m": 2.733,
+                            "name": "Miyagi",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/3790801.map",
+                            "version": 1,
+                            "name_en": "Miyagi",
+                            "id": 3790801,
+                            "size": 2865656
+                        },
+                        {
+                            "size_m": 2.861,
+                            "name": "Yamagata",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/3790869.map",
+                            "version": 1,
+                            "name_en": "Yamagata",
+                            "id": 3790869,
+                            "size": 2999957
+                        },
+                        {
+                            "size_m": 3.854,
+                            "name": "Akita",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/3791413.map",
+                            "version": 1,
+                            "name_en": "Akita",
+                            "id": 3791413,
+                            "size": 4041637
+                        },
+                        {
+                            "size_m": 3.866,
+                            "name": "Iwate",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/3792412.map",
+                            "version": 1,
+                            "name_en": "Iwate",
+                            "id": 3792412,
+                            "size": 4053848
+                        },
+                        {
+                            "size_m": 1.561,
+                            "name": "Toyama",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/3793529.map",
+                            "version": 1,
+                            "name_en": "Toyama",
+                            "id": 3793529,
+                            "size": 1636517
+                        },
+                        {
+                            "size_m": 4.547,
+                            "name": "Shizuoka",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/3793581.map",
+                            "version": 1,
+                            "name_en": "Shizuoka",
+                            "id": 3793581,
+                            "size": 4768314
+                        },
+                        {
+                            "size_m": 1.785,
+                            "name": "Ishikawa Prefecture",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/3794726.map",
+                            "version": 1,
+                            "name_en": "Ishikawa Prefecture",
+                            "id": 3794726,
+                            "size": 1871422
+                        },
+                        {
+                            "size_m": 3.544,
+                            "name": "Okayama Prefecture",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/3794962.map",
+                            "version": 1,
+                            "name_en": "Okayama Prefecture",
+                            "id": 3794962,
+                            "size": 3715971
+                        },
+                        {
+                            "size_m": 1.994,
+                            "name": "Tokushima Prefecture",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/3795000.map",
+                            "version": 1,
+                            "name_en": "Tokushima Prefecture",
+                            "id": 3795000,
+                            "size": 2090724
+                        },
+                        {
+                            "size_m": 2.57,
+                            "name": "Kochi Prefecture",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/3795031.map",
+                            "version": 1,
+                            "name_en": "Kochi Prefecture",
+                            "id": 3795031,
+                            "size": 2694405
+                        },
+                        {
+                            "size_m": 3.58,
+                            "name": "Ehime Prefecture",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/3795063.map",
+                            "version": 1,
+                            "name_en": "Ehime Prefecture",
+                            "id": 3795063,
+                            "size": 3753429
+                        },
+                        {
+                            "size_m": 1.482,
+                            "name": "Kagawa Prefecture",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/3795064.map",
+                            "version": 1,
+                            "name_en": "Kagawa Prefecture",
+                            "id": 3795064,
+                            "size": 1554326
+                        },
+                        {
+                            "size_m": 1.683,
+                            "name": "冲绳县",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/3795635.map",
+                            "version": 1,
+                            "name_en": "Okinawa Prefecture",
+                            "id": 3795635,
+                            "size": 1764306
+                        },
+                        {
+                            "size_m": 11.749,
+                            "name": "Hokkaido",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/3795658.map",
+                            "version": 1,
+                            "name_en": "Hokkaido",
+                            "id": 3795658,
+                            "size": 12319781
+                        },
+                        {
+                            "size_m": 2.887,
+                            "name": "Yamaguchi",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/4016543.map",
+                            "version": 1,
+                            "name_en": "Yamaguchi",
+                            "id": 4016543,
+                            "size": 3027412
+                        }
+                    ],
+                    "id": 382313,
+                    "size": 164626142
+                },
+                {
+                    "size_m": 17633728,
+                    "name": "尼泊尔",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/nepal.map",
+                    "version": 1,
+                    "name_en": "nepal",
+                    "cities": [],
+                    "id": 184633,
+                    "size": 17633728
+                },
+                {
+                    "size_m": 4053921,
+                    "name": "蒙古国",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/mongolia.map",
+                    "version": 1,
+                    "name_en": "mongolia",
+                    "cities": [],
+                    "id": 161033,
+                    "size": 4053921
+                },
+                {
+                    "size_m": 7706255,
+                    "name": "缅甸",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/myanmar.map",
+                    "version": 1,
+                    "name_en": "myanmar",
+                    "cities": [],
+                    "id": 50371,
+                    "size": 7706255
+                },
+                {
+                    "size_m": 3893097,
+                    "name": "朝鲜",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/north-korea.map",
+                    "version": 1,
+                    "name_en": "north-korea",
+                    "cities": [],
+                    "id": 192734,
+                    "size": 3893097
+                },
+                {
+                    "size_m": 8920919,
+                    "name": "巴基斯坦",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/pakistan.map",
+                    "version": 1,
+                    "name_en": "pakistan",
+                    "cities": [],
+                    "id": 307573,
+                    "size": 8920919
+                },
+                {
+                    "size_m": 18353876,
+                    "name": "韩国",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/south-korea.map",
+                    "version": 1,
+                    "name_en": "south-korea",
+                    "cities": [],
+                    "id": 307756,
+                    "size": 18353876
+                },
+                {
+                    "size_m": 7252120,
+                    "name": "斯里兰卡",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/sri-lanka.map",
+                    "version": 1,
+                    "name_en": "sri-lanka",
+                    "cities": [],
+                    "id": 536807,
+                    "size": 7252120
+                },
+                {
+                    "size_m": 5198071,
+                    "name": "叙利亚",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/syria.map",
+                    "version": 1,
+                    "name_en": "syria",
+                    "cities": [],
+                    "id": 424311806,
+                    "size": 5198071
+                },
+                {
+                    "size_m": 2266101,
+                    "name": "塔吉克斯坦",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/tajikistan.map",
+                    "version": 1,
+                    "name_en": "tajikistan",
+                    "cities": [],
+                    "id": 214626,
+                    "size": 2266101
+                },
+                {
+                    "size_m": 27306914,
+                    "name": "泰国",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/thailand.map",
+                    "version": 1,
+                    "name_en": "thailand",
+                    "cities": [],
+                    "id": 2067731,
+                    "size": 27306914
+                },
+                {
+                    "size_m": 1555174,
+                    "name": "土库曼斯坦",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/turkmenistan.map",
+                    "version": 1,
+                    "name_en": "turkmenistan",
+                    "cities": [],
+                    "id": 223026,
+                    "size": 1555174
+                },
+                {
+                    "size_m": 6363183,
+                    "name": "乌兹别克斯坦",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/uzbekistan.map",
+                    "version": 1,
+                    "name_en": "uzbekistan",
+                    "cities": [],
+                    "id": 196240,
+                    "size": 6363183
+                },
+                {
+                    "size_m": 10716254,
+                    "name": "越南",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/vietnam.map",
+                    "version": 1,
+                    "name_en": "vietnam",
+                    "cities": [],
+                    "id": 49915,
+                    "size": 10716254
+                },
+                {
+                    "size_m": 2558792,
+                    "name": "也门",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/yemen.map",
+                    "version": 1,
+                    "name_en": "yemen",
+                    "cities": [],
+                    "id": 305092,
+                    "size": 2558792
+                }
+            ],
+            "version": 1,
+            "name_en": "asia",
+            "id": 36966065,
+            "size": 498562956
+        },
+        {
+            "size_m": 1723.005,
+            "name": "欧洲",
+            "countries": [
+                {
+                    "size_m": 140498297,
+                    "name": "波兰",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/poland.map",
+                    "version": 1,
+                    "name_en": "poland",
+                    "cities": [],
+                    "id": 49715,
+                    "size": 140498297
+                },
+                {
+                    "size_m": 84.702,
+                    "name": "荷兰",
+                    "version": 1,
+                    "name_en": "netherlands",
+                    "cities": [
+                        {
+                            "size_m": 5.481,
+                            "name": "Friesland",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/47381.map",
+                            "version": 1,
+                            "name_en": "Friesland",
+                            "id": 47381,
+                            "size": 5747088
+                        },
+                        {
+                            "size_m": 3.008,
+                            "name": "Flevoland",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/47407.map",
+                            "version": 1,
+                            "name_en": "Flevoland",
+                            "id": 47407,
+                            "size": 3153688
+                        },
+                        {
+                            "size_m": 4.439,
+                            "name": "Drenthe",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/47540.map",
+                            "version": 1,
+                            "name_en": "Drenthe",
+                            "id": 47540,
+                            "size": 4654183
+                        },
+                        {
+                            "size_m": 15.675,
+                            "name": "Gelderland",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/47554.map",
+                            "version": 1,
+                            "name_en": "Gelderland",
+                            "id": 47554,
+                            "size": 16435971
+                        },
+                        {
+                            "size_m": 9.263,
+                            "name": "Overijssel",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/47608.map",
+                            "version": 1,
+                            "name_en": "Overijssel",
+                            "id": 47608,
+                            "size": 9713013
+                        },
+                        {
+                            "size_m": 0,
+                            "name": "North Holland",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/47654.map",
+                            "version": 1,
+                            "name_en": "North Holland",
+                            "id": 47654,
+                            "size": 0
+                        },
+                        {
+                            "size_m": 9.523,
+                            "name": "Utrecht",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/47667.map",
+                            "version": 1,
+                            "name_en": "Utrecht",
+                            "id": 47667,
+                            "size": 9985861
+                        },
+                        {
+                            "size_m": 18.863,
+                            "name": "North Brabant",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/47696.map",
+                            "version": 1,
+                            "name_en": "North Brabant",
+                            "id": 47696,
+                            "size": 19779123
+                        },
+                        {
+                            "size_m": 0,
+                            "name": "South Holland",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/47772.map",
+                            "version": 1,
+                            "name_en": "South Holland",
+                            "id": 47772,
+                            "size": 0
+                        },
+                        {
+                            "size_m": 9.494,
+                            "name": "Limburg",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/47793.map",
+                            "version": 1,
+                            "name_en": "Limburg",
+                            "id": 47793,
+                            "size": 9955636
+                        },
+                        {
+                            "size_m": 3.928,
+                            "name": "Zeeland",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/47806.map",
+                            "version": 1,
+                            "name_en": "Zeeland",
+                            "id": 47806,
+                            "size": 4118725
+                        },
+                        {
+                            "size_m": 5.029,
+                            "name": "Groningen",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/47826.map",
+                            "version": 1,
+                            "name_en": "Groningen",
+                            "id": 47826,
+                            "size": 5273168
+                        }
+                    ],
+                    "id": 2323309,
+                    "size": 88816456
+                },
+                {
+                    "size_m": 157,
+                    "name": "意大利",
+                    "version": 1,
+                    "name_en": "italy",
+                    "cities": [
+                        {
+                            "size_m": 2.763,
+                            "name": "Osaka Prefecture",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/341906.map",
+                            "version": 1,
+                            "name_en": "Osaka Prefecture",
+                            "id": 341906,
+                            "size": 2897539
+                        },
+                        {
+                            "size_m": 2.818,
+                            "name": "Oita",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/356911.map",
+                            "version": 1,
+                            "name_en": "Oita",
+                            "id": 356911,
+                            "size": 2955312
+                        },
+                        {
+                            "size_m": 4.75,
+                            "name": "Hyogo Prefecture",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/356912.map",
+                            "version": 1,
+                            "name_en": "Hyogo Prefecture",
+                            "id": 356912,
+                            "size": 4981112
+                        },
+                        {
+                            "size_m": 1.749,
+                            "name": "Fukui Prefecture",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/357112.map",
+                            "version": 1,
+                            "name_en": "Fukui Prefecture",
+                            "id": 357112,
+                            "size": 1833480
+                        },
+                        {
+                            "size_m": 1.829,
+                            "name": "Shiga",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/357800.map",
+                            "version": 1,
+                            "name_en": "Shiga",
+                            "id": 357800,
+                            "size": 1918295
+                        },
+                        {
+                            "size_m": 1.702,
+                            "name": "Nara Prefecture",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/358631.map",
+                            "version": 1,
+                            "name_en": "Nara Prefecture",
+                            "id": 358631,
+                            "size": 1784775
+                        },
+                        {
+                            "size_m": 3.682,
+                            "name": "Gifu Prefecture",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/760746.map",
+                            "version": 1,
+                            "name_en": "Gifu Prefecture",
+                            "id": 760746,
+                            "size": 3860565
+                        },
+                        {
+                            "size_m": 3.06,
+                            "name": "Mie Prefecture",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/812190.map",
+                            "version": 1,
+                            "name_en": "Mie Prefecture",
+                            "id": 812190,
+                            "size": 3209002
+                        },
+                        {
+                            "size_m": 1.984,
+                            "name": "Wakayama Prefecture",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/908959.map",
+                            "version": 1,
+                            "name_en": "Wakayama Prefecture",
+                            "id": 908959,
+                            "size": 2080229
+                        },
+                        {
+                            "size_m": 4.716,
+                            "name": "東京都",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/1543125.map",
+                            "version": 1,
+                            "name_en": "Tokyo",
+                            "id": 1543125,
+                            "size": 4945348
+                        },
+                        {
+                            "size_m": 3.555,
+                            "name": "Fukuoka Prefecture",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/1553735.map",
+                            "version": 1,
+                            "name_en": "Fukuoka Prefecture",
+                            "id": 1553735,
+                            "size": 3727297
+                        },
+                        {
+                            "size_m": 3.647,
+                            "name": "Saitama",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/1768185.map",
+                            "version": 1,
+                            "name_en": "Saitama",
+                            "id": 1768185,
+                            "size": 3824247
+                        },
+                        {
+                            "size_m": 4.066,
+                            "name": "Fukushima",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/1800608.map",
+                            "version": 1,
+                            "name_en": "Fukushima",
+                            "id": 1800608,
+                            "size": 4263744
+                        },
+                        {
+                            "size_m": 2.706,
+                            "name": "Tochigi",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/1800742.map",
+                            "version": 1,
+                            "name_en": "Tochigi",
+                            "id": 1800742,
+                            "size": 2837958
+                        },
+                        {
+                            "size_m": 3.228,
+                            "name": "Aomori",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/1834655.map",
+                            "version": 1,
+                            "name_en": "Aomori",
+                            "id": 1834655,
+                            "size": 3385116
+                        },
+                        {
+                            "size_m": 1.435,
+                            "name": "Saga Prefecture",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/1842150.map",
+                            "version": 1,
+                            "name_en": "Saga Prefecture",
+                            "id": 1842150,
+                            "size": 1504548
+                        },
+                        {
+                            "size_m": 2.99,
+                            "name": "Nagasaki Prefecture",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/1842151.map",
+                            "version": 1,
+                            "name_en": "Nagasaki Prefecture",
+                            "id": 1842151,
+                            "size": 3135025
+                        },
+                        {
+                            "size_m": 3.099,
+                            "name": "Miyazaki Prefecture",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/1842184.map",
+                            "version": 1,
+                            "name_en": "Miyazaki Prefecture",
+                            "id": 1842184,
+                            "size": 3249454
+                        },
+                        {
+                            "size_m": 4.024,
+                            "name": "Kumamoto",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/1842185.map",
+                            "version": 1,
+                            "name_en": "Kumamoto",
+                            "id": 1842185,
+                            "size": 4219360
+                        },
+                        {
+                            "size_m": 4.405,
+                            "name": "Kagoshima Prefecture",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/1842186.map",
+                            "version": 1,
+                            "name_en": "Kagoshima Prefecture",
+                            "id": 1842186,
+                            "size": 4619212
+                        },
+                        {
+                            "size_m": 2.915,
+                            "name": "Gunma",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/1851649.map",
+                            "version": 1,
+                            "name_en": "Gunma",
+                            "id": 1851649,
+                            "size": 3056988
+                        },
+                        {
+                            "size_m": 2.734,
+                            "name": "Kyoto Prefecture",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/2137477.map",
+                            "version": 1,
+                            "name_en": "Kyoto Prefecture",
+                            "id": 2137477,
+                            "size": 2866351
+                        },
+                        {
+                            "size_m": 4.935,
+                            "name": "Chiba",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/2679957.map",
+                            "version": 1,
+                            "name_en": "Chiba",
+                            "id": 2679957,
+                            "size": 5174631
+                        },
+                        {
+                            "size_m": 3.717,
+                            "name": "Ibaraki",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/2682940.map",
+                            "version": 1,
+                            "name_en": "Ibaraki",
+                            "id": 2682940,
+                            "size": 3897334
+                        },
+                        {
+                            "size_m": 4.238,
+                            "name": "Kanagawa",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/2689487.map",
+                            "version": 1,
+                            "name_en": "Kanagawa",
+                            "id": 2689487,
+                            "size": 4443916
+                        },
+                        {
+                            "size_m": 4.956,
+                            "name": "Hiroshima",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/3218753.map",
+                            "version": 1,
+                            "name_en": "Hiroshima",
+                            "id": 3218753,
+                            "size": 5196920
+                        },
+                        {
+                            "size_m": 1.677,
+                            "name": "Tottori Prefecture",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/3285636.map",
+                            "version": 1,
+                            "name_en": "Tottori Prefecture",
+                            "id": 3285636,
+                            "size": 1758870
+                        },
+                        {
+                            "size_m": 2.259,
+                            "name": "Shimane",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/3346137.map",
+                            "version": 1,
+                            "name_en": "Shimane",
+                            "id": 3346137,
+                            "size": 2368277
+                        },
+                        {
+                            "size_m": 5.141,
+                            "name": "Niigata",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/3559887.map",
+                            "version": 1,
+                            "name_en": "Niigata",
+                            "id": 3559887,
+                            "size": 5391196
+                        },
+                        {
+                            "size_m": 4.942,
+                            "name": "Nagano",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/3560284.map",
+                            "version": 1,
+                            "name_en": "Nagano",
+                            "id": 3560284,
+                            "size": 5182476
+                        },
+                        {
+                            "size_m": 4.75,
+                            "name": "Aichi Prefecture",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/3560336.map",
+                            "version": 1,
+                            "name_en": "Aichi Prefecture",
+                            "id": 3560336,
+                            "size": 4980248
+                        },
+                        {
+                            "size_m": 1.831,
+                            "name": "Yamanashi",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/3578391.map",
+                            "version": 1,
+                            "name_en": "Yamanashi",
+                            "id": 3578391,
+                            "size": 1919612
+                        },
+                        {
+                            "size_m": 2.733,
+                            "name": "Miyagi",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/3790801.map",
+                            "version": 1,
+                            "name_en": "Miyagi",
+                            "id": 3790801,
+                            "size": 2865656
+                        },
+                        {
+                            "size_m": 2.861,
+                            "name": "Yamagata",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/3790869.map",
+                            "version": 1,
+                            "name_en": "Yamagata",
+                            "id": 3790869,
+                            "size": 2999957
+                        },
+                        {
+                            "size_m": 3.854,
+                            "name": "Akita",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/3791413.map",
+                            "version": 1,
+                            "name_en": "Akita",
+                            "id": 3791413,
+                            "size": 4041637
+                        },
+                        {
+                            "size_m": 3.866,
+                            "name": "Iwate",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/3792412.map",
+                            "version": 1,
+                            "name_en": "Iwate",
+                            "id": 3792412,
+                            "size": 4053848
+                        },
+                        {
+                            "size_m": 1.561,
+                            "name": "Toyama",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/3793529.map",
+                            "version": 1,
+                            "name_en": "Toyama",
+                            "id": 3793529,
+                            "size": 1636517
+                        },
+                        {
+                            "size_m": 4.547,
+                            "name": "Shizuoka",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/3793581.map",
+                            "version": 1,
+                            "name_en": "Shizuoka",
+                            "id": 3793581,
+                            "size": 4768314
+                        },
+                        {
+                            "size_m": 1.785,
+                            "name": "Ishikawa Prefecture",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/3794726.map",
+                            "version": 1,
+                            "name_en": "Ishikawa Prefecture",
+                            "id": 3794726,
+                            "size": 1871422
+                        },
+                        {
+                            "size_m": 3.544,
+                            "name": "Okayama Prefecture",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/3794962.map",
+                            "version": 1,
+                            "name_en": "Okayama Prefecture",
+                            "id": 3794962,
+                            "size": 3715971
+                        },
+                        {
+                            "size_m": 1.994,
+                            "name": "Tokushima Prefecture",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/3795000.map",
+                            "version": 1,
+                            "name_en": "Tokushima Prefecture",
+                            "id": 3795000,
+                            "size": 2090724
+                        },
+                        {
+                            "size_m": 2.57,
+                            "name": "Kochi Prefecture",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/3795031.map",
+                            "version": 1,
+                            "name_en": "Kochi Prefecture",
+                            "id": 3795031,
+                            "size": 2694405
+                        },
+                        {
+                            "size_m": 3.58,
+                            "name": "Ehime Prefecture",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/3795063.map",
+                            "version": 1,
+                            "name_en": "Ehime Prefecture",
+                            "id": 3795063,
+                            "size": 3753429
+                        },
+                        {
+                            "size_m": 1.482,
+                            "name": "Kagawa Prefecture",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/3795064.map",
+                            "version": 1,
+                            "name_en": "Kagawa Prefecture",
+                            "id": 3795064,
+                            "size": 1554326
+                        },
+                        {
+                            "size_m": 1.683,
+                            "name": "冲绳县",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/3795635.map",
+                            "version": 1,
+                            "name_en": "Okinawa Prefecture",
+                            "id": 3795635,
+                            "size": 1764306
+                        },
+                        {
+                            "size_m": 11.749,
+                            "name": "Hokkaido",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/3795658.map",
+                            "version": 1,
+                            "name_en": "Hokkaido",
+                            "id": 3795658,
+                            "size": 12319781
+                        },
+                        {
+                            "size_m": 2.887,
+                            "name": "Yamaguchi",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/4016543.map",
+                            "version": 1,
+                            "name_en": "Yamaguchi",
+                            "id": 4016543,
+                            "size": 3027412
+                        }
+                    ],
+                    "id": 365331,
+                    "size": 164626142
+                },
+                {
+                    "size_m": 9554900,
+                    "name": "格林兰",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/greenland.map",
+                    "version": 1,
+                    "name_en": "greenland",
+                    "cities": [],
+                    "id": 2184073,
+                    "size": 9554900
+                },
+                {
+                    "size_m": 55553291,
+                    "name": "土耳其",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/turkey.map",
+                    "version": 1,
+                    "name_en": "turkey",
+                    "cities": [],
+                    "id": 174737,
+                    "size": 55553291
+                },
+                {
+                    "size_m": 136674324,
+                    "name": "英国",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/great-britain.map",
+                    "version": 1,
+                    "name_en": "great-britain",
+                    "cities": [],
+                    "id": 62149,
+                    "size": 136674324
+                },
+                {
+                    "size_m": 77570137,
+                    "name": "捷克",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/czech-republic.map",
+                    "version": 1,
+                    "name_en": "czechia",
+                    "cities": [],
+                    "id": 51684,
+                    "size": 77570137
+                },
+                {
+                    "size_m": 9231154,
+                    "name": "斯洛文尼亚",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/slovenia.map",
+                    "version": 1,
+                    "name_en": "slovenia",
+                    "cities": [],
+                    "id": 218657,
+                    "size": 9231154
+                },
+                {
+                    "size_m": 76800486,
+                    "name": "挪威",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/norway.map",
+                    "version": 1,
+                    "name_en": "norway",
+                    "cities": [],
+                    "id": 2978650,
+                    "size": 76800486
+                },
+                {
+                    "size_m": 53151716,
+                    "name": "乌克兰",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/ukraine.map",
+                    "version": 1,
+                    "name_en": "ukraine",
+                    "cities": [],
+                    "id": 60199,
+                    "size": 53151716
+                },
+                {
+                    "size_m": 51464109,
+                    "name": "瑞典",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/sweden.map",
+                    "version": 1,
+                    "name_en": "sweden",
+                    "cities": [],
+                    "id": 52822,
+                    "size": 51464109
+                },
+                {
+                    "size_m": 38527605,
+                    "name": "瑞士",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/switzerland.map",
+                    "version": 1,
+                    "name_en": "switzerland",
+                    "cities": [],
+                    "id": 51701,
+                    "size": 38527605
+                },
+                {
+                    "size_m": 27928230,
+                    "name": "比利时",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/belgium.map",
+                    "version": 1,
+                    "name_en": "belgium",
+                    "cities": [],
+                    "id": 52411,
+                    "size": 27928230
+                },
+                {
+                    "size_m": 48858214,
+                    "name": "芬兰",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/finland.map",
+                    "version": 1,
+                    "name_en": "finland",
+                    "cities": [],
+                    "id": 54224,
+                    "size": 48858214
+                },
+                {
+                    "size_m": 50672371,
+                    "name": "丹麦",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/denmark.map",
+                    "version": 1,
+                    "name_en": "denmark",
+                    "cities": [],
+                    "id": 50046,
+                    "size": 50672371
+                },
+                {
+                    "size_m": 136240058,
+                    "name": "西班牙",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/spain.map",
+                    "version": 1,
+                    "name_en": "spain",
+                    "cities": [],
+                    "id": 1311341,
+                    "size": 136240058
+                },
+                {
+                    "size_m": 66280665,
+                    "name": "奥地利",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/austria.map",
+                    "version": 1,
+                    "name_en": "austria",
+                    "cities": [],
+                    "id": 16239,
+                    "size": 66280665
+                },
+                {
+                    "size_m": 29.676,
+                    "name": "法国",
+                    "version": 1,
+                    "name_en": "france",
+                    "cities": [
+                        {
+                            "size_m": 11.78,
+                            "name": "Centre-Loire Valley",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/8640.map",
+                            "version": 1,
+                            "name_en": "Centre-Loire Valley",
+                            "id": "8640",
+                            "size": 12352741
+                        },
+                        {
+                            "size_m": 17.896,
+                            "name": "Ile-e-France",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/8649.map",
+                            "version": 1,
+                            "name_en": "Ile-e-France",
+                            "id": "8649",
+                            "size": 18765300
+                        }
+                    ],
+                    "id": 1403916,
+                    "size": 31118041
+                },
+                {
+                    "size_m": 234.147,
+                    "name": "德国",
+                    "version": 1,
+                    "name_en": "germany",
+                    "cities": [
+                        {
+                            "size_m": 8.859,
+                            "name": "Mecklenburg-Vorpommern",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/28322.map",
+                            "version": 1,
+                            "name_en": "Mecklenburg-Vorpommern",
+                            "id": "28322",
+                            "size": 9288869
+                        },
+                        {
+                            "size_m": 3.053,
+                            "name": "Free and Hanseatic City of Hamburg",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/451087.map",
+                            "version": 1,
+                            "name_en": "Free and Hanseatic City of Hamburg",
+                            "id": "451087",
+                            "size": 3200935
+                        },
+                        {
+                            "size_m": 0.31,
+                            "name": "莱茵兰-普法尔茨",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/62341.map",
+                            "version": 1,
+                            "name_en": "Rhineland-Palatinate",
+                            "id": "62341",
+                            "size": 325155
+                        },
+                        {
+                            "size_m": 12.305,
+                            "name": "图林根",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/62366.map",
+                            "version": 1,
+                            "name_en": "Thuringia",
+                            "id": "62366",
+                            "size": 12902494
+                        },
+                        {
+                            "size_m": 3.385,
+                            "name": "萨尔",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/62372.map",
+                            "version": 1,
+                            "name_en": "Saarland",
+                            "id": "62372",
+                            "size": 3549281
+                        },
+                        {
+                            "size_m": 6.98,
+                            "name": "柏林",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/62422.map",
+                            "version": 1,
+                            "name_en": "Berlin",
+                            "id": "62422",
+                            "size": 7318987
+                        },
+                        {
+                            "size_m": 19.391,
+                            "name": "Saxny",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/62467.map",
+                            "version": 1,
+                            "name_en": "Saxony",
+                            "id": "62467",
+                            "size": 20333225
+                        },
+                        {
+                            "size_m": 9.979,
+                            "name": "Saxony-Anhalt",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/62607.map",
+                            "version": 1,
+                            "name_en": "Saxony-Anhalt",
+                            "id": "62607",
+                            "size": 10464142
+                        },
+                        {
+                            "size_m": 51.311,
+                            "name": "巴登-符腾堡",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/62611.map",
+                            "version": 1,
+                            "name_en": "Baden-Württemberg",
+                            "id": "62611",
+                            "size": 53803798
+                        },
+                        {
+                            "size_m": 26.531,
+                            "name": "黑森州",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/62650.map",
+                            "version": 1,
+                            "name_en": "Hesse",
+                            "id": "62650",
+                            "size": 27819957
+                        },
+                        {
+                            "size_m": 56.492,
+                            "name": "北莱茵-威斯特法伦州",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/62761.map",
+                            "version": 1,
+                            "name_en": "North Rhine-Westphalia",
+                            "id": "62761",
+                            "size": 59236231
+                        },
+                        {
+                            "size_m": 32.495,
+                            "name": "下萨克森",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/62771.map",
+                            "version": 1,
+                            "name_en": "Lower Saxony",
+                            "id": "62771",
+                            "size": 34073864
+                        },
+                        {
+                            "size_m": 3.055,
+                            "name": "汉堡",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/62782.map",
+                            "version": 1,
+                            "name_en": "Hamburg",
+                            "id": "62782",
+                            "size": 3203513
+                        }
+                    ],
+                    "id": 51477,
+                    "size": 245520451
+                },
+                {
+                    "size_m": 3742320,
+                    "name": "阿尔巴尼亚",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/albania.map",
+                    "version": 1,
+                    "name_en": "albania",
+                    "cities": [],
+                    "id": 53292,
+                    "size": 3742320
+                },
+                {
+                    "size_m": 243261,
+                    "name": "安道尔",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/andorra.map",
+                    "version": 1,
+                    "name_en": "andorra",
+                    "cities": [],
+                    "id": 9407,
+                    "size": 243261
+                },
+                {
+                    "size_m": 1039330,
+                    "name": "亚速尔群岛",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/azores.map",
+                    "version": 1,
+                    "name_en": "azores",
+                    "cities": [],
+                    "id": 0,
+                    "size": 1039330
+                },
+                {
+                    "size_m": 18431302,
+                    "name": "白俄罗斯",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/belarus.map",
+                    "version": 1,
+                    "name_en": "belarus",
+                    "cities": [],
+                    "id": 59065,
+                    "size": 18431302
+                },
+                {
+                    "size_m": 5297173,
+                    "name": "波斯尼亞和黑塞哥維那",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/bosnia-herzegovina.map",
+                    "version": 1,
+                    "name_en": "bosnia-herzegovina",
+                    "cities": [],
+                    "id": 2528142,
+                    "size": 5297173
+                },
+                {
+                    "size_m": 12900297,
+                    "name": "保加利亚",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/bulgaria.map",
+                    "version": 1,
+                    "name_en": "bulgaria",
+                    "cities": [],
+                    "id": 186382,
+                    "size": 12900297
+                },
+                {
+                    "size_m": 13829848,
+                    "name": "克罗地亚",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/croatia.map",
+                    "version": 1,
+                    "name_en": "croatia",
+                    "cities": [],
+                    "id": 214885,
+                    "size": 13829848
+                },
+                {
+                    "size_m": 3167540,
+                    "name": "賽普勒斯",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/cyprus.map",
+                    "version": 1,
+                    "name_en": "cyprus",
+                    "cities": [],
+                    "id": 424313406,
+                    "size": 3167540
+                },
+                {
+                    "size_m": 7610724,
+                    "name": "爱沙尼亚",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/estonia.map",
+                    "version": 1,
+                    "name_en": "estonia",
+                    "cities": [],
+                    "id": 79510,
+                    "size": 7610724
+                },
+                {
+                    "size_m": 529610,
+                    "name": "法罗群岛",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/faroe-islands.map",
+                    "version": 1,
+                    "name_en": "faroe-islands",
+                    "cities": [],
+                    "id": 52939,
+                    "size": 529610
+                },
+                {
+                    "size_m": 26717425,
+                    "name": "格鲁吉亚",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/georgia.map",
+                    "version": 1,
+                    "name_en": "georgia",
+                    "cities": [],
+                    "id": 28699,
+                    "size": 26717425
+                },
+                {
+                    "size_m": 36126698,
+                    "name": "希腊",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/greece.map",
+                    "version": 1,
+                    "name_en": "greece",
+                    "cities": [],
+                    "id": 192307,
+                    "size": 36126698
+                },
+                {
+                    "size_m": 24806271,
+                    "name": "匈牙利",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/hungary.map",
+                    "version": 1,
+                    "name_en": "hungary",
+                    "cities": [],
+                    "id": 21335,
+                    "size": 24806271
+                },
+                {
+                    "size_m": 4464559,
+                    "name": "冰岛",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/iceland.map",
+                    "version": 1,
+                    "name_en": "iceland",
+                    "cities": [],
+                    "id": 299133,
+                    "size": 4464559
+                },
+                {
+                    "size_m": 17985862,
+                    "name": "爱尔兰",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/ireland-and-northern-ireland.map",
+                    "version": 1,
+                    "name_en": "ireland-and-northern-ireland",
+                    "cities": [],
+                    "id": 62273,
+                    "size": 17985862
+                },
+                {
+                    "size_m": 329831,
+                    "name": "马恩岛",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/isle-of-man.map",
+                    "version": 1,
+                    "name_en": "isle-of-man",
+                    "cities": [],
+                    "id": 62269,
+                    "size": 329831
+                },
+                {
+                    "size_m": 2005005,
+                    "name": "科索沃",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/kosovo.map",
+                    "version": 1,
+                    "name_en": "kosovo",
+                    "cities": [],
+                    "id": 2088990,
+                    "size": 2005005
+                },
+                {
+                    "size_m": 5467723,
+                    "name": "拉脱维亚",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/latvia.map",
+                    "version": 1,
+                    "name_en": "latvia",
+                    "cities": [],
+                    "id": 72594,
+                    "size": 5467723
+                },
+                {
+                    "size_m": 236062,
+                    "name": "列支敦士登",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/liechtenstein.map",
+                    "version": 1,
+                    "name_en": "liechtenstein",
+                    "cities": [],
+                    "id": 1155955,
+                    "size": 236062
+                },
+                {
+                    "size_m": 10581088,
+                    "name": "立陶宛",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/lithuania.map",
+                    "version": 1,
+                    "name_en": "lithuania",
+                    "cities": [],
+                    "id": 72596,
+                    "size": 10581088
+                },
+                {
+                    "size_m": 3104094,
+                    "name": "卢森堡",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/luxembourg.map",
+                    "version": 1,
+                    "name_en": "luxembourg",
+                    "cities": [],
+                    "id": 2171347,
+                    "size": 3104094
+                },
+                {
+                    "size_m": 2412697,
+                    "name": "马其顿",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/macedonia.map",
+                    "version": 1,
+                    "name_en": "macedonia",
+                    "cities": [],
+                    "id": 53293,
+                    "size": 2412697
+                },
+                {
+                    "size_m": 845255,
+                    "name": "马耳他",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/malta.map",
+                    "version": 1,
+                    "name_en": "malta",
+                    "cities": [],
+                    "id": 365307,
+                    "size": 845255
+                },
+                {
+                    "size_m": 4508411,
+                    "name": "摩尔多瓦",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/moldova.map",
+                    "version": 1,
+                    "name_en": "moldova",
+                    "cities": [],
+                    "id": 58974,
+                    "size": 4508411
+                },
+                {
+                    "size_m": 52375,
+                    "name": "摩纳哥",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/monaco.map",
+                    "version": 1,
+                    "name_en": "monaco",
+                    "cities": [],
+                    "id": 1124039,
+                    "size": 52375
+                },
+                {
+                    "size_m": 1725706,
+                    "name": "蒙特内哥罗",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/montenegro.map",
+                    "version": 1,
+                    "name_en": "montenegro",
+                    "cities": [],
+                    "id": 53296,
+                    "size": 1725706
+                },
+                {
+                    "size_m": 35616272,
+                    "name": "葡萄牙",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/portugal.map",
+                    "version": 1,
+                    "name_en": "portugal",
+                    "cities": [],
+                    "id": 295480,
+                    "size": 35616272
+                },
+                {
+                    "size_m": 27516677,
+                    "name": "罗马尼亚",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/romania.map",
+                    "version": 1,
+                    "name_en": "romania",
+                    "cities": [],
+                    "id": 90689,
+                    "size": 27516677
+                },
+                {
+                    "size_m": 8172832,
+                    "name": "塞尔维亚",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/serbia.map",
+                    "version": 1,
+                    "name_en": "serbia",
+                    "cities": [],
+                    "id": 1741311,
+                    "size": 8172832
+                },
+                {
+                    "size_m": 18149226,
+                    "name": "斯洛伐克",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/slovakia.map",
+                    "version": 1,
+                    "name_en": "slovakia",
+                    "cities": [],
+                    "id": 14296,
+                    "size": 18149226
+                }
+            ],
+            "version": 1,
+            "name_en": "europe",
+            "id": 25871341,
+            "size": 1806702121
+        },
+        {
+            "size_m": 125.865,
+            "name": "南美洲",
+            "countries": [
+                {
+                    "size_m": 39845512,
+                    "name": "阿根廷",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/argentina.map",
+                    "version": 1,
+                    "name_en": "argentina",
+                    "cities": [],
+                    "id": 286393,
+                    "size": 39845512
+                },
+                {
+                    "size_m": 10460224,
+                    "name": "玻利维亚",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/bolivia.map",
+                    "version": 1,
+                    "name_en": "bolivia",
+                    "cities": [],
+                    "id": 252645,
+                    "size": 10460224
+                },
+                {
+                    "size_m": 28441977,
+                    "name": "智利",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/chile.map",
+                    "version": 1,
+                    "name_en": "chile",
+                    "cities": [],
+                    "id": 167454,
+                    "size": 28441977
+                },
+                {
+                    "size_m": 19254249,
+                    "name": "哥伦比亚",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/colombia.map",
+                    "version": 1,
+                    "name_en": "colombia",
+                    "cities": [],
+                    "id": 120027,
+                    "size": 19254249
+                },
+                {
+                    "size_m": 11021492,
+                    "name": "厄瓜多尔",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/ecuador.map",
+                    "version": 1,
+                    "name_en": "ecuador",
+                    "cities": [],
+                    "id": 108089,
+                    "size": 11021492
+                },
+                {
+                    "size_m": 4464254,
+                    "name": "巴拉圭",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/paraguay.map",
+                    "version": 1,
+                    "name_en": "paraguay",
+                    "cities": [],
+                    "id": 287077,
+                    "size": 4464254
+                },
+                {
+                    "size_m": 17891520,
+                    "name": "秘鲁",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/peru.map",
+                    "version": 1,
+                    "name_en": "peru",
+                    "cities": [],
+                    "id": 288247,
+                    "size": 17891520
+                },
+                {
+                    "size_m": 600313,
+                    "name": "蘇利南",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/suriname.map",
+                    "version": 1,
+                    "name_en": "suriname",
+                    "cities": [],
+                    "id": 287082,
+                    "size": 600313
+                }
+            ],
+            "version": 1,
+            "name_en": "south-america",
+            "id": 36966069,
+            "size": 131979541
+        },
+        {
+            "size_m": 232.442,
+            "name": "非洲",
+            "countries": [
+                {
+                    "size_m": 15068185,
+                    "name": "阿尔及利亚",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/algeria.map",
+                    "version": 1,
+                    "name_en": "algeria",
+                    "cities": [],
+                    "id": 192756,
+                    "size": 15068185
+                },
+                {
+                    "size_m": 3387986,
+                    "name": "安哥拉",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/angola.map",
+                    "version": 1,
+                    "name_en": "angola",
+                    "cities": [],
+                    "id": 195267,
+                    "size": 3387986
+                },
+                {
+                    "size_m": 1911595,
+                    "name": "贝宁",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/benin.map",
+                    "version": 1,
+                    "name_en": "benin",
+                    "cities": [],
+                    "id": 192784,
+                    "size": 1911595
+                },
+                {
+                    "size_m": 5091206,
+                    "name": "波札那",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/botswana.map",
+                    "version": 1,
+                    "name_en": "botswana",
+                    "cities": [],
+                    "id": 1889339,
+                    "size": 5091206
+                },
+                {
+                    "size_m": 4735655,
+                    "name": "布吉納法索",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/burkina-faso.map",
+                    "version": 1,
+                    "name_en": "burkina-faso",
+                    "cities": [],
+                    "id": 192783,
+                    "size": 4735655
+                },
+                {
+                    "size_m": 1348639,
+                    "name": "布隆迪",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/burundi.map",
+                    "version": 1,
+                    "name_en": "burundi",
+                    "cities": [],
+                    "id": 195269,
+                    "size": 1348639
+                },
+                {
+                    "size_m": 6809643,
+                    "name": "喀麦隆",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/cameroon.map",
+                    "version": 1,
+                    "name_en": "cameroon",
+                    "cities": [],
+                    "id": 192830,
+                    "size": 6809643
+                },
+                {
+                    "size_m": 6627629,
+                    "name": "canary-islands",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/canary-islands.map",
+                    "version": 1,
+                    "name_en": "canary-islands",
+                    "cities": [],
+                    "id": 0,
+                    "size": 6627629
+                },
+                {
+                    "size_m": 620102,
+                    "name": "佛得角",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/cape-verde.map",
+                    "version": 1,
+                    "name_en": "cape-verde",
+                    "cities": [],
+                    "id": 535774,
+                    "size": 620102
+                },
+                {
+                    "size_m": 2799419,
+                    "name": "中非共和国",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/central-african-republic.map",
+                    "version": 1,
+                    "name_en": "cenral-african-republic",
+                    "cities": [],
+                    "id": 192790,
+                    "size": 2799419
+                },
+                {
+                    "size_m": 2572452,
+                    "name": "乍得",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/chad.map",
+                    "version": 1,
+                    "name_en": "chad",
+                    "cities": [],
+                    "id": 2361304,
+                    "size": 2572452
+                },
+                {
+                    "size_m": 201692,
+                    "name": "科摩罗",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/comores.map",
+                    "version": 1,
+                    "name_en": "comores",
+                    "cities": [],
+                    "id": 535790,
+                    "size": 201692
+                },
+                {
+                    "size_m": 1796303,
+                    "name": "刚果",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/congo-brazzaville.map",
+                    "version": 1,
+                    "name_en": "congo-brazzaville",
+                    "cities": [],
+                    "id": 192794,
+                    "size": 1796303
+                },
+                {
+                    "size_m": 10703142,
+                    "name": "刚果民主共和国",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/congo-democratic-republic.map",
+                    "version": 1,
+                    "name_en": "congo-democratic-republic",
+                    "cities": [],
+                    "id": 192795,
+                    "size": 10703142
+                },
+                {
+                    "size_m": 263357,
+                    "name": "吉布提",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/djibouti.map",
+                    "version": 1,
+                    "name_en": "djibouti",
+                    "cities": [],
+                    "id": 192801,
+                    "size": 263357
+                },
+                {
+                    "size_m": 17106093,
+                    "name": "埃及",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/egypt.map",
+                    "version": 1,
+                    "name_en": "egypt",
+                    "cities": [],
+                    "id": 1473947,
+                    "size": 17106093
+                },
+                {
+                    "size_m": 331688,
+                    "name": "赤道几内亚",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/equatorial-guinea.map",
+                    "version": 1,
+                    "name_en": "equatorial-guinea",
+                    "cities": [],
+                    "id": 192791,
+                    "size": 331688
+                },
+                {
+                    "size_m": 733779,
+                    "name": "厄立特里亚",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/eritrea.map",
+                    "version": 1,
+                    "name_en": "eritrea",
+                    "cities": [],
+                    "id": 296961,
+                    "size": 733779
+                },
+                {
+                    "size_m": 5763795,
+                    "name": "埃塞俄比亚",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/ethiopia.map",
+                    "version": 1,
+                    "name_en": "ethiopia",
+                    "cities": [],
+                    "id": 192800,
+                    "size": 5763795
+                },
+                {
+                    "size_m": 1957681,
+                    "name": "加蓬",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/gabon.map",
+                    "version": 1,
+                    "name_en": "gabon",
+                    "cities": [],
+                    "id": 192793,
+                    "size": 1957681
+                },
+                {
+                    "size_m": 2815244,
+                    "name": "加纳",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/ghana.map",
+                    "version": 1,
+                    "name_en": "ghana",
+                    "cities": [],
+                    "id": 192781,
+                    "size": 2815244
+                },
+                {
+                    "size_m": 645739,
+                    "name": "几内亚比索",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/guinea-bissau.map",
+                    "version": 1,
+                    "name_en": "guinea-bissau",
+                    "cities": [],
+                    "id": 192776,
+                    "size": 645739
+                },
+                {
+                    "size_m": 7633130,
+                    "name": "几内亚",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/guinea.map",
+                    "version": 1,
+                    "name_en": "guinea",
+                    "cities": [],
+                    "id": 192778,
+                    "size": 7633130
+                },
+                {
+                    "size_m": 2853879,
+                    "name": "科特迪瓦",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/ivory-coast.map",
+                    "version": 1,
+                    "name_en": "ivory-coast",
+                    "cities": [],
+                    "id": 192779,
+                    "size": 2853879
+                },
+                {
+                    "size_m": 5700229,
+                    "name": "肯尼亚",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/kenya.map",
+                    "version": 1,
+                    "name_en": "kenya",
+                    "cities": [],
+                    "id": 192798,
+                    "size": 5700229
+                },
+                {
+                    "size_m": 4795006,
+                    "name": "莱索托",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/lesotho.map",
+                    "version": 1,
+                    "name_en": "lesotho",
+                    "cities": [],
+                    "id": 2093234,
+                    "size": 4795006
+                },
+                {
+                    "size_m": 2676215,
+                    "name": "利比里亚",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/liberia.map",
+                    "version": 1,
+                    "name_en": "liberia",
+                    "cities": [],
+                    "id": 192780,
+                    "size": 2676215
+                },
+                {
+                    "size_m": 2948750,
+                    "name": "利比亚",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/libya.map",
+                    "version": 1,
+                    "name_en": "libya",
+                    "cities": [],
+                    "id": 192758,
+                    "size": 2948750
+                },
+                {
+                    "size_m": 3984090,
+                    "name": "马达加斯加",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/madagascar.map",
+                    "version": 1,
+                    "name_en": "madagascar",
+                    "cities": [],
+                    "id": 447325,
+                    "size": 3984090
+                },
+                {
+                    "size_m": 4946728,
+                    "name": "马拉维",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/malawi.map",
+                    "version": 1,
+                    "name_en": "malawi",
+                    "cities": [],
+                    "id": 195290,
+                    "size": 4946728
+                },
+                {
+                    "size_m": 6141767,
+                    "name": "马里共和国",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/mali.map",
+                    "version": 1,
+                    "name_en": "mali",
+                    "cities": [],
+                    "id": 192785,
+                    "size": 6141767
+                },
+                {
+                    "size_m": 1561704,
+                    "name": "毛里塔尼亚",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/mauritania.map",
+                    "version": 1,
+                    "name_en": "mauritania",
+                    "cities": [],
+                    "id": 192763,
+                    "size": 1561704
+                },
+                {
+                    "size_m": 708585,
+                    "name": "毛里求斯",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/mauritius.map",
+                    "version": 1,
+                    "name_en": "mauritius",
+                    "cities": [],
+                    "id": 535828,
+                    "size": 708585
+                },
+                {
+                    "size_m": 14275276,
+                    "name": "摩洛哥",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/morocco.map",
+                    "version": 1,
+                    "name_en": "morocco",
+                    "cities": [],
+                    "id": 3630439,
+                    "size": 14275276
+                },
+                {
+                    "size_m": 5719118,
+                    "name": "莫桑比克",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/mozambique.map",
+                    "version": 1,
+                    "name_en": "mozambique",
+                    "cities": [],
+                    "id": 195273,
+                    "size": 5719118
+                },
+                {
+                    "size_m": 4524056,
+                    "name": "纳米比亚",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/namibia.map",
+                    "version": 1,
+                    "name_en": "namibia",
+                    "cities": [],
+                    "id": 195266,
+                    "size": 4524056
+                },
+                {
+                    "size_m": 2661322,
+                    "name": "尼日尔",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/niger.map",
+                    "version": 1,
+                    "name_en": "niger",
+                    "cities": [],
+                    "id": 192786,
+                    "size": 2661322
+                },
+                {
+                    "size_m": 12594426,
+                    "name": "奈及利亚",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/nigeria.map",
+                    "version": 1,
+                    "name_en": "nigeria",
+                    "cities": [],
+                    "id": 192787,
+                    "size": 12594426
+                },
+                {
+                    "size_m": 1117481,
+                    "name": "卢旺达",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/rwanda.map",
+                    "version": 1,
+                    "name_en": "rwanda",
+                    "cities": [],
+                    "id": 171496,
+                    "size": 1117481
+                },
+                {
+                    "size_m": 436735,
+                    "name": "圣赫勒拿、阿森松和特里斯坦-达库尼亚",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/saint-helena-ascension-and-tristan-da-cunha.map",
+                    "version": 1,
+                    "name_en": "saint-helena-ascension-and-tristan-da-cunha",
+                    "cities": [],
+                    "id": 1964272,
+                    "size": 436735
+                },
+                {
+                    "size_m": 97769,
+                    "name": "圣多美和普林西比",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/sao-tome-and-principe.map",
+                    "version": 1,
+                    "name_en": "sao-tome-and-principe",
+                    "cities": [],
+                    "id": 535880,
+                    "size": 97769
+                },
+                {
+                    "size_m": 4368984,
+                    "name": "senegal-and-gambia",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/senegal-and-gambia.map",
+                    "version": 1,
+                    "name_en": "senegal-and-gambia",
+                    "cities": [],
+                    "id": 0,
+                    "size": 4368984
+                },
+                {
+                    "size_m": 224509,
+                    "name": "塞舌尔",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/seychelles.map",
+                    "version": 1,
+                    "name_en": "seychelles",
+                    "cities": [],
+                    "id": 536765,
+                    "size": 224509
+                },
+                {
+                    "size_m": 3572493,
+                    "name": "塞拉利昂",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/sierra-leone.map",
+                    "version": 1,
+                    "name_en": "sierra-leone",
+                    "cities": [],
+                    "id": 192777,
+                    "size": 3572493
+                },
+                {
+                    "size_m": 5013727,
+                    "name": "索马里",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/somalia.map",
+                    "version": 1,
+                    "name_en": "somalia",
+                    "cities": [],
+                    "id": 192799,
+                    "size": 5013727
+                },
+                {
+                    "size_m": 24842537,
+                    "name": "南非",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/south-africa.map",
+                    "version": 1,
+                    "name_en": "south-africa",
+                    "cities": [],
+                    "id": 87565,
+                    "size": 24842537
+                },
+                {
+                    "size_m": 73563,
+                    "name": "南苏丹",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/south-sudan.map",
+                    "version": 1,
+                    "name_en": "south-sudan",
+                    "cities": [],
+                    "id": 1656678,
+                    "size": 73563
+                },
+                {
+                    "size_m": 4581233,
+                    "name": "苏丹",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/sudan.map",
+                    "version": 1,
+                    "name_en": "sudan",
+                    "cities": [],
+                    "id": 192789,
+                    "size": 4581233
+                },
+                {
+                    "size_m": 812895,
+                    "name": "斯威士兰",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/swaziland.map",
+                    "version": 1,
+                    "name_en": "swaziland",
+                    "cities": [],
+                    "id": 88210,
+                    "size": 812895
+                },
+                {
+                    "size_m": 2719393,
+                    "name": "多哥",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/togo.map",
+                    "version": 1,
+                    "name_en": "togo",
+                    "cities": [],
+                    "id": 192782,
+                    "size": 2719393
+                },
+                {
+                    "size_m": 5820812,
+                    "name": "突尼西亚",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/tunisia.map",
+                    "version": 1,
+                    "name_en": "tunisia",
+                    "cities": [],
+                    "id": 192757,
+                    "size": 5820812
+                },
+                {
+                    "size_m": 5092156,
+                    "name": "乌干达",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/uganda.map",
+                    "version": 1,
+                    "name_en": "uganda",
+                    "cities": [],
+                    "id": 192796,
+                    "size": 5092156
+                },
+                {
+                    "size_m": 3460028,
+                    "name": "赞比亚",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/zambia.map",
+                    "version": 1,
+                    "name_en": "zambia",
+                    "cities": [],
+                    "id": 195271,
+                    "size": 3460028
+                },
+                {
+                    "size_m": 4483946,
+                    "name": "辛巴威",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/zimbabwe.map",
+                    "version": 1,
+                    "name_en": "zimbabwe",
+                    "cities": [],
+                    "id": 195272,
+                    "size": 4483946
+                }
+            ],
+            "version": 1,
+            "name_en": "africa",
+            "id": 36966057,
+            "size": 243733566
+        },
+        {
+            "size_m": 18.692,
+            "name": "澳洲",
+            "countries": [
+                {
+                    "size_m": 2459629,
+                    "name": "斐济",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/fiji.map",
+                    "version": 1,
+                    "name_en": "fiji",
+                    "cities": [],
+                    "id": 571747,
+                    "size": 2459629
+                },
+                {
+                    "size_m": 1674582,
+                    "name": "new-caledonia",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/new-caledonia.map",
+                    "version": 1,
+                    "name_en": "new-caledonia",
+                    "cities": [],
+                    "id": 0,
+                    "size": 1674582
+                },
+                {
+                    "size_m": 13563858,
+                    "name": "新西兰",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/new-zealand.map",
+                    "version": 1,
+                    "name_en": "new-zealand",
+                    "cities": [],
+                    "id": 556706,
+                    "size": 13563858
+                },
+                {
+                    "size_m": 1901981,
+                    "name": "巴布亚新几内亚",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/papua-new-guinea.map",
+                    "version": 1,
+                    "name_en": "papua-new-guinea",
+                    "cities": [],
+                    "id": 424297931,
+                    "size": 1901981
+                }
+            ],
+            "version": 1,
+            "name_en": "ausralia-ceania",
+            "id": 5107738422,
+            "size": 19600050
+        },
+        {
+            "size_m": 892.688,
+            "name": "北美洲",
+            "countries": [
+                {
+                    "size_m": 161.286,
+                    "name": "加拿大",
+                    "version": 1,
+                    "name_en": "canada",
+                    "cities": [
+                        {
+                            "size_m": 9,
+                            "name": "新斯科舍省",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/390558.map",
+                            "version": 1,
+                            "name_en": "Nova Scotia",
+                            "id": "390558",
+                            "size": 9437143
+                        },
+                        {
+                            "size_m": 16.239,
+                            "name": "努納武特地區",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/390840.map",
+                            "version": 1,
+                            "name_en": "Nunavut",
+                            "id": "390840",
+                            "size": 17027881
+                        },
+                        {
+                            "size_m": 4.198,
+                            "name": "曼尼托巴",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/390841.map",
+                            "version": 1,
+                            "name_en": "Manitoba",
+                            "id": "390841",
+                            "size": 4401836
+                        },
+                        {
+                            "size_m": 25.217,
+                            "name": "不列颠哥伦比亚省",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/390867.map",
+                            "version": 1,
+                            "name_en": "British Columbia",
+                            "id": "390867",
+                            "size": 26442285
+                        },
+                        {
+                            "size_m": 1.218,
+                            "name": "Prince Edward Island",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/391115.map",
+                            "version": 1,
+                            "name_en": "Prince Edward Island",
+                            "id": "391115",
+                            "size": 1276722
+                        },
+                        {
+                            "size_m": 4.228,
+                            "name": "薩斯喀徹溫省",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/391178.map",
+                            "version": 1,
+                            "name_en": "Saskatchewan",
+                            "id": "391178",
+                            "size": 4433612
+                        },
+                        {
+                            "size_m": 14.791,
+                            "name": "艾伯塔省",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/391186.map",
+                            "version": 1,
+                            "name_en": "Alberta",
+                            "id": "391186",
+                            "size": 15509210
+                        },
+                        {
+                            "size_m": 6.347,
+                            "name": "紐芬蘭與拉布拉多省",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/391196.map",
+                            "version": 1,
+                            "name_en": "Newfoundland and Labrador",
+                            "id": "391196",
+                            "size": 6655807
+                        },
+                        {
+                            "size_m": 3.021,
+                            "name": "西北地区",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/391220.map",
+                            "version": 1,
+                            "name_en": "Northwest Territories",
+                            "id": "391220",
+                            "size": 3167228
+                        },
+                        {
+                            "size_m": 0.96,
+                            "name": "育空地區",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/391455.map",
+                            "version": 1,
+                            "name_en": "Yukon",
+                            "id": "391455",
+                            "size": 1007105
+                        },
+                        {
+                            "size_m": 27.376,
+                            "name": "魁北克",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/61549.map",
+                            "version": 1,
+                            "name_en": "Quebec",
+                            "id": "61549",
+                            "size": 28705768
+                        },
+                        {
+                            "size_m": 45.49,
+                            "name": "安大略",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/68841.map",
+                            "version": 1,
+                            "name_en": "Ontario",
+                            "id": "68841",
+                            "size": 47700203
+                        },
+                        {
+                            "size_m": 3.2,
+                            "name": "新伯倫瑞克",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/countries/68942.map",
+                            "version": 1,
+                            "name_en": "New Brunswick",
+                            "id": "68942",
+                            "size": 3355393
+                        }
+                    ],
+                    "id": 1428125,
+                    "size": 169120193
+                },
+                {
+                    "size_m": 52328329,
+                    "name": "墨西哥",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/mexico.map",
+                    "version": 1,
+                    "name_en": "mexico",
+                    "cities": [],
+                    "id": 1376489,
+                    "size": 52328329
+                },
+                {
+                    "size_m": 681.499,
+                    "name": "美国",
+                    "version": 1,
+                    "name_en": "United States of America",
+                    "cities": [
+                        {
+                            "size_m": 17.404,
+                            "name": "阿拉巴马州",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/alabama.map",
+                            "version": 1,
+                            "name_en": "alabama",
+                            "cities": [],
+                            "id": 161950,
+                            "size": 18249394
+                        },
+                        {
+                            "size_m": 20.218,
+                            "name": "阿拉斯加州",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/alaska.map",
+                            "version": 1,
+                            "name_en": "alaska",
+                            "cities": [],
+                            "id": 1116270,
+                            "size": 21200019
+                        },
+                        {
+                            "size_m": 22.842,
+                            "name": "亚利桑那州",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/arizona.map",
+                            "version": 1,
+                            "name_en": "arizona",
+                            "cities": [],
+                            "id": 162018,
+                            "size": 23951710
+                        },
+                        {
+                            "size_m": 14.654,
+                            "name": "阿肯色州",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/arkansas.map",
+                            "version": 1,
+                            "name_en": "arkansas",
+                            "cities": [],
+                            "id": 161646,
+                            "size": 15365597
+                        },
+                        {
+                            "size_m": 21.952,
+                            "name": "科罗拉多州",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/colorado.map",
+                            "version": 1,
+                            "name_en": "colorado",
+                            "cities": [],
+                            "id": 161961,
+                            "size": 23018733
+                        },
+                        {
+                            "size_m": 5.759,
+                            "name": "康涅狄格州",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/connecticut.map",
+                            "version": 1,
+                            "name_en": "connecticut",
+                            "cities": [],
+                            "id": 165794,
+                            "size": 6038467
+                        },
+                        {
+                            "size_m": 2.058,
+                            "name": "特拉华州",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/delaware.map",
+                            "version": 1,
+                            "name_en": "delaware",
+                            "cities": [],
+                            "id": 162110,
+                            "size": 2158048
+                        },
+                        {
+                            "size_m": 0.967,
+                            "name": "哥伦比亚州",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/district-of-columbia.map",
+                            "version": 1,
+                            "name_en": "district-of-columbia",
+                            "cities": [],
+                            "id": 162069,
+                            "size": 1013742
+                        },
+                        {
+                            "size_m": 36.575,
+                            "name": "佛罗里达州",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/florida.map",
+                            "version": 1,
+                            "name_en": "florida",
+                            "cities": [],
+                            "id": 162050,
+                            "size": 38351395
+                        },
+                        {
+                            "size_m": 2.482,
+                            "name": "夏威夷州",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/hawaii.map",
+                            "version": 1,
+                            "name_en": "hawaii",
+                            "cities": [],
+                            "id": 166563,
+                            "size": 2602498
+                        },
+                        {
+                            "size_m": 15.379,
+                            "name": "爱达荷州",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/idaho.map",
+                            "version": 1,
+                            "name_en": "idaho",
+                            "cities": [],
+                            "id": 162116,
+                            "size": 16125746
+                        },
+                        {
+                            "size_m": 22.458,
+                            "name": "伊利諾伊州",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/illinois.map",
+                            "version": 1,
+                            "name_en": "illinois",
+                            "cities": [],
+                            "id": 122586,
+                            "size": 23549266
+                        },
+                        {
+                            "size_m": 15.753,
+                            "name": "印第安拉州",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/indiana.map",
+                            "version": 1,
+                            "name_en": "indiana",
+                            "cities": [],
+                            "id": 161816,
+                            "size": 16517945
+                        },
+                        {
+                            "size_m": 12.558,
+                            "name": "艾奥瓦州",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/iowa.map",
+                            "version": 1,
+                            "name_en": "iowa",
+                            "cities": [],
+                            "id": 161650,
+                            "size": 13168434
+                        },
+                        {
+                            "size_m": 13.764,
+                            "name": "堪萨斯州",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/kansas.map",
+                            "version": 1,
+                            "name_en": "kansas",
+                            "cities": [],
+                            "id": 161644,
+                            "size": 14432564
+                        },
+                        {
+                            "size_m": 18.125,
+                            "name": "肯塔基州",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/kentucky.map",
+                            "version": 1,
+                            "name_en": "kentucky",
+                            "cities": [],
+                            "id": 161655,
+                            "size": 19005912
+                        },
+                        {
+                            "size_m": 12.17,
+                            "name": "路易斯安那州",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/louisiana.map",
+                            "version": 1,
+                            "name_en": "louisiana",
+                            "cities": [],
+                            "id": 224922,
+                            "size": 12760724
+                        },
+                        {
+                            "size_m": 8.64,
+                            "name": "缅因州",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/maine.map",
+                            "version": 1,
+                            "name_en": "maine",
+                            "cities": [],
+                            "id": 63512,
+                            "size": 9059976
+                        },
+                        {
+                            "size_m": 16.199,
+                            "name": "马里兰州",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/maryland.map",
+                            "version": 1,
+                            "name_en": "maryland",
+                            "cities": [],
+                            "id": 162112,
+                            "size": 16985840
+                        },
+                        {
+                            "size_m": 23.897,
+                            "name": "密歇根州",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/michigan.map",
+                            "version": 1,
+                            "name_en": "michigan",
+                            "cities": [],
+                            "id": 165789,
+                            "size": 25058122
+                        },
+                        {
+                            "size_m": 19.159,
+                            "name": "明尼苏达州",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/minnesota.map",
+                            "version": 1,
+                            "name_en": "minnesota",
+                            "cities": [],
+                            "id": 165471,
+                            "size": 20089944
+                        },
+                        {
+                            "size_m": 10.852,
+                            "name": "密西西比州",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/mississippi.map",
+                            "version": 1,
+                            "name_en": "mississippi",
+                            "cities": [],
+                            "id": 161943,
+                            "size": 11378690
+                        },
+                        {
+                            "size_m": 22.993,
+                            "name": "密苏里州",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/missouri.map",
+                            "version": 1,
+                            "name_en": "missouri",
+                            "cities": [],
+                            "id": 161638,
+                            "size": 24110170
+                        },
+                        {
+                            "size_m": 13.997,
+                            "name": "蒙大拿州",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/montana.map",
+                            "version": 1,
+                            "name_en": "montana",
+                            "cities": [],
+                            "id": 162115,
+                            "size": 14676788
+                        },
+                        {
+                            "size_m": 11.558,
+                            "name": "内布拉斯加州",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/nebraska.map",
+                            "version": 1,
+                            "name_en": "nebraska",
+                            "cities": [],
+                            "id": 161648,
+                            "size": 12119017
+                        },
+                        {
+                            "size_m": 8.09,
+                            "name": "内华达州",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/nevada.map",
+                            "version": 1,
+                            "name_en": "nevada",
+                            "cities": [],
+                            "id": 165473,
+                            "size": 8483155
+                        },
+                        {
+                            "size_m": 5.929,
+                            "name": "新罕布什尔州",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/new-hampshire.map",
+                            "version": 1,
+                            "name_en": "new-hampshire",
+                            "cities": [],
+                            "id": 67213,
+                            "size": 6216567
+                        },
+                        {
+                            "size_m": 11.361,
+                            "name": "新泽西州",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/new-jersey.map",
+                            "version": 1,
+                            "name_en": "new-jersey",
+                            "cities": [],
+                            "id": 224951,
+                            "size": 11912502
+                        },
+                        {
+                            "size_m": 15.636,
+                            "name": "新墨西哥州",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/new-mexico.map",
+                            "version": 1,
+                            "name_en": "new-mexico",
+                            "cities": [],
+                            "id": 162014,
+                            "size": 16395598
+                        },
+                        {
+                            "size_m": 25.865,
+                            "name": "纽约州",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/new-york.map",
+                            "version": 1,
+                            "name_en": "new-york",
+                            "cities": [],
+                            "id": 61320,
+                            "size": 27121632
+                        },
+                        {
+                            "size_m": 10.784,
+                            "name": "北达科他州",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/north-dakota.map",
+                            "version": 1,
+                            "name_en": "north-dakota",
+                            "cities": [],
+                            "id": 161653,
+                            "size": 11307490
+                        },
+                        {
+                            "size_m": 22.028,
+                            "name": "俄亥俄州",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/ohio.map",
+                            "version": 1,
+                            "name_en": "ohio",
+                            "cities": [],
+                            "id": 162061,
+                            "size": 23098447
+                        },
+                        {
+                            "size_m": 17.374,
+                            "name": "俄克拉何马州",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/oklahoma.map",
+                            "version": 1,
+                            "name_en": "oklahoma",
+                            "cities": [],
+                            "id": 161645,
+                            "size": 18217581
+                        },
+                        {
+                            "size_m": 26.952,
+                            "name": "俄勒冈州",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/oregon.map",
+                            "version": 1,
+                            "name_en": "oregon",
+                            "cities": [],
+                            "id": 165476,
+                            "size": 28260972
+                        },
+                        {
+                            "size_m": 30.536,
+                            "name": "宾夕法尼亚州",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/pennsylvania.map",
+                            "version": 1,
+                            "name_en": "pennsylvania",
+                            "cities": [],
+                            "id": 162109,
+                            "size": 32019315
+                        },
+                        {
+                            "size_m": 6.097,
+                            "name": "波多黎各州",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/puerto-rico.map",
+                            "version": 1,
+                            "name_en": "puerto-rico",
+                            "cities": [],
+                            "id": 4422604,
+                            "size": 6392819
+                        },
+                        {
+                            "size_m": 1.667,
+                            "name": "罗得岛州",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/rhode-island.map",
+                            "version": 1,
+                            "name_en": "rhode-island",
+                            "cities": [],
+                            "id": 392915,
+                            "size": 1747852
+                        },
+                        {
+                            "size_m": 13.819,
+                            "name": "南卡罗来纳州",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/south-carolina.map",
+                            "version": 1,
+                            "name_en": "south-carolina",
+                            "cities": [],
+                            "id": 224040,
+                            "size": 14489956
+                        },
+                        {
+                            "size_m": 5.624,
+                            "name": "南达科他州",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/south-dakota.map",
+                            "version": 1,
+                            "name_en": "south-dakota",
+                            "cities": [],
+                            "id": 161652,
+                            "size": 5897666
+                        },
+                        {
+                            "size_m": 17.01,
+                            "name": "田纳西州",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/tennessee.map",
+                            "version": 1,
+                            "name_en": "tennessee",
+                            "cities": [],
+                            "id": 161838,
+                            "size": 17836119
+                        },
+                        {
+                            "size_m": 11.845,
+                            "name": "犹他州",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/utah.map",
+                            "version": 1,
+                            "name_en": "utah",
+                            "cities": [],
+                            "id": 161993,
+                            "size": 12420552
+                        },
+                        {
+                            "size_m": 3.586,
+                            "name": "佛蒙特州",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/vermont.map",
+                            "version": 1,
+                            "name_en": "vermont",
+                            "cities": [],
+                            "id": 60759,
+                            "size": 3759806
+                        },
+                        {
+                            "size_m": 25.917,
+                            "name": "华盛顿州",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/washington.map",
+                            "version": 1,
+                            "name_en": "washington",
+                            "cities": [],
+                            "id": 165479,
+                            "size": 27175501
+                        },
+                        {
+                            "size_m": 9.075,
+                            "name": "西維吉尼亞州",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/west-virginia.map",
+                            "version": 1,
+                            "name_en": "west-virginia",
+                            "cities": [],
+                            "id": 162068,
+                            "size": 9515680
+                        },
+                        {
+                            "size_m": 19.348,
+                            "name": "威斯康星州",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/wisconsin.map",
+                            "version": 1,
+                            "name_en": "wisconsin",
+                            "cities": [],
+                            "id": 165466,
+                            "size": 20288078
+                        },
+                        {
+                            "size_m": 10.545,
+                            "name": "怀俄明州",
+                            "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/wyoming.map",
+                            "version": 1,
+                            "name_en": "wyoming",
+                            "cities": [],
+                            "id": 161991,
+                            "size": 11057118
+                        }
+                    ],
+                    "id": 270056,
+                    "size": 714603147
+                }
+            ],
+            "version": 1,
+            "name_en": "north-america",
+            "id": 36966063,
+            "size": 936051669
+        },
+        {
+            "size_m": 17.736,
+            "name": "中美洲",
+            "countries": [
+                {
+                    "size_m": 593503,
+                    "name": "伯利兹",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/belize.map",
+                    "version": 1,
+                    "name_en": "belize",
+                    "cities": [],
+                    "id": 287827,
+                    "size": 593503
+                },
+                {
+                    "size_m": 5398544,
+                    "name": "古巴",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/cuba.map",
+                    "version": 1,
+                    "name_en": "cuba",
+                    "cities": [],
+                    "id": 307833,
+                    "size": 5398544
+                },
+                {
+                    "size_m": 3866275,
+                    "name": "危地马拉",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/guatemala.map",
+                    "version": 1,
+                    "name_en": "guatemala",
+                    "cities": [],
+                    "id": 1521463,
+                    "size": 3866275
+                },
+                {
+                    "size_m": 6506446,
+                    "name": "haiti-and-domrep",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/haiti-and-domrep.map",
+                    "version": 1,
+                    "name_en": "haiti-and-domrep",
+                    "cities": [],
+                    "id": 0,
+                    "size": 6506446
+                },
+                {
+                    "size_m": 2232415,
+                    "name": "尼加拉瓜",
+                    "url": "https://s3-us-west-2.amazonaws.com/xoss-map/GlobalMap/maps/nicaragua.map",
+                    "version": 1,
+                    "name_en": "nicaragua",
+                    "cities": [],
+                    "id": 287666,
+                    "size": 2232415
+                }
+            ],
+            "version": 1,
+            "name_en": "central-america",
+            "id": 1,
+            "size": 18597183
+        }
+    ]
+}

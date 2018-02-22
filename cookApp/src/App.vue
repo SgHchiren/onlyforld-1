@@ -2,22 +2,22 @@
   <div id="app" class="app">
 <!--     <img src="./assets/logo.png"> -->
  <mt-header fixed title="回到顶部" class="fixhead"></mt-header>
- <Home v-show="selected == '外卖'"></Home>
- <Kind v-show="selected == '订单'"></Kind>
- <Car v-show="selected == '发现'"></Car>
+ <Home v-show="selected == '首页'"></Home>
+ <Kind v-show="selected == '分类'"></Kind>
+ <Car v-show="selected == '购物车'"></Car>
  <Self v-show="selected == '我的'"></Self>
  <mt-tabbar fixed v-model="selected" class="fixbottom">
-  <mt-tab-item id="外卖" style="display:block;">
+  <mt-tab-item id="首页" style="display:block;">
     <img slot="icon" src="../src/assets/img/home.svg" class="home_icon">
-    外卖
+    首页
   </mt-tab-item>
-  <mt-tab-item id="订单">
+  <mt-tab-item id="分类">
     <img slot="icon" src="../src/assets/img/kind.svg" class="kind_icon">
-    订单
+    分类
   </mt-tab-item>
-  <mt-tab-item id="发现">
+  <mt-tab-item id="购物车">
     <img slot="icon" src="../src/assets/img/car_no.svg" class="car_icon">
-    发现
+    购物车
   </mt-tab-item>
   <mt-tab-item id="我的">
     <img slot="icon" src="../src/assets/img/self.svg" class="self_icon">
@@ -37,7 +37,7 @@ export default {
   data(){
     return{
       name: 'App',
-      selected:"外卖"
+      selected:"首页"
     }
   },
   watch:{
@@ -91,23 +91,23 @@ html,body{
     right:0;
     left:0;
     .home_icon{
-      width:24px;
-      height:24px;
+      width:30px;
+      height:30px;
       display:block;
     }
     .kind_icon{
-      width:24px;
-      height:24px;
+      width:30px;
+      height:30px;
       display:block;
     }
     .car_icon{
-      width:24px;
-      height:24px;
+      width:30px;
+      height:30px;
       display:block;
     }
     .self_icon{
-      width:24px;
-      height:24px;
+      width:30px;
+      height:30px;
       display:block;
     }
   }

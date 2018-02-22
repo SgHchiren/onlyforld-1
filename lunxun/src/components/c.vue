@@ -27,7 +27,7 @@
           let len = data.length;
           console.log(len);
           for(let i = 0; i < len; i ++){
-            this.data.push(data[i])
+            this.data.push(data[i]);
           }
         }).catch(err=>{
           console.log(err)

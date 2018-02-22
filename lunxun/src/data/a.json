@@ -1,24 +1,82 @@
 {
 "status": "1",
-"count": 1,
-"data": [
+"data": {
+"sign_time": 1515742620,
+"competition_label": [
+"竞速"
+],
+"create_time": 1515569820,
+"logo": "",
+"pic_url": "https://oi27flgao.qnssl.com/o_1c3ctkrpc19uqpd11jtil0s1bht23.jpg",
+"competition_id": 2625,
+"group": [
 {
-"username": "competitions",
-"start_time": "2018-01-11 18:48",
-"create_time": "2018-01-09 18:48",
-"id": 662,
-"user_id": 1930703,
-"total_enroll": 0,
-"title": "0108测试",
-"cid": 0,
-"pic_url": "https://oi27flgao.qnssl.com/o_1c3am6ldu1emecbqhl4v2capic.jpg",
-"mode": 1,
-"total_fee": 0,
-"closing_time": "2018-01-10 18:48",
-"com_type": 2,
-"cp_status": "待审核",
-"end_time": "2018-01-12 18:48"
+"group_quoto": 123123,
+"group_distance": 123123000,
+"group_order": 1,
+"require_age_limit": 0,
+"start_time": 1515742620,
+"require_check": false,
+"group_name": "asdasd",
+"apply_end_time": 1515829020,
+"group_money": 123123,
+"end_time": 1515829020,
+"apply_start_time": 1515569820,
+"lushu_id": 1,
+"group_id": 4538,
+"type": 0,
+"money_desc": "",
+"age_limit": [
+"none",
+"none",
+""
+]
+},
+{
+"group_quoto": 0,
+"group_distance": 0,
+"group_order": 0,
+"require_age_limit": 0,
+"start_time": -1,
+"require_check": false,
+"group_name": "rwq",
+"apply_end_time": -1,
+"group_money": 12,
+"end_time": -1,
+"apply_start_time": 0,
+"lushu_id": 1,
+"group_id": 4539,
+"type": 1,
+"money_desc": "",
+"age_limit": [
+"none",
+"none",
+""
+]
 }
 ],
-"page": 1
+"title": "asdasdasd",
+"email": "123123123@qq.com",
+"description": "<p>qweqweqweqweqwe</p>",
+"start_time": 1515742620,
+"host": "asdasdasd",
+"optional": {
+"clothes_size": [],
+"require_clothes_size": 0,
+"desc": "",
+"require_decs": 0,
+"require_address": 0
+},
+"QQ": "123123123",
+"mobile": "123123123",
+"com_sport_type": "跑步",
+"place": "qweqweqweqwe",
+"end_time": 1515829020,
+"closing_time": 1515656220,
+"host_place": [
+"阿联酋"
+],
+"com_type": 0,
+"delete": 0
+}
 }
