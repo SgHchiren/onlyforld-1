@@ -394,7 +394,7 @@
                             </el-col>
                             <el-col :span="6">
                                 <el-form-item label="人数上限" prop="group_quoto">
-                                    <el-input v-model.number="form.group[this_group].group_quoto" type="number" style="width:120px;" ></el-input>
+                                    <el-input v-model.number="form.group[this_group].group_quoto" type="number" style="width:150px;" ></el-input>
                                 </el-form-item>
                             </el-col>
                         </el-row>
@@ -2249,11 +2249,15 @@ function sortSize( arr ) {
 
 <style lang="scss" scoped>
     @import "../../assets/style/_var.scss";
+    .el-form-item__error{
+        width:100px !important;
+    }
      span{
                 display:block;
                 font-size:.8rem;
                 margin-top:.3rem;
             }
+    }
     .create-competition-box {
         padding: 1rem 0 4rem 0;
     }

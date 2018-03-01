@@ -11,6 +11,7 @@ import moment from "moment";
 
 Vue.use(VueDND)
 Vue.use(Sortable)
+Vue.use(moment)
 Vue.use(Vuex);
 Vue.use(Vueresource)
 Vue.use(Mint);

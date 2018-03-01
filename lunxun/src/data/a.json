@@ -1,82 +1,40 @@
 {
-"status": "1",
-"data": {
-"sign_time": 1515742620,
-"competition_label": [
-"竞速"
-],
-"create_time": 1515569820,
-"logo": "",
-"pic_url": "https://oi27flgao.qnssl.com/o_1c3ctkrpc19uqpd11jtil0s1bht23.jpg",
-"competition_id": 2625,
-"group": [
-{
-"group_quoto": 123123,
-"group_distance": 123123000,
-"group_order": 1,
-"require_age_limit": 0,
-"start_time": 1515742620,
-"require_check": false,
-"group_name": "asdasd",
-"apply_end_time": 1515829020,
-"group_money": 123123,
-"end_time": 1515829020,
-"apply_start_time": 1515569820,
-"lushu_id": 1,
-"group_id": 4538,
-"type": 0,
-"money_desc": "",
-"age_limit": [
-"none",
-"none",
-""
-]
-},
-{
-"group_quoto": 0,
-"group_distance": 0,
-"group_order": 0,
-"require_age_limit": 0,
-"start_time": -1,
-"require_check": false,
-"group_name": "rwq",
-"apply_end_time": -1,
-"group_money": 12,
-"end_time": -1,
-"apply_start_time": 0,
-"lushu_id": 1,
-"group_id": 4539,
-"type": 1,
-"money_desc": "",
-"age_limit": [
-"none",
-"none",
-""
-]
-}
-],
-"title": "asdasdasd",
-"email": "123123123@qq.com",
-"description": "<p>qweqweqweqweqwe</p>",
-"start_time": 1515742620,
-"host": "asdasdasd",
-"optional": {
-"clothes_size": [],
-"require_clothes_size": 0,
-"desc": "",
-"require_decs": 0,
-"require_address": 0
-},
-"QQ": "123123123",
-"mobile": "123123123",
-"com_sport_type": "跑步",
-"place": "qweqweqweqwe",
-"end_time": 1515829020,
-"closing_time": 1515656220,
-"host_place": [
-"阿联酋"
-],
-"com_type": 0,
-"delete": 0
-}
+    "status": "1", 
+    "data": {
+        "sign_time": null, 
+        "competition_label": [
+            "绕圈", 
+            "竞速", 
+            "休闲"
+        ], 
+        "create_time": 1517473920, 
+        "com_sport_type": "骑游", 
+        "logo": "", 
+        "pic_url": "https://oi27flgao.qnssl.com/o_1c55lgqtl1ueg19dcv7hefl1kklc.png", 
+        "competition_id": 2623, 
+        "group": [], 
+        "title": "asd", 
+        "email": "", 
+        "description": "<p>asdasdasdasd行者&nbsp; &nbsp;asd</p>", 
+        "start_time": 1517646720, 
+        "host": "", 
+        "optional": {
+            "clothes_size": [], 
+            "require_clothes_size": 0, 
+            "desc": "", 
+            "require_decs": 0, 
+            "require_address": 0
+        }, 
+        "QQ": "", 
+        "url": "www.baidu.com", 
+        "mobile": "", 
+        "place": "", 
+        "end_time": 1517733120, 
+        "closing_time": 1517560320, 
+        "host_place": [
+            "阿根廷"
+        ], 
+        "com_type": 2, 
+        "delete": 0
+    }
 }

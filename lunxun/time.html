@@ -1,295 +1,104 @@
-<template>
-    <div class="create-competition-box">
-        <el-steps :active="step" space="40%" class="stepstyle" align-center>
-            <el-step title="赛事信息"></el-step>
-            <el-step title="组别信息"></el-step>
-            <el-step title="提交审核"></el-step>
-        </el-steps>
-        <div v-if="step1">
+ <div v-show="step2" style="margin-left:0rem;width:100%;">
         <el-row class="form-row">
-            <el-col :span="24" v-loading.fullscreen.lock="status.fullscreenLoading"><div class="grid-content bg-purple"><h3 class="sub-title">赛事信息（必填）</h3></div></el-col>
-        </el-row>
-
-        <el-form ref="baseInfoForm" :rules="rules.baseInfoRules" :model="form.baseInfo" label-width="100px" class="group-section ">
-            <el-row class="form-row">
-                <el-col :span="12">
-                    <el-form-item label-width="120px" label="赛事标题" prop="title">
-                        <el-input v-model="form.baseInfo.title" :placeholder="'不超过 20 个字符'" :maxlength="20"></el-input>
-                    </el-form-item>
-                </el-col>
-            </el-row>
-            <el-row class="form-row">
-                <el-col :span="12">
-                    <el-form-item label-width="120px" label="主办方" prop="host">
-                        <el-input v-model="form.baseInfo.host" :maxlength="50"></el-input>
-                    </el-form-item>
-                </el-col>
-                <el-col :span="12">
-                    <el-form-item label-width="120px" label="联系电话" prop="mobile">
-                        <el-input v-model="form.baseInfo.mobile" type="phone" :maxlength="14"></el-input>
-                    </el-form-item>
-                </el-col>
-            </el-row>
-            <el-row class="form-row">
-                <el-col :span="12">
-                    <el-form-item label-width="120px" label="联系QQ" prop="QQ">
-                        <el-input v-model.number="form.baseInfo.QQ" type="number" :maxlength="20"></el-input>
-                    </el-form-item>
-                </el-col>
-                <el-col :span="12">
-                    <el-form-item label-width="120px" label="联系邮箱" prop="email">
-                        <el-input v-model="form.baseInfo.email" type="email" :maxlength="50"></el-input>
-                    </el-form-item>
-                </el-col>
-            </el-row>
-            <el-row class="form-row">
-                <el-col :span="12">
-                    <el-form-item label-width="120px" label="报名开始时间" prop="create_time">
-                        <el-date-picker
-                            v-model="form.baseInfo.create_time"
-                            type="datetime"
-                            format="yyyy-MM-dd HH:mm"
-                            placeholder="选择日期时间">
-                        </el-date-picker>
-                    </el-form-item>
-                </el-col>
-                <el-col :span="12">
-                    <el-form-item label-width="120px" label="报名结束时间" prop="closing_time">
-                        <el-date-picker
-                            v-model="form.baseInfo.closing_time"
-                            type="datetime"
-                            format="yyyy-MM-dd HH:mm"
-                            placeholder="选择日期时间">
-                        </el-date-picker>
-                    </el-form-item>
-                </el-col>
-            </el-row>
-            <el-row class="form-row">
-                <el-col :span="12">
-                    <el-form-item label-width="120px" label="赛事开始时间" prop="start_time">
-                        <el-date-picker
-                            v-model="form.baseInfo.start_time"
-                            type="datetime"
-                            format="yyyy-MM-dd HH:mm"
-                            placeholder="选择日期时间">
-                        </el-date-picker>
-                    </el-form-item>
-                </el-col>
-                <el-col :span="12">
-                    <el-form-item label-width="120px" label="赛事结束时间" prop="end_time">
-                        <el-date-picker
-                            v-model="form.baseInfo.end_time"
-                            type="datetime"
-                            format="yyyy-MM-dd HH:mm"
-                            placeholder="选择日期时间">
-                        </el-date-picker>
-                    </el-form-item>
-                </el-col>
-            </el-row>
-            <el-row class="form-row">
-                <el-col :span="12">
-                    <el-form-item label-width="120px" label="签到时间" prop="sign_time">
-                        <el-date-picker
-                            v-model="form.baseInfo.sign_time"
-                            type="datetime"
-                            format="yyyy-MM-dd HH:mm"
-                            placeholder="选择签到时间">
-                        </el-date-picker>
-                    </el-form-item>
-                </el-col>
-                <el-col :span="12">
-                    <el-form-item label-width="120px" label="签到地点" prop="place">
-                        <el-input v-model="form.baseInfo.place" :maxlength="25"></el-input>
-                    </el-form-item>
-                </el-col>
-            </el-row>
-            <el-row class="form-row">
-                <el-col :span="12">
-                    <el-form-item label-width="120px" label="比赛模式" prop="com_type">
-                        <el-select v-model="form.baseInfo.com_type" placeholder="请选择赛事模式">
-                            <el-option
-                                v-for="item in options.com_type"
-                                :label="item.name"
-                                :value="item.id">
-                            </el-option>
-                        </el-select>
-                        <!-- <el-switch
-                            v-model="form.baseInfo.com_type"
-                            on-text="是"
-                            off-text="否">
-                        </el-switch> -->
-                    </el-form-item>
-                </el-col>
-                <el-col :span="12">
-                    <el-form-item label-width="120px" label="比赛地点" prop="host_place">
-                        <el-cascader
-                            :options="options.place"
-                            v-model="form.baseInfo.host_place"
-                            :filterable="true"
-                            :disabled="status.disableHostPlace"
-                            placeholder="输入想搜索的城市">
-                        </el-cascader>
-                    </el-form-item>
-                </el-col>
-            </el-row>
-            <el-row class="form-row">
-                <el-col :span="12">
-                    <el-form-item label-width="120px" label="赛事展示图" prop="pic_url">
-                        <img-upload
-                            v-model="form.baseInfo.pic_url"
-                            :domainstr="'https://oi27flgao.qnssl.com/'"
-                            :config="imgUploadOptions.config"
-                            :size="{height:'120px',width:'302px'}"
-                            :info="'建议尺寸690*274<br>且大小在2M内'"
-                            :preview-suffix="'-cmp.newbanner'"
-                            @onSuccess="imgUploadOptions.picUrlSuccessCallback"
-                            @onError="imgUploadOptions.picUrlErrorCallback"
-                        ></img-upload>
-                        <!-- :preview-suffix="'-cmp.newbanner'" -->
-                    </el-form-item>
-                </el-col>
-                <el-col :span="12">
-                    <el-form-item label-width="120px" label="赛事方LOGO" prop="logo_url">
-                        <img-upload
-                            v-model="form.baseInfo.logo"
-                            :domainstr="'https://oi27flgao.qnssl.com/'"
-                            :config="imgUploadOptions.config"
-                            :size="{height:'120px',width:'120px'}"
-                            :info="'建议透明底PNG格式，尺寸200*200<br>且大小在2M内'"
-                            @onSuccess="imgUploadOptions.logoUrlSuccessCallback"
-                            @onError="imgUploadOptions.logoUrlErrorCallback"
-                        ></img-upload>
-                    </el-form-item>
-                </el-col>
-            </el-row>
-            <!-- <el-row>
-                <el-col :span="12">
-                    <el-form-item label-width="120px" label="收款方式" prop="pay_type">
-                        <el-select v-model="form.baseInfo.pay_type" placeholder="请选择收款方式">
-                            <el-option
-                                v-for="item in options.pay"
-                                :label="item.name"
-                                :value="item.id">
-                        </el-select>
-                    </el-form-item>
-                </el-col>
-            </el-row> -->
-            <el-row>
-                <el-col :span="24">
-                    <el-form-item label-width="200px" label="赛事类型（单选）" prop="com_sport_type">
-                        <el-radio-group v-model="form.baseInfo.com_sport_type">
-                            <el-radio
-                                v-for="item in options.com_sport_type"
-                                :label="item.name"
-                            >{{ item.name }}</el-radio>
-                        </el-radio-group>
-                    </el-form-item>
-                </el-col>
-            </el-row>
-            <el-row>
-                <el-col :span="24">
-                    <el-form-item label-width="200px" label="赛事标签（最多四项）" prop="competition_label">
-                        <el-checkbox-group v-model="form.baseInfo.competition_label">
-                            <el-checkbox
-                                v-for="item in options.competition_label"
-                                :label="item.name"
-                            >{{ item.name }}</el-checkbox>
-                        </el-checkbox-group>
-                    </el-form-item>
-                </el-col>
-            </el-row>
-        </el-form>
-        </div>
-      <!-- 组别信息 start -->
-        <div v-if="step2">
-        <el-row class="form-row">
+            <!-- <el-col :span="24">
+                <h3 class="sub-title">组别信息（必填）
+            </el-col> -->
             <el-col :span="24">
-                <h3 class="sub-title">组别信息（必填）<el-button @click="addNewGroup" type="text" class="float-right" size="small">添加组别</el-button></h3>
+                <a type="text" @click="addNewGroup" class="addgroup" href="javascript:void(0);" ><span style="font-size:2rem;color:#bfcbd8;display:block;margin-top:40px;margin-bottom:-10px;">+</span>添加组别</a>
             </el-col>
         </el-row>
-        <el-row :span="24" >
-            <el-col :span="24">
+        <el-dialog v-model="dialogFormVisible" style="width:110%;
+        left:-5%;" :show-close="false">
+                <el-row class="form-row">
+        </el-row>
+        <el-row :span="40" >
+            <el-col :span="40">
                 <transition-group name="formitem" appear>
-                    <el-form v-for="(item, index) in form.group" ref="groupForm" :model="form.group[index]" :rules="rules.groupRules" :span="24" :key="item.form_id" label-width="130px" class="group-section demo-ruleForm">
-                        <el-button @click="deleteGroup( index )" class="close-btn" type="text" size="large">×</el-button>
+                    <el-form :model="form.group[form.group.length - 1]" :rules="rules.groupRules" :key="form.group[form.group.length -1].form_id" :span="24"  label-width="130px" class="group-section demo-ruleForm" style="text-align:center;">
                         <el-row class="form-row">
-                            <el-col :span="12">
+                            <el-col :span="12" style="width:49%;">
                                 <el-form-item label-width="120px" label="组别名称" prop="group_name">
-                                    <el-input v-model="item.group_name" :maxlength="10" :placeholder="'最多10个字符'"></el-input>
+                                    <el-input v-model="form.group[form.group.length - 1].group_name" :maxlength="10" :placeholder="'最多10个字符'" style="width:170px;float:left;"></el-input>
                                 </el-form-item>
                             </el-col>
                             <el-col :span="6">
-                                <el-form-item label-width="120px" label="人数上限" prop="group_quoto">
-                                    <el-input v-model.number="item.group_quoto" type="number"></el-input>
+                                <el-form-item label="人数上限" prop="group_quoto">
+                                    <el-input v-model.number="form.group[form.group.length - 1].group_quoto" type="number" style="width:170px;float:left;"></el-input>
                                 </el-form-item>
                             </el-col>
                         </el-row>
                         <el-row class="form-row">
-                            <el-col :span="12">
-                                <el-form-item label-width="120px" label="出发时间" prop="start_time">
+                                <el-form-item label-width="120px" label="开门时间" prop="start_time" style="float:left;">
                                     <!-- <el-input v-model="form.baseInfo.createTime"></el-input> -->
+                                    <!--  <el-date-picker
+                                        v-model="value4"
+                                        type="datetimerange"
+                                        :picker-options="pickerOptions2"
+                                        range-separator="至"
+                                        start-placeholder="开始日期"
+                                        end-placeholder="结束日期"
+                                        format="yyyy-MM-dd HH:mm"
+                                        align="right">
+                                    </el-date-picker> -->
                                     <el-date-picker
-                                        v-model="item.start_time"
+                                        v-model="form.group[form.group.length - 1].start_time"
                                         type="datetime"
                                         format="yyyy-MM-dd HH:mm"
-                                        placeholder="选择日期时间">
+                                        placeholder="选择日期时间"
+                                        style="width:170px;">
                                     </el-date-picker>
                                 </el-form-item>
-                            </el-col>
-                            <el-col :span="12">
-                                <el-form-item label-width="120px" label="至" prop="end_time">
+                                <el-form-item label-width="120px" label="关门时间" prop="end_time" style="display:inline-block;">
                                     <!-- <el-input v-model="form.baseInfo.closingTime"></el-input> -->
                                     <el-date-picker
-                                        v-model="item.end_time"
+                                        v-model="form.group[form.group.length - 1].end_time"
                                         type="datetime"
                                         format="yyyy-MM-dd HH:mm"
-                                        placeholder="选择日期时间">
+                                        placeholder="选择日期时间"
+                                        style="width:170px;">
                                     </el-date-picker>
                                 </el-form-item>
-                            </el-col>
                         </el-row>
-                         <el-row class="form-row">
-                            <el-col :span="12">
-                                <el-form-item label-width="120px" label="报名时间" prop="apply_start_time">
+                        <el-row class="form-row">
+                                <el-form-item label-width="120px" label="报名时间" prop="apply_start_time" style="float:left;">
                                     <!-- <el-input v-model="form.baseInfo.createTime"></el-input> -->
                                     <el-date-picker
-                                        v-model="item.apply_start_time"
+                                        v-model="form.group[form.group.length - 1].apply_start_time"
                                         type="datetime"
                                         format="yyyy-MM-dd HH:mm"
-                                        placeholder="选择日期时间">
+                                        placeholder="选择日期时间"
+                                        style="width:170px;">
                                     </el-date-picker>
                                 </el-form-item>
-                            </el-col>
-                            <el-col :span="12">
-                                <el-form-item label-width="120px" label="至" prop="apply_end_time">
+                                <el-form-item label-width="120px" label="报名截止时间" prop="apply_end_time" style="display:inline-block">
                                     <!-- <el-input v-model="form.baseInfo.closingTime"></el-input> -->
                                     <el-date-picker
-                                        v-model="item.apply_end_time"
+                                        v-model="form.group[form.group.length - 1].apply_end_time"
                                         type="datetime"
                                         format="yyyy-MM-dd HH:mm"
-                                        placeholder="选择日期时间">
+                                        placeholder="选择日期时间"
+                                        style="width:170px;">
                                     </el-date-picker>
                                 </el-form-item>
-                            </el-col>
                         </el-row>
                         <el-row class="form-row">
                             <el-col :span="12">
                                 <el-form-item label-width="120px" label="距离" prop="group_distance">
-                                    <el-input v-model.number="item.group_distance" type="number">
+                                    <el-input v-model.number="form.group[form.group.length - 1].group_distance" type="number" style="width:170px;float:left;">
                                         <template slot="append">km</template>
                                     </el-input>
                                 </el-form-item>
                             </el-col>
                             <el-col :span="12">
                                 <el-form-item label-width="120px" label="路书编号" prop="lushu_id">
-                                    <el-input v-model.number="item.lushu_id" :type="'number'"></el-input>
+                                    <el-input v-model.number="form.group[form.group.length - 1].lushu_id" :type="'number'" style="width:170px;float:left;"></el-input>
                                 </el-form-item>
                             </el-col>
                         </el-row>
                         <el-row class="form-row">
                             <el-col :span="12">
                                 <el-form-item label-width="120px" label="报名费" prop="group_money">
-                                    <el-input v-model.number="item.group_money" type="number">
+                                    <el-input v-model.number="form.group[form.group.length - 1].group_money" type="number" style="width:170px;float:left;">
                                         <template slot="append">元/人</template>
                                     </el-input>
                                 </el-form-item>
@@ -298,2008 +107,210 @@
                         <!-- 新增年龄限制 start-->
                         <el-row>
                             <el-col :span="12">
-                                <el-form-item label-width="220px" label="是否增加年龄限制" prop="require_age_limit">
+                                <el-form-item label-width="189px" label="是否增加年龄限制" prop="require_age_limit">
                                     <el-switch
-                                        v-model="item.require_age_limit"
+                                        v-model="form.group[form.group.length - 1].require_age_limit"
                                         on-text="是"
-                                        off-text="否">
+                                        off-text="否"
+                                        style="margin-right:270px;"
+                                        >
                                     </el-switch>
                                 </el-form-item>
                             </el-col>
                         </el-row>
                         <transition name="formitem">
-                            <el-row v-show="item.require_age_limit">
+                            <el-row v-show="form.group[form.group.length - 1].require_age_limit">
                                 <el-col :span="24">
-                                    <el-form-item label-width="220px" label="出生日期要求" prop="clothes_size">
+                                    <el-form-item label-width="189px" label="出生日期要求" prop="clothes_size">
                                         <el-date-picker
-                                            v-model="item.age_limit[0]"
-                                            align="right"
-                                            type="date"
-                                            placeholder="不选则默认为无限制"
-                                            :editable="false"
-                                            :picker-options="options.age_limit">
-                                        </el-date-picker> 至
-                                        <el-date-picker
-                                            v-model="item.age_limit[1]"
+                                            v-model="form.group[form.group.length - 1].age_limit[0]"
+                                            style="position:absolute;left:0;"
                                             align="right"
                                             type="date"
                                             placeholder="不选则默认为无限制"
                                             :editable="false"
                                             :picker-options="options.age_limit">
                                         </el-date-picker>
-                                        <span class="font-14 font-gray4">例如：1970-01-01 - 2017-04-20</span>
+                                        <el-date-picker
+                                            v-model="form.group[form.group.length - 1].age_limit[1]"
+                                            align="right"
+                                            type="date"
+                                            style="position:absolute;left:200px;"
+                                            placeholder="不选则默认为无限制"
+                                            :editable="false"
+                                            :picker-options="options.age_limit">
+                                        </el-date-picker>
+                                        <span class="font-14 font-gray4" style="position:absolute;top:30px;">例如：1970-01-01 - 2017-04-20</span>
                                     </el-form-item>
                                 </el-col>
                             </el-row>
                         </transition>
                         <!-- 新增年龄限制 end-->
-                        <el-row class="form-row">
+                        <el-row class="form-row" style="margin-top:15px;">
                             <el-form-item label-width="120px" label="备注" prop="money_desc">
-                                <el-input v-model="item.money_desc" type="textarea" resize="'none'" :rows="3"></el-input>
+                                <el-input v-model="form.group[form.group.length - 1].money_desc" type="textarea" resize="'none'" :rows="3"></el-input>
                             </el-form-item>
                         </el-row>
+                         <el-button @click="cancelGroup" >取消</el-button>
+                        <el-button @click="saveGroup" type="success">保存</el-button>
+                       
                     </el-form>
                 </transition-group>
             </el-col>
         </el-row>
-        </div>
-        <!-- 组别信息 end -->
-
-
-        <!-- 费用项目 start -->
-       <!--  <div class="group_list" v-if="cost_show">
-            <ul >
-                <li v-for="(item,index) in form.cost" v-dragging="{ item: item, list: form.cost, group: 'form.cost' }" :key="item.form_id">
-                    <div class="group_list_title">
-                        {{item.group_name}}
-                        <el-button @click="deletecost(index)" type="primary" style="float:right;margin-top:0.6rem;">删除</el-button>
-                        <el-button @click="changecost(index)" type="primary" style="float:right; margin-top:.6rem;margin-right:2rem;">编辑</el-button>
-                         <i class="handle"></i>
-                    </div>
-                    <span>费用金额:{{item.group_money}}元／人</span>
-                    <span>备注信息:{{item.money_desc}}</span>
-                </li>
-            </ul>
-        </div> -->
-       <!--  <el-dialog v-model="this_cost_show">
-            <el-row class="form-row">
-            <el-col :span="24">
-            </el-col>
+            </el-dialog>
+           
+         <el-dialog v-model="this_show" style="width:110%;
+        left:-5%;" :show-close="false">
+                <el-row class="form-row">
         </el-row>
-        <el-row :span="24">
+        <el-row :span="24" >
             <el-col :span="24">
                 <transition-group name="formitem" appear>
-                    <el-form :key="form.cost[this_cost].form_id" ref="costForm" :model="form.cost[this_cost]" :rules="rules.costRules" :span="24"  label-width="130px" class="cost-section" style="text-align:center;">
-                        <el-row class="form-row" :span="23">
+                    <el-form :model="form.group[this_group]" :rules="rules.groupRules" :key="form.group[this_group].form_id" :span="24"  label-width="130px" class="group-section demo-ruleForm" style="text-align:center;color:#48576a;">
+                        <el-row class="form-row">
+                            <el-col :span="12" style="width:49%;">
+                                <el-form-item label-width="120px" label="组别名称" prop="group_name">
+                                    <el-input v-model="form.group[this_group].group_name" :maxlength="10" :placeholder="'最多10个字符'" style="width:170px;float:left;"></el-input>
+                                </el-form-item>
+                            </el-col>
+                            <el-col :span="6">
+                                <el-form-item label="人数上限" prop="group_quoto">
+                                    <el-input v-model.number="form.group[this_group].group_quoto" type="number" style="width:170px;float:left;"></el-input>
+                                </el-form-item>
+                            </el-col>
+                        </el-row>
+                        <el-row class="form-row">
+                                <el-form-item label-width="120px" label="开门时间" prop="start_time" style="float:left;">
+                                    <!-- <el-input v-model="form.baseInfo.createTime"></el-input> -->
+                                    <!--  <el-date-picker
+                                        v-model="value4"
+                                        type="datetimerange"
+                                        :picker-options="pickerOptions2"
+                                        range-separator="至"
+                                        start-placeholder="开始日期"
+                                        end-placeholder="结束日期"
+                                        format="yyyy-MM-dd HH:mm"
+                                        align="right">
+                                    </el-date-picker> -->
+                                    <el-date-picker
+                                        v-model="form.group[this_group].start_time"
+                                        type="datetime"
+                                        format="yyyy-MM-dd HH:mm"
+                                        placeholder="选择日期时间"
+                                        style="width:170px;">
+                                    </el-date-picker>
+                                </el-form-item>
+                                <el-form-item label-width="120px" label="关门时间" prop="end_time" style="display:inline-block;">
+                                    <!-- <el-input v-model="form.baseInfo.closingTime"></el-input> -->
+                                    <el-date-picker
+                                        v-model="form.group[this_group].end_time"
+                                        type="datetime"
+                                        format="yyyy-MM-dd HH:mm"
+                                        placeholder="选择日期时间"
+                                        style="width:170px;">
+                                    </el-date-picker>
+                                </el-form-item>
+                        </el-row>
+                        <el-row class="form-row">
+                                <el-form-item label-width="120px" label="报名时间" prop="apply_start_time" style="float:left;">
+                                    <!-- <el-input v-model="form.baseInfo.createTime"></el-input> -->
+                                    <el-date-picker
+                                        v-model="form.group[this_group].apply_start_time"
+                                        type="datetime"
+                                        format="yyyy-MM-dd HH:mm"
+                                        placeholder="选择日期时间"
+                                        style="width:170px;">
+                                    </el-date-picker>
+                                </el-form-item>
+                                <el-form-item label-width="120px" label="报名截止时间" prop="apply_end_time" style="display:inline-block">
+                                    <!-- <el-input v-model="form.baseInfo.closingTime"></el-input> -->
+                                    <el-date-picker
+                                        v-model="form.group[this_group].apply_end_time"
+                                        type="datetime"
+                                        format="yyyy-MM-dd HH:mm"
+                                        placeholder="选择日期时间"
+                                        style="width:170px;">
+                                    </el-date-picker>
+                                </el-form-item>
+                        </el-row>
+                        <el-row class="form-row">
                             <el-col :span="12">
-                                <el-form-item label-width="120px" label="费用名称" prop="group_name">
-                                    <el-input v-model="form.cost[this_cost].group_name" placeholder="如：车旅费用（最多10个字符）" :maxlength="10"></el-input>
+                                <el-form-item label-width="120px" label="距离" prop="group_distance">
+                                    <el-input v-model.number="form.group[this_group].group_distance" type="number" style="width:170px;float:left;">
+                                        <template slot="append">km</template>
+                                    </el-input>
                                 </el-form-item>
                             </el-col>
                             <el-col :span="12">
-                                <el-form-item label-width="120px" label="费用金额" prop="group_money">
-                                    <el-input v-model.number="form.cost[this_cost].group_money" type="number">
+                                <el-form-item label-width="120px" label="路书编号" prop="lushu_id">
+                                    <el-input v-model.number="form.group[this_group].lushu_id" :type="'number'" style="width:170px;float:left;"></el-input>
+                                </el-form-item>
+                            </el-col>
+                        </el-row>
+                        <el-row class="form-row">
+                            <el-col :span="12">
+                                <el-form-item label-width="120px" label="报名费" prop="group_money">
+                                    <el-input v-model.number="form.group[this_group].group_money" type="number" style="width:170px;float:left;">
                                         <template slot="append">元/人</template>
-                                    ></el-input>
+                                    </el-input>
                                 </el-form-item>
                             </el-col>
                         </el-row>
-                        <el-row class="form-row" :span="23">
-                            <el-form-item label-width="120px" label="备注信息" prop="money_desc">
-                                <el-input v-model="form.cost[this_cost].money_desc"  type="textarea" resize="'none'" :rows="3"></el-input>
-                            </el-form-item>
-                        </el-row>
-                        <el-button @click="saveCost" type="primary">保存</el-button>
-                        <el-button @click="cancelcost" type="primary">取消</el-button>
-                    </el-form>
-                </transition-group>
-            </el-col>
-        </el-row>
-        </el-dialog> -->
-
-<!-- 
-        <div v-if="step2">
-        <el-button type="text" @click="addNewCost" class="addgroup">添加费用项目</el-button>
-        <el-dialog v-model="dialogMoneyVisible">
-        <el-row class="form-row">
-            <el-col :span="24">
-               
-            </el-col>
-        </el-row>
-        <el-row :span="24">
-            <el-col :span="24">
-                <transition-group name="formitem" appear>
-                    <el-form :key="form.cost[form.cost.length - 1].form_id" ref="costForm" :model="form.cost[index]" :rules="rules.costRules" :span="24"  label-width="130px" class="cost-section" style="text-align:center;">
-                        <el-row class="form-row" :span="23">
-                            <el-col :span="12">
-                                <el-form-item label-width="120px" label="费用名称" prop="group_name">
-                                    <el-input v-model="item.group_name" placeholder="如：车旅费用（最多10个字符）" :maxlength="10"></el-input>
-                                </el-form-item>
-                            </el-col>
-                            <el-col :span="12">
-                                <el-form-item label-width="120px" label="费用金额" prop="group_money">
-                                    <el-input v-model.number="item.group_money" type="number">
-                                        <template slot="append">元/人</template>
-                                    ></el-input>
-                                </el-form-item>
-                            </el-col>
-                        </el-row>
-                        <el-row class="form-row" :span="23">
-                            <el-form-item label-width="120px" label="备注信息" prop="money_desc">
-                                <el-input v-model="item.money_desc"  type="textarea" resize="'none'" :rows="3"></el-input>
-                            </el-form-item>
-                        </el-row>
-                        <el-button @click="saveCost" type="primary">保存</el-button>
-                        <el-button @click="cancelCost" type="primary">取消</el-button>
-                    </el-form>
-                </transition-group>
-            </el-col>
-        </el-row>
-    </el-dialog>
-    </div> -->
-        <!-- 费用项目 end -->
-        <div v-if="step2">
-         <el-row class="form-row">
-            <el-col :span="24">
-                <h3 class="sub-title">费用项目（可选）<el-button @click="addNewCost" type="text" class="float-right" size="small">添加费用项目</el-button></h3>
-            </el-col>
-        </el-row>
-        <el-row :span="24">
-            <el-col :span="24">
-                <transition-group name="formitem" appear>
-                    <el-form v-for="(item, index) in form.cost" :key="item.form_id" ref="costForm" :model="form.cost[index]" :rules="rules.costRules" :span="24"  label-width="130px" class="cost-section">
-                        <el-button @click="deleteCost( index )" class="close-btn" type="text">×</el-button>
-                        <el-row class="form-row" :span="23">
-                            <el-col :span="12">
-                                <el-form-item label-width="120px" label="费用名称" prop="group_name">
-                                    <el-input v-model="item.group_name" placeholder="如：车旅费用（最多10个字符）" :maxlength="10"></el-input>
-                                </el-form-item>
-                            </el-col>
-                            <el-col :span="12">
-                                <el-form-item label-width="120px" label="费用金额" prop="group_money">
-                                    <el-input v-model.number="item.group_money" type="number">
-                                        <template slot="append">元/人</template>
-                                    ></el-input>
-                                </el-form-item>
-                            </el-col>
-                        </el-row>
-                        <el-row class="form-row" :span="23">
-                            <el-form-item label-width="120px" label="备注信息" prop="money_desc">
-                                <el-input v-model="item.money_desc"  type="textarea" resize="'none'" :rows="3"></el-input>
-                            </el-form-item>
-                        </el-row>
-                    </el-form>
-                </transition-group>
-            </el-col>
-        </el-row>
-    </div>
-<!--费用结束 -->
-        <!-- 附加项目 start -->
-        <div v-if="step2">
-        <el-row class="form-row">
-            <el-col :span="24">
-                <h3 class="sub-title">附加项目（非必填）</h3>
-            </el-col>
-        </el-row>
-        <el-row :span="24">
-            <el-col :span="24">
-                <transition name="formitem">
-                    <el-form ref="optionalForm" :model="form.optional" :rules="rules.optionalRules" :span="24" label-width="100px" class="cost-section">
-                        <el-row  :span="24">
-                            <el-col :span="12">
-                                <el-form-item label-width="220px" label="是否需要用户填写收货地址" prop="require_address">
-                                    <el-switch
-                                        v-model="form.optional.require_address"
-                                        on-text="是"
-                                        off-text="否">
-                                    </el-switch>
-                                </el-form-item>
-                            </el-col>
-                        </el-row>
+                        <!-- 新增年龄限制 start-->
                         <el-row>
                             <el-col :span="12">
-                                <el-form-item label-width="220px" label="是否必选衣服尺码" prop="require_clothes_size">
+                                <el-form-item label-width="189px" label="是否增加年龄限制" prop="require_age_limit">
                                     <el-switch
-                                        v-model="form.optional.require_clothes_size"
+                                        v-model="form.group[this_group].require_age_limit"
                                         on-text="是"
-                                        off-text="否">
+                                        off-text="否"
+                                        style="margin-right:270px;"
+                                        >
                                     </el-switch>
                                 </el-form-item>
                             </el-col>
                         </el-row>
                         <transition name="formitem">
-                            <el-row v-show="form.optional.require_clothes_size">
-                                <el-col :span="12">
-                                    <el-form-item label-width="220px" label="是否使用均码" prop="average_size">
-                                        <el-switch
-                                            v-model="form.optional.average_size"
-                                            on-text="是"
-                                            off-text="否">
-                                        </el-switch>
-                                    </el-form-item>
-                                </el-col>
-                            </el-row>
-                        </transition>
-                        <transition name="formitem">
-                            <el-row v-show="form.optional.require_clothes_size">
+                            <el-row v-show="form.group[this_group].require_age_limit">
                                 <el-col :span="24">
-                                    <el-form-item label-width="220px" label="可提供的衣服尺码" prop="clothes_size">
-                                        <el-checkbox-group v-model="form.optional.clothes_size">
-                                            <el-checkbox
-                                                v-for="item in options.clothes_size_options"
-                                                :disabled="form.optional.average_size"
-                                                :label="item.name">{{ item.name }}</el-checkbox>
-                                        </el-checkbox-group>
+                                    <el-form-item label-width="189px" label="出生日期要求" prop="clothes_size">
+                                        <el-date-picker
+                                            v-model="form.group[this_group].age_limit[0]"
+                                            align="right"
+                                            type="date"
+                                            style="position:absolute;left:0;"
+                                            placeholder="不选则默认为无限制"
+                                            :editable="false"
+                                            :picker-options="options.age_limit"
+                                           >
+                                        </el-date-picker>
+                                        <el-date-picker
+                                            v-model="form.group[this_group].age_limit[1]"
+                                            align="right"
+                                            type="date"
+                                            style="position:absolute;left:200px;"
+                                            placeholder="不选则默认为无限制"
+                                            :editable="false"
+                                            :picker-options="options.age_limit">
+                                        </el-date-picker>
+                                        <span class="font-14 font-gray4" style="position:absolute;top:30px;">例如：1970-01-01 - 2017-04-20</span>
                                     </el-form-item>
                                 </el-col>
                             </el-row>
                         </transition>
-                        <el-row class="form-row" :span="24">
-                            <el-form-item label-width="120px" label="其他备注信息" prop="desc">
-                                <el-input v-model="form.optional.desc"  type="textarea" :rows="1" placeholder="最多 30 个字" resize="none" :maxlength="30"></el-input>
+                        <!-- 新增年龄限制 end-->
+                        <el-row class="form-row" style="margin-top:15px;">
+                            <el-form-item label-width="120px" label="备注" prop="money_desc">
+                                <el-input v-model="form.group[this_group].money_desc" type="textarea" resize="'none'" :rows="3"></el-input>
                             </el-form-item>
                         </el-row>
-                        <el-row>
-                            <el-col :span="12">
-                                <el-form-item label-width="220px" label="用户报名时备注是否必填" prop="require_decs">
-                                    <el-switch
-                                        v-model="form.optional.require_decs"
-                                        on-text="是"
-                                        off-text="否">
-                                    </el-switch>
-                                </el-form-item>
-                            </el-col>
-                        </el-row>
+                         <el-button @click="deleteGroup">取消</el-button>
+                        <el-button @click="savegroup(this_group)" type="success">保存</el-button>
+                       
                     </el-form>
-                </transition>
+                </transition-group>
             </el-col>
         </el-row>
+            </el-dialog>
         </div>
-        <!-- 附加项目 end -->
-
-        <!-- 赛事详细信息 start -->
-        <div v-if="step1">
-        <el-row class="form-row">
-            <el-col :span="24">
-                <h3 class="sub-title">赛事详细信息（必填）</h3>
-            </el-col>
-        </el-row> 
-    </div>
-    <div v-show="editor_show">
-        <el-row class="editor-box">
-            <textarea ref="editor-trigger" class="editor" rows="6"></textarea>
-        </el-row>
-        </div>
-        <Step v-if="step3" :message="form"></Step>
-        <el-row class="btn-group">
-            <el-button @click="handlePreStep" v-show="preStep">上一步</el-button>
-            <el-button @click="handleNextStep" v-show="nextStep" type="primary">下一步</el-button>
-            <el-button @click="handleFinStep" v-show="finStep" type="primary">下一步</el-button>
-        </el-row>
-        <el-row class="btn-group" v-if="btn_fin" >
-            <el-button @click="saveCompetition" :loading="status.disableBtn" type="success">保存</el-button>
-            <el-button @click="previewCompetition" :loading="status.disableBtn" type="default">赛事预览</el-button>
-            <el-button @click="releaseCompetition" :loading="status.disableBtn" type="default">提交审核</el-button>
-            <el-button @click="backtostep1" type="primary">修改赛事信息</el-button>
-            <el-button @click="backtostep2" type="primary">修改组别及其他</el-button>
-        </el-row>
-        <!-- 预览二维码 -->
-        <el-dialog title="提示" v-model="status.showQrCode" size="tiny">
-            <div class="preview-qr-code" v-html="qrcodeImg"></div>
-            <p v-if="qrcodeImg" class="text-center">手机浏览器扫码查看，<span><b class="font-red2">{{ expire }}</b></span>小时后过期</p>
-            <p v-if="qrcodeImg">或者点击此处查看：<a v-bind:href="previewUrl" class="word-wrap text-center" target="_blank">{{ previewUrl }}</a></p>
-        </el-dialog>
-
-        <!-- 发布成功 -->
-        <el-dialog title="提示" v-model="status.showReleaseInfo" size="tiny" :close-on-click-modal="false" :close-on-press-escape="false" :show-close="false">
-            <span>赛事发布申请已提交，请耐心等待管理员审核。</span>
-            <span slot="footer" class="dialog-footer">
-                <el-button type="primary" @click="gotoDraftBoxPage">确 定</el-button>
-            </span>
-        </el-dialog>
-    </div>
-</template>
-
-<script>
-import Q from "q";
-import D from "assets/util/date.js";
-import moment from "moment";
-import uploadInit from "./uploadInit.js";
-import { Group, Cost, BaseInfo, Optional } from "./constructor.js";
-import ImgUpload from "../public/imgUpload.vue";
-import FONT_COLOR_LIST from "../public/fontColorList.js";
-import Step from "../createCompetition/steps/view.vue";
-
-// http://webpack.github.io/docs/code-splitting.html 异步加载省市数据
-
-export default {
-    name: "create-competition",
-    data () {
-        let _this = this;
-        let checkNumber = function ( rule, value, callback ) {
-            let result = !isNaN( value ) && value >= 0;
-            if ( !result ) {
-                callback( new Error('请输入大于等于 0 的数字') )
-            } else {
-                callback();
-            }
-        }
-        let checkIntNumber = function ( rule, value, callback ) {
-            let result = !isNaN( value ) && value >= 0 && Number.isInteger( value );
-            if ( !result ) {
-                callback( new Error('请输入大于等于 0 的整数') )
-            } else {
-                callback();
-            }
-        }
-        // 可以不填写路书id
-        let checkLushuId = function ( rule, value, callback ) {
-            let result = true;
-            if ( value ) {
-                result = !isNaN( value ) && value >= 0 && Number.isInteger( value );
-            }
-            if ( !result ) {
-                callback( new Error('路书 ID 只能是正整数') )
-            } else {
-                callback();
-            }
-        }
-        let checkEmail = function ( rule, value, callback ) {
-            let reg = /^([a-zA-Z0-9_\.\-]{1,25})+@([a-zA-Z0-9_\-\.]{1,20})+(\.([a-zA-Z0-9_\-\.]{1,10}))$/;
-            let result = reg.test( value );
-            if ( result ) {
-                callback();
-            } else {
-                callback( new Error('请输入正确的邮箱地址') );
-            }
-        }
-        return {
-            step:1,//步骤
-            step2:false,//组别 v-if
-            step1:true,//step1 v-if
-            step3:false,//step3 view
-            nextStep:true,//next button v-if
-            preStep:false,//pre button v-if
-            finStep:false,//到第三部的下一步
-            dialogFormVisible:false,//add group v-if
-            dialogMoneyVisible:false,//add money v-i
-            qrcode: undefined,  // 二维码生成方法
-            qrcodeImg: '',      // 生成的图片
-            previewUrl: '',     // 预览连接
-            editor: undefined,  // 编辑器对象
-            btn_fin:false,//step3的时候 才会显示这个
-            group_list_show:false,//group_list v-if
-            competitionId: undefined, // 待编辑的赛事草稿 id
-            expire: 2,          // 预览过期时间（小时）
-            cost_show:false, //cost v-if
-            this_group:0,//this group index
-            this_cost:0,//this cost index
-            this_show:false,//this group v-if
-            this_cost_show:false, //this cost v-if
-            editor_show:true,//editor v-show
-           
-            status: {
-                isEditPage: false,
-                showQrCode: false,
-                showReleaseInfo: false,
-                fullscreenLoading: false,
-                isReleased: false,          // 赛事草稿是否已经发布，发布后不能再发布
-                disableBtn: false,          // 禁用按钮
-                disableHostPlace: false,    // 比赛地点是否必填
-            },
-            imgUploadOptions: {
-                config: {
-                    uptokenstr: 'gnM3ePmDf1jNsJ0DuN7RSFGSnCejigbJG6UW9iAZ:ILFK4K5jkXECRzqlA44RGkYJAPc=:eyJzY29wZSI6ImNvbXBldGl0aW9ucyIsImRlYWRsaW5lIjoxODE3OTUzNDY5fQ==',
-                    domainstr: 'http://7xruod.com2.z0.glb.qiniucdn.com/',
-                },
-            },
-            options: {
-                // 地址级联选择
-                place: [],
-                // 赛事支付类型
-                pay: [],
-                // 赛事类型
-                com_sport_type: [],
-                // 赛事特色标签
-                competition_label: [],
-                // 衣服尺码选项
-                clothes_size_options: [],
-                // 赛事模式（是否为线上赛、行者线上运动会）
-                com_type: [],
-                // 出生日期范围
-                age_limit: {
-                    shortcuts: [{
-                        text: '无限制',
-                        onClick(picker) {
-                            picker.$emit('pick', "none");
-                        }
-                    }],
-                },
-            },
-            // 表单数据
-            form: {
-                // 赛事基本信息
-                baseInfo: {
-                    title: '',
-                    host: '',
-                    mobile: '',
-                    QQ: '',
-                    email: '',
-                    create_time: '',
-                    closing_time: '',
-                    start_time: '',
-                    end_time: '',
-                    sign_time: '',
-                    place: '',                  // 签到地点
-                    host_place: [],             // 比赛地点 [国，省，市]
-                    pic_url: '',
-                    logo: '',
-                    pay_type: 0,
-                    com_sport_type: '',             // type number
-                    competition_label: [],
-                    com_type: 0,                // 0 线下赛事， 1 线上赛事，9999 行者线上运动会 ，默认为 1
-                    description: '',            // 赛事详情描述
-                },
-                // 组别信息
-                group: [],
-                // 费用项目
-                cost: [],
-                // 附加项目非必填
-                optional: {
-                    require_address: false,
-                    require_clothes_size: false,
-                    clothes_size: [],
-                    average_size: false,            // 是否用均码
-                    desc: '',
-                    require_decs: false,            // 用户报名时是否必填备注
-                }
-            },
-            // 表单验证规则
-            rules: {
-                // 赛事基本信息验证规则
-                baseInfoRules: {
-                    title: [
-                        { required: true, message: '请输入赛事标题', trigger: 'blur' },
-                        { min: 1, max: 20, message: '标题长度在 2 到 30 个字符', trigger: 'blur' }
-                    ],
-                    host: [
-                        { required: true, message: '请输入主办方名' },
-                        { min: 1, max: 50, message: '长度在 1 到 50 个字符', trigger: 'blur' }
-                    ],
-                    mobile: [
-                        { required: true, message: '请输入主办方联系电话（座机、手机均可）' },
-                        { min: 7, max: 14, message: '长度在 7 到 14 个字符', trigger: 'blur' }
-                    ],
-                    QQ: [
-                        { required: true, type: 'number', message: '请输入主办方联系QQ' },
-                        { validator: checkIntNumber, message: '请填写正确的 QQ 号码' }
-                    ],
-                    email: [
-                        { required: true, message: '请输入主办方联系邮箱' },
-                        { validator: checkEmail, message: '请输入正确格式的邮箱地址' }
-                    ],
-                    create_time: [
-                        { required: true, type: 'date', message: '请输入报名开始时间' }
-
-                    ],
-                    closing_time: [
-                        { required: true, type: 'date', message: '请输入报名结束时间' }
-
-                    ],
-                    start_time: [
-                        { required: true, type: 'date', message: '请输入赛事开始时间' }
-
-                    ],
-                    end_time: [
-                        { required: true, type: 'date', message: '请输入赛事结束时间' }
-
-                    ],
-                    sign_time: [
-                        { required: true, type: 'date', message: '请输入赛事签到时间' }
-
-                    ],
-                    place: [
-                        { required: true, message: '请输入签到地点' },
-                        { min: 1, max: 25, message: '长度在 1 到 25 个字符' },
-                    ],
-                    host_place: [
-                        { required: true, message: '请选择比赛地点' },
-                        { type: 'array', message: '请选择比赛地点' },
-                    ],
-                    pic_url: [
-                        { required: true, message: '请上传赛事展示图' }
-
-                    ],
-                    logo: [
-                        { required: false, message: '请上传赛事方LOGO' }
-
-                    ],
-                    pay_type: [
-                        { required: true, message: '请选择收款方式' }
-                    ],
-                    com_sport_type: [
-                        { required: true, type: 'string', message: '请设置赛事类型' }
-                    ],
-                    competition_label: [
-                        { required: false, type: 'array', message: '请设置赛事标签' }
-                    ],
-                    com_type: [
-                        { required: true, type: 'number', message: '请设置赛事模式' }
-                    ],
-                    description: [
-                        { required: true, message: '请填写赛事详情' }
-                    ]
-                },
-                // 组别信息验证规则
-                groupRules: {
-                    group_name: [
-                        { required: true, message: '请填写组别名称' }
-                    ],
-                    group_quoto: [
-                        { required: true, message: '请填写人数上限' },
-                        { validator: checkIntNumber, message: '请填写正确的数字' }
-                    ],
-                    start_time: [
-                        { required: true, type: 'date', message: '请填写出发时间' }
-                    ],
-                    end_time: [
-                        { required: true, type: 'date', message: '请填写关门时间' }
-                    ],
-                    apply_start_time: [
-                        { required: true, type: 'date', message: '请填写报名开始时间'}
-                    ],
-                    apply_end_time: [
-                        { required: true, type: 'date', message: '请填写报名截止时间'}
-                    ],
-                    group_distance: [
-                        { required: true, validator: checkNumber, message: '请填写距离' },
-                        { validator: checkNumber, message: '请填写正确的数字' }
-                    ],
-                    lushu_id: [
-                        { validator: checkLushuId, message: '路书编号只能是正整数' }
-                    ],
-                    group_money: [
-                        { required: true, message: '请填写报名费用' },
-                        { validator: checkNumber, message: '请填写正确的数字' }
-                    ],
-                    money_desc: [
-                        { required: false, message: '请填写组别描述' }
-                    ],
-                },
-                // 费用信息验证
-                costRules: {
-                    group_name: [
-                        { required: true, message: '请填写费用名称' }
-                    ],
-                    group_money: [
-                        { required: true, message: '请填写费用金额' },
-                        { validator: checkNumber, message: '请填写正确的数字' }
-                    ],
-                    money_desc: [
-                        { required: false, message: '请填写费用描述' },
-                        { min: 3, max: 30, message: '费用描述字数在 3-30 之间' }
-                    ],
-                },
-                // 附加项目验证规则
-                optionalRules: {
-                    require_address: [
-                        { required: false, message: '是否需要用户填写收货地址' }
-                    ],
-                    require_clothes_size: [
-                        { required: false, message: '是否必选衣服尺码' }
-                    ],
-                    clothes_size: [
-                        { required: false, type: 'array', message: '请选择可提供的衣服尺码' }
-                    ],
-                    average_size: [
-                        { required: false, type: 'boolean', message: '请选择可提供的衣服尺码' }
-                    ],
-                    desc: [
-                        { required: false, message: '请填写其他备注信息' }
-                    ],
-                    require_decs: [
-                        { required: false, message: '是否设置用户必填备注' }
-                    ]
-                }
-            }
-        }
-    },
-    created () {
-        let _this = this;
-
-        // 判断当前页面是否是编辑草稿的页面
-        // 并设置草稿 ID
-        let competitionId = this.$route.params.id;
-        if ( competitionId && this.$route.path.indexOf("edit") > -1 ) {
-            this.status.isEditPage = true;
-            this.competitionId = competitionId;
-            this.getDraft( competitionId );
-            console.log(`[赛事] 当前正在查看 id:${competitionId}的赛事草稿`);
-        }
-        // 拉取城市选择项
-        require([ "assets/util/qrcode.js", "assets/data/world.json" ], ( qrcode, world ) => {
-            _this.qrcode = qrcode;
-            let place = [];
-            world.map( ( country, index ) => {
-                let _country = {
-                    label: country.cn,
-                    value: country.cn,
-                };
-                if ( country.cities ) {
-                    _country.children = [];
-                    for ( let p in country.cities ) {
-                        let province = country.cities[p];
-                        let _province = {};
-                        if ( province.length > 0 ) {
-                            _province = {
-                               value: province[0].province,
-                               label: province[0].province,
-                               children: []
-                           };
-                           province.map( ( city, index ) => {
-                                _province.children.push( {
-                                    value: city.name,
-                                    label: city.name,
-                                } );
-                           });
-                        }
-                        _country.children.push( _province );
-                    }
-                }
-                place.push( _country );
-            });
-            _this.options.place = place;
-        });
-
-        // 拉取其他 select options
-        _this.$http.get( "/api/v4/competition_options/" ).then( res => {
-            res.json();
-            let data = res.data.data && res.data.data.options;
-            if ( data.pay ) {
-                _this.options.pay = data.pay;
-                _this.options.com_sport_type = data.com_sport_type;
-                _this.options.competition_label = data.competition_label;
-                _this.options.com_type = data.com_type;
-                _this.options.clothes_size_options = data.clothes_size_options;
-            } else {
-                _this.$message({
-                    type: 'error',
-                    message: '选项数据异常'
-                });
-            }
-        }, err => {
-            console.error( err );
-            _this.$message({
-                type: 'error',
-                message: '获取数据选项失败'
-            })
-        });
-
-        this.form.group.push( new Group() );
-        console.log(this.form.group);
-        // this.form.cost.push( new Cost() );
-        this.imgUploadOptions.picUrlSuccessCallback = function ( res ) {
-            _this.form.baseInfo.pic_url = res.key || "";
-            _this.$message({
-                message: '赛事展示图上传成功',
-                type: 'success'
-            });
-        }
-
-        this.imgUploadOptions.picUrlErrorCallback = function ( err ) {
-            console.error( err );
-            if ( err && err.message ) {
-                if ( err.message === "文件大小错误。" ) {
-                    err.message = "图片大小不能超过 2M。"
-                }
-            }
-            _this.form.baseInfo.pic_url = err.key || "";
-            _this.$message({
-                message: err.message || '赛事展示图上传失败',
-                type: 'error'
-            });
-        }
-        this.imgUploadOptions.logoUrlSuccessCallback = function ( res ) {
-            _this.form.baseInfo.logo = res.key || "";
-            _this.$message({
-                message: 'LOGO上传成功',
-                type: 'success'
-            });
-        }
-        this.imgUploadOptions.logoUrlErrorCallback = function ( err ) {
-            console.error( err );
-            if ( err && err.message ) {
-                if ( err.message === "文件大小错误。" ) {
-                    err.message = "图片大小不能超过 2M。"
-                }
-            }
-            _this.form.baseInfo.logo = err.key || "";
-            _this.$message({
-                message: err.message || 'LOGO上传失败',
-                type: 'error'
-            });
-        }
-    },
-    beforeDestroy () {
-        if ( this.editor ) {
-            this.editor.destroy();
-            window.wangEditor.numberOfLocation--;
-            this.editor = null;
-        }
-    },
-    mounted () {
-        this.$nextTick( () => {
-            this.createEditor();
-        });
-    },
-    methods: {
-        //操作步骤到第二部
-         handleNextStep(){
-                if(this.form.baseInfo.title == ""  || this.form.baseInfo.create_time == "" || this.form.baseInfo.closing_time == "" || this.form.baseInfo.start_time == "" || this.form.baseInfo.end_time == "" || this.form.baseInfo.sign_time == "" || this.form.baseInfo.pic_url == "" || this.form.baseInfo.host == "" || this.form.baseInfo.place == "" || this.form.baseInfo.mobile == "" || this.form.baseInfo.QQ == "" || this.form.baseInfo.email == ""  || this.form.baseInfo.com_sport_type == "" || this.form.baseInfo.description == ''){
-                    console.log(this.form.baseInfo)
-                    this.$message({
-                        message:"您有必填的信息尚未补全",
-                        type:"warning"
-                    })
-                }else{
-                this.step = 2;
-                if(this.form.group[0].group_name == ""){
-                    this.group_list_show = false;
-                }else{
-                    this.group_list_show = true;
-                }
-                this.nextStep = false;
-                this.finStep = true;
-                console.log(this.step);
-                console.log(this.form.group)
-                this.step1 = false;//step 1
-                this.step2 = true;//step 2
-                this.step3 = false;//step 3
-                this.preStep = true;// pre step
-                this.btn_fin = false;//btn_fin 不显示
-                this.editor_show = false;
-                this.cost_show = true;
-                console.log(this.editor_show);
-                console.log(this.form.group[0])
-                if(this.form.group[0].group_name == ""){
-                    this.cost_show = false;
-                }else{
-                    this.cost_show = true;
-                }
-                    // if(this.form.baseInfo.start_time.toString().length == 13 && this.form.baseInfo.start_time.toString().length == 13 && this.form.baseInfo.start_time.toString().length == 13 && this.form.baseInfo.start_time.toString().length == 13 && this.form.baseInfo.start_time.toString().length == 13){
-                    //         console.log("时间正确")
-                    // }else{
-                    // this.form.baseInfo.start_time = this.form.baseInfo.start_time.getTime();
-                    // this.form.baseInfo.end_time = this.form.baseInfo.end_time.getTime();
-                    // this.form.baseInfo.sign_time = this.form.baseInfo.sign_time.getTime();
-                    // this.form.baseInfo.create_time = this.form.baseInfo.create_time.getTime();
-                    // this.form.baseInfo.closing_time = this.form.baseInfo.closing_time.getTime();
-                    // }
-                }
-                // case 3:
-              //   console.log(this.form.group);
-              //   // break;
-              // // }
-            },
-            //到第三部的下一步
-            handleFinStep(){
-                console.log(this.form)
-                console.log("第三部")
-                console.log(this.form.group);
-                    if(this.form.group[0].group_name == "" || this.form.group[0].group_money == "" || this.form.group[0].group_distance == "" || this.form.group[0].group_quoto == ""){
-                      this.$message({
-                            message:"您有必填的信息尚未补全",
-                            type:"warning"
-                        })  
-                        console.log(2);
-
-                    }else{
-                    console.log(1);
-                    console.log(this.form.group)
-                    this.step = 3;
-                    this.btn_fin = true;// fin_btn
-                    this.finStep = false;
-                    this.step1 = false;//step 1
-                    this.step2 = false;//step 2
-                    this.step3 = true;//step 3
-                    this.nextStep = false;//next btn
-                    this.preStep = false;
-                    this.group_list_show = false;
-                    this.cost_show = false;
-                    this.this_show = false;
-                    this.this_cost_show = false;
-                    this.editor_show = false;
-                    console.log(this.editor_show);
-                    let len = this.form.group.length;
-                    for(let i = 0 ; i < len; i ++){
-                        this.form.group[i].group_order = i + 1;
-                    }
-                        }
-            },
-            //上一步
-            handlePreStep(){
-                this.step--;
-                switch(this.step){
-                    case 1:
-                    this.step1 = true;
-                    this.step2 = false;
-                    this.step3 = false;
-                    this.preStep = false;
-                    this.finStep = false;
-                    this.nextStep = true;
-                    this.btn_fin = false;
-                    this.group_list_show = false;
-                    this.cost_show = false;
-                    this.this_show = false;
-                    this.editor_show = true;
-                    console.log(this.editor_show);
-                    break;
-                    // case 2:
-                    // this.btn_fin = false;
-                    // this.step2 = true;
-                    // this.step1 = false;
-                    // this.step3 = false;
-                    // this.nextStep = true;
-                    // this.preStep = true;
-                    // if(this.form.group.length >= 1){
-                    //     this.group_list_show = true;
-                    //     this.cost_show = true;
-                    // }else{
-                    //     this.group_list_show = false;
-                    //     this.cost_show = false;
-                    // }
-                }
-            },
-            //修改赛事信息
-            backtostep1(){
-                this.step = 1;
-                this.step1 = true;
-                this.step2 = false;
-                this.step3 = false;
-                this.nextStep = true;
-                this.preStep = false;
-                this.btn_fin = false;
-                this.group_list_show = false;
-                this.cost_show = false;
-                this.editor_show = true;
-                console.log(this.editor_show);
-            },
-            //修改组别及其他
-            backtostep2(){
-                this.step = 2;
-                this.step1 = false;
-                this.step2 = true;
-                this.step3 = false;
-                this.nextStep = false;
-                this.finStep = true;
-                this.preStep = true;
-                this.cost_show = true;
-                this.btn_fin = false;
-                this.editor_show = false;
-                // if(this.form.group.length >= 1){
-                //         this.group_list_show = true;
-                //         this.cost_show = true;
-                //     }else{
-                //         this.group_list_show = false;
-                //         this.cost_show = false;
-                // }
-                if(this.form.group[0].apply_start_time === ""){
-                    this.group_list_show = false;
-                }else{
-                    this.group_list_show = true;
-                }
-                // if(this.form.cost[0].group_name === ""){
-                //     this.cost_show = false;
-                // }else{
-                //     this.cost_show = true;
-                // }
-            },
-            //delete group_this
-            deletethis(index){
-                if(this.form.group.length == 1){
-                    this.$message({
-                        message:"组别不能为空",
-                        type:"warning"
-                })
-                }else{
-                    this.form.group.splice( index,1 );
-                }
-            },
-            //删除当前cost
-                deleteCost ( index ) {
-            this.form.cost.splice( index, 1 );
-        },
-            //编辑当前
-            changethis(index){
-               this.this_show = true;
-               this.this_group = index;
-            },
-            //编辑当前费用
-            changecost(index){
-                this.this_cost_show = true;
-                this.this_cost = index;
-            },
-            cancelGroup(){
-                this.this_show = false;
-                this.$message({
-                    message:"您点击了取消",
-                    type:"warning"
-                })
-            },
-            //删除cost
-            deletecost(index){
-                // if(this.form.cost.length == 1){
-                //     this.$message({
-                //         message:"费用项目不能为空",
-                //         type:"warning"
-                //     })
-                // }else{
-                //     this.form.cost.splice( index,1 );
-                // }
-                if(this.form.cost.length == 1){
-                    this.$message({
-                        message:"费用项目不能为空",
-                        type:"warning"
-                })
-                }else{
-                    this.form.cost.splice( index,1 );
-                }
-            },
-            //保存组别
-            saveGroup(){
-                this.dialogFormVisible = false;
-                this.this_show =false;
-                // let len = this.form.group.length;
-                // for(let i = 0; i < len; i ++){
-                //     if(this.form.group[i].start_time === ""){
-                //       console.log(1)
-                //     }else{
-                //         if(this.showGroup.indexOf(this.form.group[i]) == -1){
-                //         this.showGroup.push(this.form.group[i]);
-                //     }else{
-                //         console.log(2);
-                //     }
-                //     }
-                // }
-                // this.showGroup = this.form.group.slice(0);
-                // let showlen = this.showGroup.length;
-                // console.log(this.form.group);
-                // for(let i = 0; i < showlen; i ++){
-                //     // this.showGroup[i].start_time = moment(this.showGroup[i].start_time).format("YYYY-MM-DD HH:mm");
-                //     // this.showGroup[i].end_time = moment(this.showGroup[i].end_time).format("YYYY-MM-DD HH:mm");
-                //     // this.showGroup[i].join_time = moment(this.showGroup[i].join_time).format("YYYY-MM-DD HH:mm");
-                //     this.showGroup[i].apply_end_time = moment(this.showGroup[i].apply_end_time).format("YYYY-MM-DD HH:mm");
-                //     // this.showGroup[i].apply_end_time = D.formate(this.showGroup[i]);
-                // }
-                // let today = new Date();
-                // console.log(today);
-                // console.log(this.showGroup);
-                // console.log(this.form.group);
-                //console.log(this.form.group);
-                // console.log(moment(this.form.group[1].start_time.getTime()).format("YYYY-MM-DD HH:mm"));//新数组的时间操作
-                //console.log(this.form.group[0].start_time.getTime());//this.form.group里面存储的数据
-                // console.log(this.form.group);
-                let len = this.form.group.length;
-                while( len-- ){
-                    if(this.form.group[len].group_name == ""){
-                        this.form.group.splice( len,1 );
-                        console.log("delete");
-                    }else{
-                        // if(this.form.group[len].start_time.toString().length == 13 && this.form.group[len].end_time.toString().length == 13 && this.form.group[len].apply_start_time.toString().length == 13 && this.form.group[len].apply_end_time.toString().length == 13){
-                        //      console.log(1);
-                        // }else{
-                        //     this.form.group[len].start_time = this.form.group[len].start_time.getTime();
-                        //     this.form.group[len].end_time = this.form.group[len].end_time.getTime();
-                        //     this.form.group[len].apply_end_time = this.form.group[len].apply_end_time.getTime();
-                        //     this.form.group[len].apply_start_time = this.form.group[len].apply_start_time.getTime();
-                        // }
-                        console.log("save")
-                    }
-                }
-                console.log(this.form.group);
-                this.group_list_show = true;
-                this.$message({
-                        message:"保存成功",
-                        type:"success"
-                })
-            },
-            saveCost(){
-                this.this_cost_show = false;
-                this.dialogMoneyVisible = false;
-                let len = this.form.cost.length;
-                while(len--){
-                    if(this.form.cost[len].group_name == ""){
-                        this.$message({
-                            message:"费用名称或费用不能为空",
-                            type:"warning"
-                        })
-                        this.form.cost.splice(len,1);
-                    }else{
-                    console.log(1);
-                }
-                }
-                this.cost_show = true;
-                console.log(this.form.cost);
-            },
-            cancelCost(){
-                this.dialogMoneyVisible = false;
-                this.form.cost.splice(this.form.cost.length - 1, 1)
-            },
-            cancelcost(){
-                this.this_cost_show = false;
-                this.$message({
-                    message:"您点击了取消",
-                    type:"warning"
-                })
-            },
-        // 创建编辑器
-        createEditor (){
-            let _this = this;
-            let el = this.$refs['editor-trigger'];
-            this.editor = new wangEditor( el );
-            // window.E = this.editor;
-            this.editor.config.customUpload = true;
-            this.editor.config.customUploadInit = uploadInit;
-            this.editor.config.uptokenstr = "gnM3ePmDf1jNsJ0DuN7RSFGSnCejigbJG6UW9iAZ:ILFK4K5jkXECRzqlA44RGkYJAPc=:eyJzY29wZSI6ImNvbXBldGl0aW9ucyIsImRlYWRsaW5lIjoxODE3OTUzNDY5fQ==";
-            this.editor.config.domainstr = "https://oi27flgao.qnssl.com/";
-            this.editor.config.imgSuffix = "-cmp.pic";
-            this.editor.config.mapAk = 'I1uWI2bIOWDQbZNEfarmd7He';
-            this.editor.config.menus = [
-                'source',
-                'bold',
-                'underline',
-                'italic',
-                'forecolor',
-                'eraser',
-                '|',
-                'alignleft',
-                'aligncenter',
-                'alignright',
-                '|',
-                'head',
-                'unorderlist',
-                'orderlist',
-                '|',
-                'link',
-                'unlink',
-                'table',
-                '|',
-                'img',
-                'location',
-                '|',
-                // 'undo',
-                // 'redo',
-                'fullscreen'
-            ];
-            this.editor.config.colors = FONT_COLOR_LIST;
-            // 滚动时菜单吸顶
-            this.editor.config.menuFixed = 60;
-            // 粘贴过滤样式
-            this.editor.config.pasteFilter = true;
-            this.editor.onchange = function () {
-                _this.form.baseInfo.description = _this.editor.$txt.html();
-            };
-            this.editor.create();
-            if ( this.form.baseInfo.description ) {
-                this.editor.$txt.html( this.form.baseInfo.description );
-            }
-        },
-
-        // 保存赛事草稿
-        // status = 0
-        saveCompetition ( resolve, reject ) {
-            let _this = this;
-            _this.status.fullscreenLoading = true;
-            // 保存草稿是取消表单校验
-            // (function () {
-            //     let deferred = Q.defer();
-            //     _this.validateForms( ( res ) => {
-            //         deferred.resolve( "ok" );
-            //     }, ( err ) => {
-            //         _this.$message({
-            //             message: '请修改表单错误项',
-            //             type: 'error'
-            //         });
-            //         deferred.reject( err );
-            //     });
-            //     return deferred.promise;
-            // })().then( res => {
-            //     // TODO
-            // }).fail( err => {
-            //     console.error( err );
-            //     _this.status.fullscreenLoading = false;
-            // });
-
-            let deferred = Q.defer();
-            // 赛事 id 和要提交的表单数据
-            let id = _this.competitionId ? _this.competitionId : -1;
-            let data = this.createFormData( true );
-            _this.uploadData( 0, data, id, ( res ) => {
-                _this.$message({
-                    message: '赛事草稿保存成功',
-                    type: 'success'
-                });
-                if ( resolve && resolve instanceof Function ) {
-                    resolve( res.data.code );
-                }
-                _this.status.fullscreenLoading = false;
-                deferred.resolve();
-            }, err => {
-                let info = ( err.data && err.data.msg ) ? err.data.msg : '';
-                _this.$message({
-                    message: `赛事草稿保存失败 ${ info }`,
-                    type: 'error'
-                });
-                _this.status.fullscreenLoading = false;
-                deferred.reject( err );
-            });
-        },
-
-        // 申请发布赛事
-        // doc: https://coding.net/u/zs1621/p/server_doc/attachment/1107463/preview/1104542#user-content-sai-shi-he-guan-li-fang-bao-cun-cao-gao
-        // 申请赛事中 logo_url 改为 logo 字段
-        // 所有时间一律使用 unix time
-        // status = 1
-       releaseCompetition () {
-        console.log(this.form);
-            let _this = this;
-            // console.log( this.createFormData( false ) ); for test
-            (function() {
-                let deferred = Q.defer();
-                if ( _this.status.isReleased ) {
-                    deferred.reject( new Error("已经发布过一次啦") );
-                } else {
-                    deferred.resolve();
-                }
-                return deferred.promise;
-            })().then( res => {
-                let deferred = Q.defer();
-                _this.$confirm( `是否确认提交审核？审核通过后将不能再修改。`, '提示', {
-                    confirmButtonText: '确认',
-                    cancelButtonText: '取消',
-                    type: 'warning'
-                }).then( () => {
-                    _this.status.fullscreenLoading = true;
-                    console.log("this")
-                    deferred.resolve();
-                }).catch( () => {
-                    deferred.reject( new Error("取消赛事申请") );
-                });
-                return deferred.promise;
-            }).then( res => {
-                let deferred = Q.defer();
-                _this.validateForms( ( res ) => {
-                    console.log("it")
-                    deferred.resolve();
-                }, ( err ) => {
-                    _this.$message({
-                        message: err.message || '请修改表单错误项',
-                        type: 'error'
-                    });
-                    _this.status.fullscreenLoading = false;
-                    deferred.reject();
-                });
-                return deferred.promise;
-            }).then( res => {
-                console.log("that")
-                let deferred = Q.defer();
-                // 赛事 id 和要提交的表单数据
-                let id = _this.competitionId ? _this.competitionId : -1;
-                let data = this.createFormData( false );
-                // mode === 1，表示赛事方保存并提交草稿
-                _this.uploadData( 1, data, id, res => {
-                    _this.$message({
-                        message: '赛事发布申请已提交',
-                        type: 'success'
-                    });
-                    _this.status.showReleaseInfo = true;
-                    _this.status.fullscreenLoading = false;
-                    _this.status.isReleased = true;
-                    deferred.resolve();
-                }, err => {
-                    let info = ( err.data && err.data.msg ) ? err.data.msg : '';
-                    _this.$message({
-                        message: `赛事提交失败 ${ info }`,
-                        type: 'error'
-                    });
-                    _this.status.fullscreenLoading = false;
-                    deferred.reject();
-                });
-                return deferred.promise;
-            }).fail( err => {
-                console.error( err );
-            });
-        },
-
-        // 提交赛事草稿数据
-        // 根据 status 的值判断是仅保存草稿还是保存并提交赛事
-        uploadData ( mode=0, form, competitionId=-1, resolve, reject ) {
-            let _this = this;
-            let url = `/api/v4/save_user_draft`;
-
-            if ( isNaN(competitionId) ) {
-                console.warn("[赛事] competitionId 错误，不能上传数据");
-                if ( reject && reject instanceof Function ) {
-                    reject( new Error("competitionId 错误，不能上传数据") );
-                }
-                return;
-            }
-
-            if ( competitionId === -1 ) {
-                console.warn("[赛事] competitionId == -1，即将创建新赛事草稿");
-                if ( _this.status.isEditPage ) {
-                    _this.$message({
-                        type: "error",
-                        message: "很抱歉，保存时出错，请刷新页面重试"
-                    });
-                    return;
-                }
-            }
-
-            if ( this.status.disableBtn ) {
-                _this.$message({
-                    type: "warning",
-                    message: "数据上传中..."
-                });
-                return;
-            }
-
-            if ( !isNaN( _this.competitionId ) ) {
-                competitionId = _this.competitionId;
-            }
-
-            let postData = {
-                mode: mode,
-                competitionId: competitionId/1,
-                draft: form,
-                expire: 3600 * _this.expire,
-            };
-            this.status.disableBtn = true;
-            this.$http.post( url, postData ).then( res => {
-                res.json();
-                let data = res.data;
-                if ( data.status == "1" ) {
-                    if ( !isNaN( data.data.CompetitionId ) ){
-                        // create 页面中之能上传一次 competitionId == -1 的草稿
-                        if ( isNaN( _this.competitionId ) && !_this.status.isEditPage ) {
-                            _this.competitionId = data.data.CompetitionId;
-                        }
-                    }
-                    if ( resolve && resolve instanceof Function ) {
-                        resolve( data );
-                    }
-                } else {
-                    if ( reject && reject instanceof Function ) {
-                        reject( res );
-                    }
-                }
-                this.status.disableBtn = false;
-            }, err => {
-                if ( reject && reject instanceof Function ) {
-                    reject( err );
-                }
-                this.status.disableBtn = false;
-            });
-        },
-
-        // 生成完整的表单数据
-        // 上传草稿和申请赛事的表单数据不一样
-        createFormData ( isDraft=false ) {
-            let _this = this;
-            let baseInfo = _this.form.baseInfo;
-            let data = new BaseInfo();
-            data.groups = [];
-            data.optional = {};
-            // 纠正时间为 Unix Time
-
-            for ( let key in baseInfo ) {
-                if ( baseInfo.hasOwnProperty( key ) ) {
-                    if ( baseInfo[key] instanceof Date ) {
-                        // console.log( baseInfo[key] );
-                        if ( isDraft ) {
-                            data[key] = fixTime( baseInfo[key].getTime() );
-                        } else {
-                            data[key] = D.formate2(baseInfo[key].getTime());
-                        }
-                    } else {
-                        data[key] = baseInfo[key];
-                    }
-                }
-            }
-            // data['pay_type'] = 0;               // 固定值
-            // type 0 是必选组别
-            _this.form.group.map( ( item, index ) => {
-                let group = {};
-                for ( let key in item ) {
-                    if ( item.hasOwnProperty( key ) ) {
-                        if ( item[key] instanceof Date ) {
-                            if ( isDraft ) {
-                                group[key] = item[key].getTime();
-                            } else {
-                                group[key] = D.formate2(item[key].getTime());
-                            }
-                        } else {
-                            group[key] = item[key];
-                        }
-                        if ( key === 'group_distance' ) {
-                            group[key] = group[key] * 1000;           //  用户在填写的时候数值的单位是 km ，但是正式上传数据的时候单位是 m
-                        }
-                        if ( !isDraft && key === 'lushu_id' && !group[key] ) {
-                            group[key] = 1;
-                        }
-                        if ( key === 'age_limit' ) {
-                            let min_time = group[key][0] instanceof Date ? group[key][0].getTime() : group[key][0];
-                            let max_time = group[key][1] instanceof Date ? group[key][1].getTime() : group[key][1];
-                            group[key] = [min_time, max_time];
-                        }
-                        if ( key === 'require_age_limit' ) {
-                            group[key] = Boolean(group[key]) ? 1 : 0;
-                        }
-                        if( key === 'require_com_limit' ){
-                            group[key] = Boolean(group[key]) ? 1 : 0;
-                        }
-                    }
-                }
-                data.groups.push( group );
-            });
-
-            // type 1 是必选组别，费用项目一类
-            _this.form.cost.map( ( item, index ) => {
-                let cost = {};
-                for ( let key in item ) {
-                    if ( item.hasOwnProperty( key ) ) {
-                        if ( item[key] instanceof Date ) {
-                            cost[key] = item[key].getTime();
-                        } else {
-                            cost[key] = item[key];
-                        }
-                    }
-                }
-                data.groups.push( cost );
-            });
-
-
-            // 附加字段修正
-            // _this.form.optional
-            data.optional = {
-                require_address: _this.form.optional.require_address ? 1 : 0,
-                require_clothes_size: _this.form.optional.require_clothes_size ? 1 : 0,
-                clothes_size: sortSize( _this.form.optional.clothes_size ),
-                desc: _this.form.optional.desc,
-                require_decs: _this.form.optional.require_decs ? 1 : 0,
-            };
-
-            // 差异字段处理
-            // logo_url - logo 字段
-            // com_type 赛事模式
-            if ( isDraft ) {
-                // TODO
-            } else {
-                data.logo = data.logo;
-                delete data.logo;
-            }
-            return data;
-        },
-
-        // 赛事预览
-        previewCompetition () {
-            let _this = this;
-            // let parentEl = this.$refs['preview-qr-code'];
-            // let qr = this.qrcode( 4, 'M' );
-            // qr.addData( link, 'Numeric' );
-            // qr.make();
-            _this.status.fullscreenLoading = true;
-            _this.saveCompetition( code => {
-                if ( code ) {
-                    code = code || 'no_code';
-                    let qr = _this.qrcode( 5, 'M' );
-                    let img = '';
-                    let link = `http://${ window.location.hostname }/competition/preview/${ code }`;
-                    console.log( '[预览链接]'+link );
-                    qr.addData( link, 'Byte');  // Numeric is error
-                    qr.make();
-                    img = qr.createImgTag(4);
-                    _this.qrcodeImg = img;
-                    _this.previewUrl = link;
-                    _this.status.showQrCode = true;
-                    _this.status.fullscreenLoading = false;
-                } else {
-                    _this.$message({
-                        message: '生成预览二维码失败',
-                        type: 'error'
-                    });
-                    _this.status.fullscreenLoading = false;
-                    console.log( "生成预览二维码失败" );
-                }
-            })
-        },
-
-        // 校验赛事表单
-        validateForms ( lastResolve, lastReject ) {
-            let _this = this;
-            let promises = [];
-
-            // 校验基本表单
-            function checkBaseInfo() {
-                console.log("检查1");
-                let deferred = Q.defer();
-                _this.$refs['baseInfoForm'].validate( valid => {
-                    if (valid) {
-                        deferred.resolve( valid );
-                    } else {
-                        deferred.reject( valid );
-                    }
-                });
-                return deferred.promise;
-            }
-            console.log("1231");
-            function checkCompetitionDescription (){
-                console.log("检查3");
-                let deferred = Q.defer();
-                let content = _this.form.baseInfo.description;
-                if ( !content ){
-                    setTimeout( () => {
-                        _this.$message({
-                            message: '请填写赛事详细信息',
-                            type: 'error'
-                        });
-                    }, 1000)
-                    deferred.reject( false );
-                } else {
-                    deferred.resolve( true );
-                }
-                return deferred.promise;
-            }
-            // 校验可选项目表单
-            function checkOptionalForm (){
-                console.log("检查2");
-                let deferred = Q.defer();
-                _this.$refs['optionalForm'].validate( valid => {
-                    if ( valid ){
-                        deferred.resolve( valid );
-                    } else {
-                        deferred.reject( valid );
-                    }
-                });
-                return deferred.promise;
-            }
-
-            // 校验赛事详情文本内容
-           
-
-            promises.push( checkBaseInfo() );
-            this.form.group.map( ( item, index, arr ) => {
-                promises.push( (function(){
-                    let deferred = Q.defer();
-                    _this.$refs['groupForm'][index].validate((valid) => {
-                        if (valid) {
-                            deferred.resolve( valid );
-                        } else {
-                            deferred.reject( valid );
-                        }
-                    });
-                    return deferred.promise;
-                })() );
-            });
-            promises.push( checkOptionalForm() );
-            promises.push( checkCompetitionDescription() );
-
-            this.form.cost.map( ( item, index, arr ) => {
-                promises.push( (function(){
-                    let deferred = Q.defer();
-                    _this.$refs['costForm'][index].validate((valid) => {
-                        if (valid) {
-                            deferred.resolve( valid );
-                        } else {
-                            deferred.reject( valid );
-                        }
-                    });
-                    return deferred.promise;
-                })());
-            });
-            Q.all( promises ).then( () => {
-                let deferred = Q.defer();
-                let result = _this.checkFormTime();
-                if ( result instanceof Error ) {
-                    deferred.reject( result );
-                } else {
-                    deferred.resolve();
-                }
-                return deferred.promise;
-            }).then( ( results ) => {
-                console.log("检查4");
-                // 检查所有表单是否通过验证
-                if ( lastResolve ) lastResolve( results );
-            }).fail( err => {
-                if ( lastReject ) lastReject( err );
-            });
-        },
-
-        // 添加新的赛事组别
-        addNewGroup () {
-            this.dialogFormVisible = true;
-            console.log(this.form.group)
-            let newGroup = new Group();
-            let start_time = this.form.baseInfo.start_time;
-            let end_time = this.form.baseInfo.end_time;
-            let apply_start_time = this.form.baseInfo.create_time;
-            let apply_end_time = this.form.baseInfo.closing_time;
-            this.form.group.push( newGroup );
-            if ( start_time  ) {
-                newGroup.start_time = new Date( start_time );
-            }
-            if ( end_time  ) {
-                newGroup.end_time = new Date( end_time );
-            }
-            if( apply_start_time ){
-                newGroup.apply_start_time = new Date( apply_start_time );
-            }
-            if( apply_end_time ){
-                newGroup.apply_end_time = new Date( apply_end_time );
-            }
-        },
-
-        // 添加新的收费项目
-        addNewCost () {
-            this.dialogMoneyVisible = true;
-            this.form.cost.push( new Cost() );
-            console.log(this.form.cost)
-        },
-        // 删除赛事组别
-        deleteGroup () {
-            this.dialogFormVisible = false;
-            this.form.group.splice(this.form.group.length - 1 , 1);
-            //this.form.group.splice( index, 1 );
-        },
-        // 获取草稿数据
-        // 当前页面是编辑草稿时，created 钩子方法内会调用该函数
-        // 这个时候要是用 TypeScript 就好多了啊 /(ㄒoㄒ)/~~
-        getDraft ( id ) {
-            let data = {};
-            let _this = this;
-            _this.status.fullscreenLoading = true;
-            _this.$http.get( `/api/v4/get_user_draft/?competitionId=${ id}` ).then( res => {
-                let draft = res.data && res.data.data && res.data.data.draft;
-                let baseInfo = new BaseInfo( draft );
-                let _form = this.form;
-                let _baseInfo = _form.baseInfo;
-                // 首先清空现有表单
-                _form.group = [];
-                _form.cost = [];
-                if ( draft && draft.competition_id ) {
-                    // console.log(baseInfo)
-                    // 设置 baseInfo 表单数据
-                    for ( let key in _baseInfo ) {
-                        // console.log(baseInfo)
-                        // console.log(baseInfo[key]);
-                        _baseInfo[key] = baseInfo[key];
-                    }
-                    // 设置 group 及 cost 表单数据
-                    draft.groups.map( item => {
-                        if ( item.type === 0 ) {
-                            console.log(_form.group);
-                            _form.group.push( new Group( item ) );
-                        } else if ( item.type === 1 ) {
-                            console.log(_form.cost)
-                            _form.cost.push( new Cost( item ) );
-                        }
-                    });
-                    _form.optional = new Optional( draft.optional );
-                    // 初始化编辑器内容
-                    _this.editor.$txt.html( _baseInfo.description );
-                } else {
-                    _this.$message({
-                        type: 'error',
-                        message: '获取草稿数据失败',
-                        duration: 5000
-                    });
-                    console.warn( '草稿数据异常' );
-                }
-                _this.status.fullscreenLoading = false;
-            }, err => {
-                _this.$message({
-                    type: 'error',
-                    message: '获取草稿数据失败',
-                    duration: 5000
-                });
-                _this.status.fullscreenLoading = false;
-                console.error( err );
-            })
-        },
-
-        // 前往草稿箱页面
-        gotoDraftBoxPage () {
-            let _this = this;
-            _this.status.showReleaseInfo = false;
-            _this.$router.push({
-                path: "/list"
-            });
-        },
-
-        // 时间逻辑校验
-        checkFormTime () {
-            let result = true;                                                 // 校验结果
-            let startTime = fixTime( this.form.baseInfo.start_time );          // 比赛开始时间
-            let endTime = fixTime( this.form.baseInfo.end_time );              // 比赛结束时间
-            let currentTime = fixTime( +new Date() );                          // 当前时间
-            let signTime = fixTime( this.form.baseInfo.sign_time );            // 签到时间
-            let createTime = fixTime( this.form.baseInfo.create_time );        // 报名开始时间
-            let closingTime = fixTime( this.form.baseInfo.closing_time );      // 报名结束时间
-
-            let group = this.form.group;
-            let len = group.length;
-
-            if ( closingTime <= currentTime ) {
-                return new Error("报名结束时间不能小于或等于当前时间");
-            }
-
-            if ( createTime >= closingTime ) {
-                return new Error("报名开始时间不能大于或等于报名结束时间");
-            }
-
-            if ( startTime >= endTime ) {
-                return new Error("比赛开始时间不能大于或等于比赛结束时间");
-            }
-
-            if ( closingTime > endTime ) {
-                return new Error("报名结束时间不能大于比赛结束时间");
-            }
-
-            if ( createTime > startTime ) {
-                return new Error("报名开始时间不能大于比赛开始时间");
-            }
-
-            for ( let i = 0; i < len; i++ ) {
-                let item = group[i];
-                if ( item.type !== 0 ) continue;
-                let groupStartTime = fixTime( item.start_time );
-                let groupEndTime = fixTime( item.end_time );
-                let groupApplystart = fixTime(item.apply_start_time);
-                let groupApplyend = fixTime(item.apply_end_time);
-                if ( groupStartTime >= groupEndTime ) {
-                    return new Error("分组出发时间不能大于或等于分组关门时间");
-                }
-                if ( groupEndTime > endTime ) {
-                    return new Error("分组关门时间不能大于比赛结束时间");
-                }
-                if ( groupStartTime < startTime ) {
-                    return new Error("分组出发时间不能小于比赛开始时间");
-                }
-            }
-            // 检查赛事组别年龄范围
-            for ( let i = 0; i < len; i++ ) {
-                let item = group[i];
-                if ( item.require_age_limit && item.age_limit[0] !== "none" && item.age_limit[1] !== "none" ) {
-                    let min_time = item.age_limit[0] instanceof Date ? item.age_limit[0].getTime() : item.age_limit[0];
-                    let max_time = item.age_limit[1] instanceof Date ? item.age_limit[1].getTime() : item.age_limit[1];
-                    if (min_time >= max_time) {
-                        return new Error("赛事组别出生日期要求错误：最小值不能大于最大值");
-                    }
-                } else if ( item.require_age_limit && item.age_limit[0] === "none" && item.age_limit[1] === "none" ) {
-                    return new Error("赛事组别出生日期要求错误：至少需填写一项");
-                }
-            }
-            return result;
-        }
-        // 时间取时分
-    },
-    watch: {
-        'form.baseInfo.competition_label': {
-            handler ( val ){
-                const count = 4;
-                if ( val && val.length > count ) {
-                    this.form.baseInfo.competition_label = val.splice( -count );
-                    this.$message({
-                        type: "info",
-                        message: `赛事特色标签最多选择${ count }项`,
-                        duration: 3000
-                    });
-                }
-            },
-            deep: false
-        },
-        'form.optional.require_clothes_size': {
-            handler ( val ){
-                this.rules.optionalRules.clothes_size[0].required = Boolean( val );
-            },
-            deep: false
-        },
-        'form.optional.average_size': {
-            handler ( val ){
-                // console.log( val );
-                if ( val ){
-                    this.form.optional.clothes_size = ["A"];
-                } else {
-                    this.form.optional.clothes_size = [];
-                }
-            },
-            deep: false
-        },
-        '$route.path': {
-            handler ( val ) {
-                if ( val === "/create" ) {
-                    // TODO: 清空所有表单数据
-                }
-                window.location.reload();
-                // 暂时先使用刷新页面的方式
-            },
-            deep: false
-        },
-        'form.baseInfo.start_time': {
-            handler ( val ) {
-                if ( val instanceof Date ) {
-                    let time = val.getTime();
-                    let _this = this;
-                    let sign_time = _this.form.baseInfo.sign_time;
-                    _this.form.group.map( item  => {
-                        let t = item.start_time && item.start_time instanceof Date && item.start_time.getTime() || 0;
-                        if ( t > time || !t ) {
-                            item.start_time = new Date( time );
-                        }
-                    });
-                    if ( sign_time && sign_time instanceof Date && sign_time.getTime() > time || !sign_time ) {
-                        _this.form.baseInfo.sign_time = new Date( time );
-                    }
-                }
-            },
-            deep: true
-        },
-        'form.baseInfo.end_time': {
-            handler ( val ) {
-                if ( val instanceof Date ) {
-                    let time = val.getTime();
-                    let _this = this;
-                    _this.form.group.map( item  => {
-                        let t = item.end_time && item.end_time instanceof Date && item.end_time.getTime() || 0;
-                        if ( t === 0 || t > time ) {
-                            item.end_time = new Date( time );
-                        }
-                    });
-                }
-            },
-            deep: true
-        },
-        'form.baseInfo.create_time': {
-            handler ( val ) {
-                if( val instanceof Date) {
-                    let time = val.getTime();
-                    let _this = this;
-                    _this.form.group.map( item => {
-                        let t = item.apply_start_time && item.apply_start_time instanceof Date && item.apply_start_time.getTime() || 0;
-                        if(t === 0 || t > time) {
-                            item.apply_start_time = new Date( time )
-                        }
-                    })
-                }
-            },
-            deep: true
-        },
-        'form.baseInfo.closing_time': {
-            handler ( val ) {
-                if( val instanceof Date) {
-                    let time = val.getTime();
-                    let _this = this;
-                    _this.form.group.map( item => {
-                        let t = item.apply_end_time && item.apply_end_time instanceof Date && item.apply_end_time.getTime() || 0;
-                        if(t === 0 || t > time) {
-                            item.apply_end_time = new Date( time )
-                        }
-                    })
-                }
-            },
-            deep: true
-        },
-        'form.baseInfo.com_type': {
-            handler ( val ) {
-                // 线下赛时，比赛地点才为必填
-                if ( val !== 0 ) {
-                    this.status.disableHostPlace = true;
-                    this.rules.baseInfoRules.host_place[0].required = false;
-                } else {
-                    this.status.disableHostPlace = false;
-                    this.rules.baseInfoRules.host_place[0].required = true;
-                }
-                this.form.baseInfo.host_place = [];
-            },
-            deep: false
-        }
-    },
-    components: {
-        "img-upload": ImgUpload,Step
-    }
-}
-/**
- * 调整时间精确度至分钟
- * @param  {[type]} val [description]
- * @return {[type]}     [description]
- */
-function fixTime ( val ) {
-    if ( val instanceof Date ) {
-        val = val.getTime();
-    }
-    let time;
-    let str = val + "";
-    if ( str.length === 10 ) {
-        time = new Date( val * 1000 );
-    } else {
-        time = new Date( val );
-    }
-    return new Date( time.getFullYear(), time.getMonth(), time.getDate(), time.getHours(), time.getMinutes() ).getTime();
-}
-/**
- * 服装尺码排序
- * @param  {[type]} arr [description]
- * @return {[type]}     [description]
- */
-function sortSize( arr ) {
-    let newArr = [];
-    return newArr = arr.sort( ( last, next ) => {
-        if ( next.indexOf("L") > -1 ) {
-            if ( last.indexOf("L") > -1 ) {
-                if ( next.length > last.length ) {
-                    return -1;
-                } else {
-                    return 1;
-                }
-            } else {
-                return -1;
-            }
-        } else if ( next.indexOf("M") > -1 ) {
-            if ( last.indexOf("S") > -1 ) {
-                return -1;
-            } else {
-                return 1;
-            }
-        } else {
-            if (last.indexOf("S") > -1) {
-                if ( last.length > next.length ) {
-                    return -1;
-                } else {
-                    return 1;
-                }
-            } else {
-                return 1;
-            }
-        }
-    });
-}
-</script>
-
-<style lang="scss" scoped>
-    @import "../../assets/style/_var.scss";
-    .create-competition-box {
-        padding: 1rem 0 4rem 0;
-    }
-    .group_list{
-        width:100%;
-        margin-top:.8rem;
-        float:left;
-        ul{
-        }
-        .group_list_title{
-            height:3rem;
-            background-color:orange;
-            line-height:3rem;
-            margin:0;
-            width:100%;
-        }
-        ul li{
-            display:block;
-            margin-top:1rem;
-            background-color:#dedede;
-            span{
-                display:block;
-                font-size:.8rem;
-                margin-top:.5rem;
-            }
-        }
-    }
-    .stepstyle{
-        height:3rem;
-        background-color:#dedede;
-        padding-left:9rem;
-    }
-    .sub-title {
-        font-size: 1rem;
-        color: #aa6708;
-        padding-bottom: 0.4rem;
-        border-bottom: 1px solid #aa6708;
-        margin-bottom: 1rem;
-        margin-top: 1rem;
-    }
-    .form-row {
-        // margin-bottom: 1rem;
-    }
-    .addgroup{
-        display:inline-block;
-        width:100%;
-        height:10rem;
-        border:1px dashed black;
-        margin-top:1rem;
-        font-size:1rem;
-    }
-    .cost-section,
-    .group-section {
-        position: relative;
-        padding: 1rem 1.4rem 0 0;
-        box-sizing: border-box;
-        background-color: #fff;
-        margin-bottom: 0.6rem;
-        border-radius: 1px;
-        box-shadow: 0 0 1px 0.5px rgba(0,0,0,0.1);
-        .close-btn {
-            display: none;
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 30px;
-            height: 30px;
-            padding: 0;
-            color: $color-gray;
-            font-size: 1.4rem;
-            transition: all 0.25s ease;
-            &:hover {
-                color: $color-red2;
-                // background-color: $color-red2;
-            }
-        }
-    }
-    .cost-section,
-    .group-section:nth-of-type(n+2) {
-        .close-btn {
-            display: block;
-        }
-    }
-    .editor-box {
-        &>p {
-            display: none;
-        }
-        .editor {
-            width:100%;
-            height: 50rem;
-            padding: 1rem;
-            textarea {
-                height: 100%;
-                resize: none;
-            }
-        }
-    }
-    .btn-group {
-        margin-top: 1rem;
-        text-align:center;
-        button {
-            display: inline-block;
-        }
-    }
-    // transition
-    .formitem-enter-active,
-    .formitem-leave-active, {
-        transition: all 0.25s ease;
-    }
-    .formitem-enter {
-        opacity: 0;
-        transform: translate3d(0, -10px, 0);
-    }
-    .formitem-enter-to {
-        opacity: 1;
-        transform: translate3d(0, 0, 0);
-    }
-    .formitem-leave-to {
-        opacity: 0;
-        transform: translate3d(0, -10px, 0);
-    }
-</style>
-<style media="screen" lang="scss">
-    .wangEditor-container {
-        font-size: 14px;
-    }
-    .preview-qr-code {
-        position: relative;
-        padding: 2rem 1rem 4rem 1rem;
-        &>img {
-            display: block;
-            margin-right: auto;
-            margin-left: auto;
-        }
-    }
-</style>

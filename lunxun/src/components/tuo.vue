@@ -27,12 +27,8 @@ import moment from "moment"
       getData(){
         console.log(this)
         this.$http.get("../../src/data/a.json").then(res=>{
-          console.log(res.data.data.closing_time);
-          let time = res.data.data.closing_time;
-          let time2 = this.fixTime(time);
-          let time3 = "Tue Jan 09 2018 17:34:00 GMT+0800 (CST)";
-          console.log(moment(time3).format("YYYY-MM-DD HH:mm"));
-          // console.log(time2);
+          let draft = res.data && res.data.data;
+          console.log(draft);
         }).catch(err=>{
           console.log(err)
         })
